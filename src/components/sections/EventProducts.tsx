@@ -63,7 +63,7 @@ export default function EventProducts() {
 
           <div
             ref={scrollRef}
-            className="flex gap-1 md:gap-3 lg:gap-5 z-9 overflow-x-auto scroll-smooth py-4 h-full scrollbar-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent"
+            className="flex gap-2 md:gap-3 lg:gap-5 z-9 overflow-x-auto scroll-smooth py-4 h-full scrollbar-hidden scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent"
           >
             {popularProducts?.map((product, index) => (
               <div

@@ -33,7 +33,7 @@ const ProductsListSection = ({ category,params }: { category: string, params?:"h
                 </div>
             </div>
             <div className="py-4 rounded-bl-3xl rounded-tr-3xl rounded-br-3xl  bg-white">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-1 md:gap-2 lg:gap-5 justify-items-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 xxl:grid-cols-5 gap-2 md:gap-2 lg:gap-5  justify-items-center">
                     {popularProducts.map((product)=>(
                         <ProductCard key={product.id} product={product} />
                     ))}

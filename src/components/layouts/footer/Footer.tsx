@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-500 text-center py-4 text-sm text-gray-500 text-stroke">
+      <div className="border-t border-outlined text-center py-4 text-sm text-gray-500 text-stroke">
         © {new Date().getFullYear()} GiggleBear. All rights reserved.
       </div>
     </footer>

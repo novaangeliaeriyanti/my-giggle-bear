@@ -39,10 +39,10 @@ const ProductCard = ({ product }: { product: ProductType }) => {
   };
 
   return (
-    <div className="bg-white border-[1px] border-neutral-300 overflow-hidden w-full max-w-[150px] md:max-w-[150px] lg:max-w-[200px] flex-shrink-0 card-rounded">
-      <Link href={`/products/${product.id}`}>
+    <div className="bg-white border-[1px] border-gray-200 overflow-hidden w-full h-full max-w-[150px] md:max-w-[150px] lg:max-w-[200px] flex-shrink-0 card-rounded">
+      {/* <Link href={`/products/${product.id}`}> */}
         <div className="relative aspect-[1]">
-          <span className="absolute top-0 left-0 bg-pink-400 text-white rounded-br-xl font-bold p-1 lg:px-4 lg:py-2 z-10 text-xs sm:text-sm">
+          <span className="absolute top-0 left-0 bg-pink-50 text-primary rounded-br-xl font-bold p-1 lg:px-4 lg:py-2 z-10 text-xs sm:text-sm">
             50%
           </span>
           <Image
@@ -52,7 +52,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             className="object-contain hover:scale-105 transition-all duration-300"
           />
         </div>
-      </Link>
+      {/* </Link> */}
 
       <div className="flex flex-col gap-2 p-3 sm:p-4 lg:gap-3">
         <h1 className="font-medium line-clamp-1 text-gray-500 text-sm sm:text-base">

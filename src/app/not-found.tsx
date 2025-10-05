@@ -1,9 +1,9 @@
 "use client"
 
-import Footer from "@/components/layouts/Footer";
+import Footer from "@/components/layouts/footer/Footer";
 import Navbar from "@/components/layouts/navbar";
 import Button from "@/components/ui/Button";
-import { Home, Plus } from "lucide-react";
+import { Home } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation"
 

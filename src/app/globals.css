@@ -12,6 +12,7 @@
   --description: #666666;
   --blue-sky:#d0f1f1; /*#d0f1f1*/
   --yellow-light:#fee673;
+  --pink-light: #fff6f9;
 }
 
 @theme inline {
@@ -26,6 +27,7 @@
   --color-outlined: var(--outlined);
   --color-text-description: var(--description);
   --color-blue-sky: var(--blue-sky);
+  --color-pink-light: var(--pink-light);
 }
 
 @media (prefers-color-scheme: dark) {

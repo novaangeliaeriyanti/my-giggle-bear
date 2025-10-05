@@ -2,6 +2,7 @@ import Carousel from "@/components/sections/carousel/Carousel"
 import EventProducts from "@/components/sections/EventProducts"
 import ProductsListSection from "@/components/sections/products-list/ProductList"
 import ServiceHighlights from "@/components/sections/service-highlight/ServiceHighlights"
+import Testimonials from "@/components/sections/Testimonials"
 import VideoSection from "@/components/sections/video/VideoSection"
 import VoucherBanner from "@/components/sections/VoucherBanner"
 import { homepageVariants } from "@/data/homepage"
@@ -17,6 +18,7 @@ export default function Home1() {
       <VoucherBanner />
       <ProductsListSection category="" />
       <VideoSection />
+      <Testimonials />
     </main>
   )
 }

@@ -1,4 +1,5 @@
-import Footer from "@/components/layouts/Footer"
+import Footer from "@/components/layouts/footer/Footer"
+import FooterV2 from "@/components/layouts/footer/FooterV2"
 import Navbar from "@/components/layouts/navbar"
 import type { ReactNode } from "react"
 

@@ -1,6 +1,4 @@
 "use client";
-
-import { Footprints, Glasses, Shirt, ShoppingBasket } from "lucide-react";
 import Image from "next/image";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 

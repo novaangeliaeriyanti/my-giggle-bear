@@ -39,7 +39,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
   };
 
   return (
-    <div className="bg-white border-[1px] border-neutral-300 overflow-hidden w-full max-w-[100px] md:max-w-[150px] lg:max-w-[200px] flex-shrink-0 card-rounded">
+    <div className="bg-white border-[1px] border-neutral-300 overflow-hidden w-full max-w-[150px] md:max-w-[150px] lg:max-w-[200px] flex-shrink-0 card-rounded">
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-[1]">
           <span className="absolute top-0 left-0 bg-pink-400 text-white rounded-br-xl font-bold p-1 lg:px-4 lg:py-2 z-10 text-xs sm:text-sm">

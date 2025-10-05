@@ -2,6 +2,7 @@ import ProductCard from "@/components/ui/ProductCard";
 import { popularProducts } from "@/data/products";
 import Link from "next/link";
 import CategoriesProduct from "./CategoriesProduct";
+import { Suspense } from "react";
 
 const ProductsListSection = ({ category,params }: { category: string, params?:"homepage" | "products" }) => {
   return (
@@ -18,9 +19,9 @@ const ProductsListSection = ({ category,params }: { category: string, params?:"h
                         </span>
                     </div>
                     <span className="text-description">Choose your favorite products through our collection</span>
-                    <div>
+                    <Suspense fallback={<div></div>}>
                         <CategoriesProduct />
-                    </div>
+                    </Suspense>
                     {params !== "products" && (
                       <Link
                         href={category ? `/products/?category=${category}` : "/products"}

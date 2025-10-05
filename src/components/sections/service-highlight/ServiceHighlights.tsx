@@ -18,7 +18,7 @@ const ServiceHighlights = () => {
               text-pink-400 font-bold
             "
           >
-            <div className="flex items-center justify-center gap-2 px-4 lg:px-6">
+            <div className="flex items-center gap-2 px-4 lg:px-6">
               <Image
                 src={item.icon}
                 alt={item.title}

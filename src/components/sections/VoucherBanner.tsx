@@ -17,7 +17,7 @@ const VoucherBanner = () => {
   };
 
   return (
-    <div className="flex justify-center container mx-auto p-4 mt-4 lg:px-0">
+    <div className="flex justify-center container mx-auto p-4 mt-8">
       <div className="relative w-full bg-blue-sky text-primary card-rounded bg-primary-50 bg-[url(/images/icons/grid-line.png)] bg-cover overflow-visible flex items-center">
         <div className="absolute -top-8 w-12 h-12 md:w-20 md:h-20 lg:w-24 lg:h-24">
           <Image

@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className="w-full">
       {/* Topbar */}
       <div className="border-b border-gray-200 flex items-center justify-center">
-        <div className="container flex justify-between py-4 px-4 gap-3 lg:px-0">
+        <div className="container flex justify-between py-4 px-4 gap-3">
           {/* Logo */}
           <Link href="/" className="logo font-bold text-blue-600">
             <div className="flex items-center">
@@ -155,7 +155,7 @@ export default function Navbar() {
           { activeMenu &&
             menus.find((menu) => menu.title === activeMenu)?.items && (
               <div className="absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-200 z-50 animate-[fadeDown_0.2s_ease-out]">
-                <div className="container mx-auto px-4 lg:px-0">
+                <div className="container mx-auto px-4">
                   <div
                     className="
                       py-6

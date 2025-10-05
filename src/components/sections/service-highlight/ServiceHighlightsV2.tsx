@@ -5,7 +5,7 @@ import { ServiceHighlightsData } from "@/data/homepage";
 
 const ServiceHighlightsV2 = () => {
   return (
-    <div className="flex justify-center container mx-auto p-4 lg:px-0">
+    <div className="flex justify-center container mx-auto p-4">
       <div className="flex w-full max-w-7xl mx-auto flex-wrap gap-4">
         {ServiceHighlightsData.map((item) => (
           <div

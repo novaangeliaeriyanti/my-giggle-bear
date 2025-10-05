@@ -9,7 +9,7 @@ const ProductsListSection = ({ category,params }: { category: string, params?:"h
     <div className="flex justify-center">
         <div className="w-full  rounded-3xl flex flex-col lg:flex-row container mx-auto p-4">
             <div className="rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl bg-[url(/grid-line.png)] bg-cover bg-center overflow-visible">
-                <div className="flex flex-col gap-1 pr-6">
+                <div className="flex flex-col gap-1 lg:pr-6">
                     <div className="flex items-center gap-2 logo font-bold">
                         <span className="flex space-x-2 text-secondary text-stroke-3">
                             <span>Popular</span>

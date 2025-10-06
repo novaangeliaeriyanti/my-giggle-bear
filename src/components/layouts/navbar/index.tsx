@@ -1,5 +1,5 @@
 "use client"
-import { Bell, ChevronDown, Home, User2 } from "lucide-react"
+import { Bell, ChevronDown, User2 } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 import ShoppingCartIcon from "./ShoppingCartIcon"
@@ -75,7 +75,7 @@ export default function Navbar() {
                             activeMenu === menu.title ? null : menu.title
                           )
                         }
-                        className="flex justify-between items-center px-4 py-3 text-gray-700 font-medium "
+                        className="flex justify-between items-center px-4 py-3 text-gray-500 font-medium "
                       >
                         {menu.title}
                         <ChevronDown
@@ -92,7 +92,7 @@ export default function Navbar() {
                             <Link
                               key={i}
                               href={item.href}
-                              className="flex items-center gap-2 text-gray-600 hover:text-hover transition-colors"
+                              className="flex items-center gap-2 text-gray-500 hover:text-hover transition-colors"
                             >
                               {item.icon && (
                                 <Image
@@ -124,7 +124,7 @@ export default function Navbar() {
             </div>
           )}
         
-        <div className="hidden md:flex md:items-center gap-6 font-medium text-gray-700 mx-auto justify-center">
+        <div className="hidden md:flex md:items-center gap-6 font-medium text-gray-500 mx-auto justify-center">
           { menus.map((menu) =>
             menu.items ? (
               <button

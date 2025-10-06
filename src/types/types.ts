@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 export type ServiceHighlightType = {
     id: string | number;
     title: string;
@@ -17,6 +15,9 @@ export type ProductType = {
   sizes: string[];
   colors: string[];
   images: Record<string, string>;
+  discount?: number;
+  priceDiscount?: number;
+  isFlashsale?: boolean;
 };  
 
 export type ProductsType = ProductType[];

@@ -40,19 +40,23 @@ const ProductCard = ({ product }: { product: ProductType }) => {
 
   return (
     <div className="bg-white border-[1px] border-gray-200 overflow-hidden w-full h-full max-w-[150px] md:max-w-[150px] lg:max-w-[200px] flex-shrink-0 card-rounded">
-      {/* <Link href={`/products/${product.id}`}> */}
+      <Link href={`/products/${product.id}`}>
         <div className="relative aspect-[1]">
-          <span className="absolute top-0 left-0 bg-pink-50 text-primary rounded-br-xl font-bold p-1 lg:px-4 lg:py-2 z-10 text-xs sm:text-sm">
-            50%
-          </span>
+        { product.discount && (
+          <div className="absolute top-0 left-0 bg-pink-50 text-primary border-gray-200  rounded-br-xl font-bold p-1 lg:px-4 lg:py-2 z-10 text-xs sm:text-sm">
+            {product.discount}%
+          </div>
+        )}
           <Image
             src={product.images[productTypes.color]}
             alt={product.name}
             fill
             className="object-contain hover:scale-105 transition-all duration-300"
           />
+          { product?.isFlashsale && <div className="absolute bottom-0 left-0 bg-yellow-50 text-yellow-500 px-2 py-1 text-xs font-bold rounded-md  m-3 sm:m-4">flashsale</div> }
+          
         </div>
-      {/* </Link> */}
+      </Link>
 
       <div className="flex flex-col gap-2 p-3 sm:p-4 lg:gap-3">
         <h1 className="font-medium line-clamp-1 text-gray-500 text-sm sm:text-base">
@@ -111,10 +115,21 @@ const ProductCard = ({ product }: { product: ProductType }) => {
         </div>
 
         {/* Price and add to cart button */}
-        <div className="flex flex-row items-start justify-between gap-2 mt-2">
-          <p className="font-bold text-gray-700 text-sm sm:text-base">
-            ${product.price.toFixed(2)}
-          </p>
+        <div 
+          className={`flex flex-row items-start justify-between gap-2`}
+        >
+          {product.discount ? (
+            <div className="flex flex-col justify-start items-start">
+              <span className="font-bold text-gray-700 text-sm sm:text-base">
+                ${product?.priceDiscount?.toFixed(2)}
+              </span>
+              <span className="line-through text-gray-400 text-xs">
+                ${product.price.toFixed(2)}
+              </span>
+            </div>
+            ) : (
+              <span className="font-bold text-gray-700 text-sm sm:text-base">${product.price.toFixed(2)}</span>
+          )}
           <button
             onClick={handleAddToCart}
             className="hidden lg:flex ring-1 rounded-lg px-1 py-1 text-xs sm:text-base cursor-pointer text-white bg-pink-400 ring-pink-400 hover:text-pink-400 hover:bg-white hover:ring-pink-400 transition-all duration-300 items-center gap-1"

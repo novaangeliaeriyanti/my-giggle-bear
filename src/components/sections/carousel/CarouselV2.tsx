@@ -4,10 +4,9 @@ import { images } from '@/data/homepage';
 import 'keen-slider/keen-slider.min.css';
 import { useKeenSlider } from 'keen-slider/react';
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 
 export default function CarouselV2() {
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     loop: true,
@@ -15,9 +14,6 @@ export default function CarouselV2() {
       perView: 1.5,
       spacing: 20,
       origin: 'center',
-    },
-    slideChanged(s) {
-      setCurrentSlide(s.track.details.rel);
     },
     mode: 'snap',
   });

@@ -28,6 +28,7 @@
   --color-text-description: var(--description);
   --color-blue-sky: var(--blue-sky);
   --color-pink-light: var(--pink-light);
+  --color-yellow-light: var(--yellow-light);
 }
 
 @media (prefers-color-scheme: dark) {

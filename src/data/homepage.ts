@@ -28,9 +28,9 @@ export const homepageVariants: Record<string, HomepageConfig> = {
 };
 
 export const images: string[] = [
-  '/images/banners/banner.webp',
-  '/images/banners/banner1.webp',
-  '/images/banners/banner2.webp',
+  "/images/banners/banner.webp",
+  "/images/banners/banner1.webp",
+  "/images/banners/banner2.webp",
 ];
 
 export const ServiceHighlightsData: ServiceHighlightsType = [
@@ -66,14 +66,13 @@ export const voucher = {
 };
 
 export const videoSection = {
-  icon:"/images/icons/film.png",
+  icon: "/images/icons/film.png",
   title: "Welcome to Kidz Station!",
   description:
     "Kidz Station is the most explorative toy store that offers a unique experience for play where parents & kids can team up together. Let your imagination run as you embark on a new adventure filled with thrills and excitement. Welcome to Kidz Station Imagine Play",
   videoSrc: "/videos/video.mp4",
   poster: "/thumbnail.webp",
 };
-
 
 export const reviews = [
   {
@@ -89,16 +88,14 @@ export const reviews = [
     name: "Michael Lee",
     avatar: "/images/icons/review.png",
     rating: 4,
-    comment:
-      "Fun and safe products! Great value for money and very responsive customer service.",
+    comment: "Fun and safe products! Great value for money and very responsive customer service.",
   },
   {
     id: 3,
     name: "Amanda Rivera",
     avatar: "/images/icons/review.png",
     rating: 5,
-    comment:
-      "Highly recommend! The toys are well-made and my daughter really loves them!",
+    comment: "Highly recommend! The toys are well-made and my daughter really loves them!",
   },
   {
     id: 4,
@@ -109,7 +106,3 @@ export const reviews = [
       "Perfect for birthday gifts! Fast shipping and everything arrived in perfect condition.",
   },
 ];
-
-
-
-

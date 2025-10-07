@@ -9,13 +9,13 @@ const ServiceHighlightsV2 = () => {
       <div className="flex w-full max-w-7xl mx-auto flex-wrap gap-4">
         {ServiceHighlightsData.map((item) => (
           <div
-              key={item.id}
-              className="
+            key={item.id}
+            className="
                 flex-1
                 flex flex-col items-center justify-center
                 rounded-xl
               "
-            >
+          >
             <div className="flex items-center justify-center gap-2 px-4 lg:px-6">
               <Image
                 src={item.icon}
@@ -30,9 +30,7 @@ const ServiceHighlightsV2 = () => {
                   md:w-8 md:h-8
                 "
               />
-              <span className="text-sm md:text-base text-gray-500">
-                {item.title}
-              </span>
+              <span className="text-sm md:text-base text-gray-500">{item.title}</span>
             </div>
           </div>
         ))}

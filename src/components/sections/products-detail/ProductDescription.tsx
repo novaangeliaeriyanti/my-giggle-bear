@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Modal from "@/components/ui/Modal";
-import Button from "@/components/ui/Button";
 import { ChevronDown } from "lucide-react";
 
 interface ProductDescriptionProps {
@@ -17,19 +16,17 @@ const ProductDescription = ({ description }: ProductDescriptionProps) => {
       <div className="relative">
         <p className="text-body line-clamp-10">{description}</p>
         <div className="flex justify-end">
-          <div className="flex items-center cursor-pointer text-body hover:text-primary">
+          <div
+            onClick={() => setIsOpen(true)}
+            className="flex items-center cursor-pointer text-body hover:text-primary"
+          >
             <ChevronDown className="w-4 h-4 flex-shrink-0 space-xs" />
             Read more
           </div>
         </div>
-   
       </div>
 
-      <Modal
-        isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
-        title="Product Description"
-      >
+      <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Product Description">
         {description}
       </Modal>
     </>

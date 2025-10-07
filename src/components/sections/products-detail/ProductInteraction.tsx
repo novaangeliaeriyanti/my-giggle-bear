@@ -2,11 +2,11 @@
 
 import Button from "@/components/ui/Button";
 import { ProductType } from "@/types/types";
-// import useCartStore from "@/stores/cartStore";
+import useCartStore from "@/stores/cartStore";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
-// import { toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const ProductInteraction = ({
   product,
@@ -22,7 +22,7 @@ const ProductInteraction = ({
   const searchParams = useSearchParams();
   const [quantity, setQuantity] = useState(1);
 
-  // const { addToCart } = useCartStore();
+  const { addToCart } = useCartStore();
 
   const handleTypeChange = (type: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -41,13 +41,13 @@ const ProductInteraction = ({
   };
 
   const handleAddToCart = () => {
-    // addToCart({
-    //   ...product,
-    //   quantity,
-    //   selectedColor,
-    //   selectedSize,
-    // });
-    // toast.success("Product added to cart")
+    addToCart({
+      ...product,
+      quantity,
+      selectedColor,
+      selectedSize,
+    });
+    toast.success("Product added to cart")
   };
   return (
     <div className="flex flex-col gap-4 mt-4">
@@ -64,10 +64,8 @@ const ProductInteraction = ({
               onClick={() => handleTypeChange("size", size)}
             >
               <div
-                className={`w-7 h-7 text-small text-center flex items-center rounded-lg justify-center ${
-                  selectedSize === size
-                    ? "bg-primary text-white"
-                    : "bg-white text-gray-700"
+                className={`w-7 h-7 text-small text-center flex items-center rounded-lg justify-center hover:text-hover ${
+                  selectedSize === size ? "bg-primary text-white" : "bg-white text-gray-700"
                 }`}
               >
                 {size.toUpperCase()}
@@ -96,14 +94,14 @@ const ProductInteraction = ({
       {/* QUANTITY */}
       <div className="flex flex-col gap-2 text-small">
         <span className="text-body font-bold text-secondary">Quantity</span>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center">
           <button
             className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"
             onClick={() => handleQuantityChange("decrement")}
           >
             <Minus className="w-4 h-4 " />
           </button>
-          <span className="font-bold text-gray-700">{quantity}</span>
+          <span className="font-bold text-gray-700 text-small space-md">{quantity}</span>
           <button
             className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"
             onClick={() => handleQuantityChange("increment")}
@@ -114,12 +112,12 @@ const ProductInteraction = ({
       </div>
       {/* BUTTONS */}
       <Button
-       onClick={handleAddToCart}
-       desc="Add to Cart"
-       icon={<Plus className="w-4 h-4" />}
-       className="flex justify-center items-center"
+        onClick={handleAddToCart}
+        desc="Add to Cart"
+        icon={<Plus className="w-4 h-4" />}
+        className="flex justify-center items-center"
       />
-      <button className="ring-1 ring-gray-primary text-primary text-button px-4 py-2 rounded-md flex items-center justify-center cursor-pointer gap-2 hover:bg-primary hover:text-white">
+      <button className="text-primary text-button px-4 py-2 rounded-md flex items-center justify-center cursor-pointer gap-2 border border-primary ring-0 hover:border-dashed">
         <ShoppingCart className="w-4 h-4" />
         Buy this Item
       </button>

@@ -1,37 +1,37 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import { useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import clsx from 'clsx';
-import ProductCard from '../ui/ProductCard';
-import { popularProducts } from '@/data/products';
+import Image from "next/image";
+import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import clsx from "clsx";
+import ProductCard from "../ui/ProductCard";
+import { popularProducts } from "@/data/products";
 
 export default function EventProducts() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const scroll = (direction: 'left' | 'right') => {
+  const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
     const { scrollLeft, clientWidth } = scrollRef.current;
-    const scrollAmount = direction === 'left' ? -clientWidth : clientWidth;
+    const scrollAmount = direction === "left" ? -clientWidth : clientWidth;
     scrollRef.current.scrollTo({
       left: scrollLeft + scrollAmount,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   return (
     <div className="flex justify-center">
       <div className="group w-full flex flex-col gap-4 container mx-auto p-4 mt-4">
-        <div className='flex flex-col gap-1'>
+        <div className="flex flex-col gap-1">
           <div className="flex items-center">
             <h2 className="text-secondary">Popular</h2>
             <h2 className="text-primary space-xs">Products</h2>
           </div>
           <span className="text-body">Choose your favorite products through our collection</span>
-        </div>        
+        </div>
 
-        <div className='relative w-full flex flex-col'>
+        <div className="relative w-full flex flex-col">
           <div className="absolute rounded-3xl top-0 left-0 h-full w-full block z-0">
             <Image
               src="/images/banners/event-banner.avif"
@@ -42,9 +42,9 @@ export default function EventProducts() {
             />
           </div>
           <button
-                onClick={() => scroll("left")}
-                aria-label="Scroll Left"
-                className="
+            onClick={() => scroll("left")}
+            aria-label="Scroll Left"
+            className="
                   absolute left-0 top-1/2 -translate-y-1/2 
                   translate-x-[-40px] group-hover:translate-x-0
                   opacity-0 group-hover:opacity-100
@@ -53,8 +53,8 @@ export default function EventProducts() {
                   flex z-10 text-primary border-2 border-dashed border-primary p-2
                   hover:text-white hover:bg-primary rounded-full
                 "
-              >
-                <ChevronLeft className="w-6 h-6" />
+          >
+            <ChevronLeft className="w-6 h-6" />
           </button>
 
           <div
@@ -64,17 +64,14 @@ export default function EventProducts() {
             {popularProducts?.map((product, index) => (
               <div
                 key={product.id}
-                className={clsx(
-                  "flex-shrink-0 rounded",
-                  index === 0 && "ml-24 lg:ml-32"
-                )}
+                className={clsx("flex-shrink-0 rounded", index === 0 && "ml-24 lg:ml-32")}
               >
                 <ProductCard product={product} />
               </div>
             ))}
           </div>
           <button
-            onClick={() => scroll('right')}
+            onClick={() => scroll("right")}
             aria-label="Scroll Right"
             className="
               absolute right-0 top-1/2 -translate-y-1/2 

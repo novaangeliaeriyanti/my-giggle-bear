@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -50,7 +50,7 @@ const Carousel = () => {
         aria-label="Previous slide"
         type="button"
       >
-       <ChevronLeft className="w-6 h-6" />
+        <ChevronLeft className="w-6 h-6" />
       </button>
 
       {/* Arrow right */}
@@ -60,7 +60,7 @@ const Carousel = () => {
         aria-label="Next slide"
         type="button"
       >
-         <ChevronRight className="w-6 h-6"/>
+        <ChevronRight className="w-6 h-6" />
       </button>
 
       {/* Dots navigation */}
@@ -70,15 +70,17 @@ const Carousel = () => {
             key={i}
             onClick={() => setCurrent(i)}
             className={`h-1 sm:h-1 md:h-2 lg:h-2 rounded-full ${
-              i === current ? "w-3 sm:w-3 md:w-6 lg:w-6 bg-white" : "w-1 sm:w-1 md:w-3 lg:w-3 bg-white/50"
+              i === current
+                ? "w-3 sm:w-3 md:w-6 lg:w-6 bg-white"
+                : "w-1 sm:w-1 md:w-3 lg:w-3 bg-white/50"
             }`}
             aria-label={`Go to slide ${i + 1}`}
             type="button"
           />
         ))}
-      </div>  
+      </div>
     </div>
   );
-}
+};
 
-export default Carousel
+export default Carousel;

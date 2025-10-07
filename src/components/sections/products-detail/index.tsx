@@ -46,7 +46,7 @@ const ProductDetail = () => {
 
   return (
     <div className="flex flex-col gap-4 lg:flex-row md:gap-12 container mx-auto p-4 lg:py-6">
-      <div className="w-full lg:w-5/12 relative aspect-[2/3] overflow-hidden card-rounded">
+      <div className="w-full lg:w-5/12 relative aspect-[2/3] overflow-hidden card-rounded bg-gray-light">
         {product.discount && (
           <h4 className="absolute top-0 left-0 z-10 font-bold bg-pink-50 text-primary border-gray-200 rounded-br-xl p-2">
             {product.discount}%
@@ -56,30 +56,28 @@ const ProductDetail = () => {
           src={product.images[color]}
           alt={product.name}
           fill
-         className="object-contain card-rounded z-0"
+          className="object-contain card-rounded z-0"
         />
       </div>
 
       <div className="w-full lg:w-7/12 flex flex-col gap-4">
         <h3 className="text-gray-700 font-bold">{product.name}</h3>
-        { product?.isFlashsale && <div className="bg-yellow-50 text-yellow-500 px-2 py-1 text-body w-fit card-rounded border">flashsale</div> }
+        {product?.isFlashsale && (
+          <div className="bg-yellow-50 text-yellow-500 px-2 py-1 text-body w-fit card-rounded border border-dashed">
+            flashsale
+          </div>
+        )}
         <ShareButton />
         <ProductDescription description={product.description} />
         {product.discount ? (
           <div className="flex items-center">
             <h3>${product?.priceDiscount?.toFixed(2)}</h3>
-            <span className="ml-2 line-through text-small">
-              ${product.price.toFixed(2)}
-            </span>
+            <span className="ml-2 line-through text-small">${product.price.toFixed(2)}</span>
           </div>
-          ) : (
-            <h3>${product.price.toFixed(2)}</h3>
+        ) : (
+          <h3>${product.price.toFixed(2)}</h3>
         )}
-        <ProductInteraction
-          product={product}
-          selectedSize={size}
-          selectedColor={color}
-        />
+        <ProductInteraction product={product} selectedSize={size} selectedColor={color} />
       </div>
     </div>
   );

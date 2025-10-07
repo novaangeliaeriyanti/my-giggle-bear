@@ -23,7 +23,7 @@ const Modal = ({ isOpen, onClose, title, children }: ModalProps) => {
           <X className="w-6 h-6" />
         </button>
 
-        {title && <h3 className="mb-4 text-secondary">{title}</h3> }
+        {title && <h3 className="mb-4 text-secondary">{title}</h3>}
         <div className="text-gray-500 leading-relaxed max-h-[70vh] overflow-y-auto pr-2">
           {children}
         </div>

@@ -1,6 +1,6 @@
-import Footer from "@/components/layouts/footer/Footer"
-import Navbar from "@/components/layouts/navbar"
-import type { ReactNode } from "react"
+import Footer from "@/components/layouts/footer/Footer";
+import Navbar from "@/components/layouts/navbar";
+import type { ReactNode } from "react";
 
 export default function HomepageLayout({ children }: { children: ReactNode }) {
   return (
@@ -9,5 +9,5 @@ export default function HomepageLayout({ children }: { children: ReactNode }) {
       <main className="flex-1">{children}</main>
       <Footer />
     </div>
-  )
+  );
 }

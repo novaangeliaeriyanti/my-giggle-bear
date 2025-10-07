@@ -1,7 +1,7 @@
 export const menus: {
-  title: string
-  href?: string
-  items?: { label: string; href: string; icon?: string }[]
+  title: string;
+  href?: string;
+  items?: { label: string; href: string; icon?: string }[];
 }[] = [
   {
     title: "Home",
@@ -23,7 +23,6 @@ export const menus: {
       { label: "Blog Details", href: "/blog-details", icon: "/images/icons/smile.png" },
       { label: "Empty Shop", href: "/empty-shop", icon: "/images/icons/smile.png" },
       { label: "404 Not Found", href: "/not-found", icon: "/images/icons/smile.png" },
-
     ],
   },
   {
@@ -50,4 +49,4 @@ export const menus: {
     title: "Contact",
     href: "/contact",
   },
-]
+];

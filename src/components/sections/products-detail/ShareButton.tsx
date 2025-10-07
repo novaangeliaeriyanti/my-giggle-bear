@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Share2, Link as LinkIcon } from "lucide-react";
 import Modal from "@/components/ui/Modal";
+import { toast } from "react-toastify";
 
 const ShareButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +17,7 @@ const ShareButton = () => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      console.error("Failed to copy link:", err);
+      toast.error(`Failed to copy link because ${err}`)
     }
   };
 
@@ -30,18 +31,16 @@ const ShareButton = () => {
       </div>
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title="Share this product">
-        <div className="flex justify-center gap-6 m-6">   
-         <div className="flex flex-col gap-2 items-center">
+        <div className="flex justify-center gap-6 m-6">
+          <div className="flex flex-col gap-2 items-center">
             <div
-                onClick={handleCopy}
-                className="flex items-center p-3 rounded-full border border-gray-200 text-icon w-fit hover:text-hover cursor-pointer"
-                >
-                <LinkIcon size={24} />
+              onClick={handleCopy}
+              className="flex items-center p-3 rounded-full border border-gray-200 text-icon w-fit hover:text-hover cursor-pointer"
+            >
+              <LinkIcon size={24} />
             </div>
-            <span className="text-body mt-1">
-                {copied ? "Copied!" : "Copy Link"}
-            </span>
-         </div>
+            <span className="text-body mt-1">{copied ? "Copied!" : "Copy Link"}</span>
+          </div>
         </div>
       </Modal>
     </>

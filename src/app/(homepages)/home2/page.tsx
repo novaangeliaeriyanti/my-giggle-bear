@@ -1,6 +1,6 @@
-import CarouselV2 from "@/components/sections/carousel/CarouselV2"
-import ServiceHighlightsV2 from "@/components/sections/service-highlight/ServiceHighlightsV2"
-import VoucherBanner from "@/components/sections/VoucherBanner"
+import CarouselV2 from "@/components/sections/carousel/CarouselV2";
+import ServiceHighlightsV2 from "@/components/sections/service-highlight/ServiceHighlightsV2";
+import VoucherBanner from "@/components/sections/VoucherBanner";
 
 export default function Home2() {
   return (
@@ -9,5 +9,5 @@ export default function Home2() {
       <ServiceHighlightsV2 />
       <VoucherBanner />
     </main>
-  )
+  );
 }

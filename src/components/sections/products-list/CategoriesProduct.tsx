@@ -6,7 +6,7 @@ const categories = [
   { name: "All", icon: "/images/icons/service-return.png", slug: "all" },
   { name: "T-shirts", icon: "/images/icons/service-return.png", slug: "t-shirts" },
   { name: "Shoes", icon: "/images/icons/service-return.png", slug: "shoes" },
-  { name: "Accessories",icon: "/images/icons/service-return.png", slug: "accessories" },
+  { name: "Accessories", icon: "/images/icons/service-return.png", slug: "accessories" },
 ];
 
 const CategoriesProduct = () => {
@@ -44,11 +44,6 @@ const CategoriesProduct = () => {
             bg-no-repeat bg-center bg-contain
             aspect-[4/2]
             transition-transform duration-300 hover:scale-105
-            ${
-              category.slug === selectedCategory
-                ? "text-primary"
-                : "text-secondary"
-            }
           `}
         >
           <div className="flex items-center gap-1">
@@ -74,9 +69,7 @@ const CategoriesProduct = () => {
                 </div>
               )}
             </div>
-            <h4 className="text-heading-1 text-stroke text-secondary">
-              {category.name}
-            </h4>
+            <h4 className={`text-heading-1 text-stroke ${category.slug === selectedCategory ? "text-primary" : "text-secondary"}`}>{category.name}</h4>
           </div>
         </div>
       ))}

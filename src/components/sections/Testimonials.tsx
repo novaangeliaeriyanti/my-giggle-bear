@@ -28,8 +28,7 @@ const Testimonials = () => {
           <h2 className="text-primary space-xs">Reviews</h2>
         </div>
         <span className="text-body max-w-2xl text-gray-500">
-          Gain confidence in your purchase with real stories from our happy
-          customers!
+          Gain confidence in your purchase with real stories from our happy customers!
         </span>
       </div>
 
@@ -64,13 +63,13 @@ const Testimonials = () => {
               className="flex-shrink-0 overflow-hidden w-[260px] sm:w-[300px] md:w-[320px] bg-white card-rounded card-rounded border border-gray-200 flex flex-col gap-3"
             >
               <div className="relative">
-              <div className="absolute top-0 right-0 text-tiny font-bold bg-yellow-50 border border-gray-200 text-white rounded-bl-xl rounded-tr-xl lg:rounded-tr-3xl p-1 lg:px-4 lg:py-2 z-10">
-                <div className="flex text-yellow-400">
-                  {[...Array(review.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="currentColor" />
-                  ))}
+                <div className="absolute top-0 right-0 text-tiny font-bold bg-yellow-50 border border-gray-200 text-white rounded-bl-xl rounded-tr-xl lg:rounded-tr-3xl p-1 lg:px-4 lg:py-2 z-10">
+                  <div className="flex text-yellow-400">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} size={16} fill="currentColor" />
+                    ))}
+                  </div>
                 </div>
-              </div>
               </div>
               <div className="flex flex-col gap-3 p-5 pt-4">
                 <div className="flex items-center gap-2">
@@ -83,9 +82,7 @@ const Testimonials = () => {
                   />
                   <span className="text-body text-secondary line-clamp-2">{review.name}</span>
                 </div>
-                <span className="text-small line-clamp-3">
-                  “{review.comment}”
-                </span>
+                <span className="text-small line-clamp-3">“{review.comment}”</span>
               </div>
             </div>
           ))}

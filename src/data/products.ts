@@ -1,11 +1,10 @@
-import { ProductsType } from "@/types/types";
+import { ProductType } from "@/types/types";
 
-export const popularProducts: ProductsType = [
+export const popularProducts: ProductType[] = [
   {
     id: 1,
     name: "Adidas CoreFit T-Shirt",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
       "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 39.9,
@@ -18,12 +17,15 @@ export const popularProducts: ProductsType = [
       purple: "/images/products/1p.png",
       green: "/images/products/1gr.png",
     },
+    brandId: "adidas",
+    category: ["kids"],
+    subcategory: ["clothes"],
+    rating: "4"
   },
   {
     id: 2,
     name: "Puma Ultra Warm Zip",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
       "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 59.9,
@@ -33,12 +35,14 @@ export const popularProducts: ProductsType = [
     sizes: ["s", "m", "l", "xl"],
     colors: ["gray", "green"],
     images: { gray: "/images/products/2g.png", green: "/images/products/2gr.png" },
+    brandId: "puma",
+    category: ["kids", "preteen"],
+    subcategory: ["clothes", "outerwear"],
   },
   {
     id: 3,
     name: "Nike Air Essentials Pullover",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
       "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 69.9,
@@ -50,12 +54,15 @@ export const popularProducts: ProductsType = [
       blue: "/images/products/3b.png",
       black: "/images/products/3bl.png",
     },
+    brandId: "nike",
+    category: ["preteen"],
+    subcategory: ["clothes", "hoodies"],
+    rating: "4.6"
   },
   {
     id: 4,
     name: "Nike Dri Flex T-Shirt",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
       "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 29.9,
@@ -64,12 +71,14 @@ export const popularProducts: ProductsType = [
     sizes: ["s", "m", "l"],
     colors: ["white", "pink"],
     images: { white: "/images/products/4w.png", pink: "/images/products/4p.png" },
+    brandId: "nike",
+    category: ["kids"],
+    subcategory: ["clothes", "t-shirts"],
   },
   {
     id: 5,
     name: "Under Armour StormFleece",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
       "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 49.9,
@@ -81,12 +90,14 @@ export const popularProducts: ProductsType = [
       orange: "/images/products/5o.png",
       black: "/images/products/5bl.png",
     },
+    brandId: "under-armour",
+    category: ["preteen"],
+    subcategory: ["clothes", "outerwear"],
   },
   {
     id: 6,
     name: "Nike Air Max 270",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
       "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 59.9,
@@ -94,12 +105,14 @@ export const popularProducts: ProductsType = [
     sizes: ["40", "42", "43", "44"],
     colors: ["gray", "white"],
     images: { gray: "/images/products/6g.png", white: "/products/6w.png" },
+    brandId: "nike",
+    category: ["kids", "preteen"],
+    subcategory: ["shoes", "sneakers"],
   },
   {
     id: 7,
     name: "Nike Ultraboost Pulse",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
       "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 69.9,
@@ -107,12 +120,14 @@ export const popularProducts: ProductsType = [
     sizes: ["40", "42", "43"],
     colors: ["gray", "pink"],
     images: { gray: "/images/products/7g.png", pink: "/images/products/7p.png" },
+    brandId: "nike",
+    category: ["preteen"],
+    subcategory: ["shoes", "sneakers"],
   },
   {
     id: 8,
     name: "Levi’s Classic Denim",
-    shortDescription:
-      "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+    shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     description:
       "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
     price: 59.9,
@@ -122,8 +137,9 @@ export const popularProducts: ProductsType = [
     sizes: ["s", "m", "l"],
     colors: ["blue", "green"],
     images: { blue: "/images/products/8b.png", green: "/images/products/8gr.png" },
+    brandId: "levi's",
+    category: ["kids", "preteen"],
+    subcategory: ["clothes", "denim"],
+    rating: "5"
   },
 ];
-
-
-  

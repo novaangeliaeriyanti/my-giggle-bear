@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
-
 :root {
   --background: #ffffff;
   --foreground: #ffffff;
   --primary: #f472b6; /* pink-400 */
-  --secondary: #39cfd3;/* teal-400  #2dd4bf */
-  --icon: #6B7280; /* gray-500 */
+  --secondary: #39cfd3; /* teal-400  #2dd4bf */
+  --icon: #6b7280; /* gray-500 */
   --hover: #f472b6; /* pink-400 */
-  --outlined: #D1D5DB; /* gray-200 */
-  --blue-sky:#d0f1f1; /*#d0f1f1*/
-  --yellow-light:#fee673;
+  --outlined: #d1d5db; /* gray-200 */
+  --blue-sky: #d0f1f1; /*#d0f1f1*/
+  --yellow-light: #fee673;
   --pink-light: #fff6f9;
+  --gray-light: #F9F9F9;
 }
 
 @theme inline {
@@ -19,7 +19,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-primary: var(--primary);   
+  --color-primary: var(--primary);
   --color-secondary: var(--secondary);
   --color-icon: var(--icon);
   --color-hover: var(--hover);
@@ -27,6 +27,7 @@
   --color-blue-sky: var(--blue-sky);
   --color-pink-light: var(--pink-light);
   --color-yellow-light: var(--yellow-light);
+  --color-gray-light: var(--gray-light);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,20 +44,22 @@ body {
 }
 
 @layer components {
-
   .card-rounded {
     @apply rounded-xl lg:rounded-3xl;
   }
 
-  h2, .heading-2 {
+  h2,
+  .heading-2 {
     @apply text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 leading-tight font-bold;
   }
 
-  h3, .heading-3 {
+  h3,
+  .heading-3 {
     @apply text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-snug font-bold;
   }
 
-  h4, .heading-4 {
+  h4,
+  .heading-4 {
     @apply text-sm md:text-base text-gray-700 tracking-wide;
   }
 
@@ -69,20 +72,31 @@ body {
   }
 
   .text-tiny {
-    @apply text-xs sm:text-sm text-gray-400;
+    @apply text-xs text-gray-400;
   }
 
   .text-button {
     @apply text-xs sm:text-sm md:text-base font-medium leading-relaxed;
   }
+
 }
 
 @layer utilities {
-  .space-xs { margin: 0.5rem; }
-  .space-sm { margin: 1rem; }
-  .space-md { margin: 1.5rem; }
-  .space-lg { margin: 2rem; }
-  .space-xl { margin: 4rem; }
+  .space-xs {
+    margin: 0.5rem;
+  }
+  .space-sm {
+    margin: 1rem;
+  }
+  .space-md {
+    margin: 1.5rem;
+  }
+  .space-lg {
+    margin: 2rem;
+  }
+  .space-xl {
+    margin: 4rem;
+  }
 }
 
 @keyframes fadeDown {
@@ -98,7 +112,8 @@ body {
 
 @layer utilities {
   @keyframes float {
-    0%, 100% {
+    0%,
+    100% {
       transform: translateY(0);
     }
     50% {
@@ -122,24 +137,30 @@ body {
 
 .text-stroke-3 {
   text-shadow:
-    3px 0 0 #fff, -3px 0 0 #fff,
-    0 3px 0 #fff, 0 -3px 0 #fff,
-    3px 3px 0 #fff, -3px 3px 0 #fff,
-    3px -3px 0 #fff, -3px -3px 0 #fff;
+    3px 0 0 #fff,
+    -3px 0 0 #fff,
+    0 3px 0 #fff,
+    0 -3px 0 #fff,
+    3px 3px 0 #fff,
+    -3px 3px 0 #fff,
+    3px -3px 0 #fff,
+    -3px -3px 0 #fff;
 }
 
 .text-stroke {
   text-shadow:
-    0.1em 0 0 #fff, -0.1em 0 0 #fff,
-    0 0.1em 0 #fff, 0 -0.1em 0 #fff,
-    0.1em 0.1em 0 #fff, -0.1em 0.1em 0 #fff,
-    0.1em -0.1em 0 #fff, -0.1em -0.1em 0 #fff;
+    0.1em 0 0 #fff,
+    -0.1em 0 0 #fff,
+    0 0.1em 0 #fff,
+    0 -0.1em 0 #fff,
+    0.1em 0.1em 0 #fff,
+    -0.1em 0.1em 0 #fff,
+    0.1em -0.1em 0 #fff,
+    -0.1em -0.1em 0 #fff;
 }
 
-.text-heading-1{
-  letter-spacing: -.48px;
+.text-heading-1 {
+  letter-spacing: -0.48px;
   font-weight: 900;
   line-height: normal;
 }
-
-

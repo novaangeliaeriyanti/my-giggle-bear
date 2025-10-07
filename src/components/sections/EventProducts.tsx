@@ -24,15 +24,11 @@ export default function EventProducts() {
     <div className="flex justify-center">
       <div className="group w-full flex flex-col gap-4 container mx-auto p-4 mt-4">
         <div className='flex flex-col gap-1'>
-          <div className="flex items-center gap-1 logo font-bold">
-            <span className="flex space-x-2 text-secondary">
-              <span>Popular</span>
-            </span>
-            <span className="flex text-primary space-x-2">
-              <span>Products</span>
-              </span>
+          <div className="flex items-center">
+            <h2 className="text-secondary">Popular</h2>
+            <h2 className="text-primary space-xs">Products</h2>
           </div>
-          <span className="text-description">Choose your favorite products through our collection</span>
+          <span className="text-body">Choose your favorite products through our collection</span>
         </div>        
 
         <div className='relative w-full flex flex-col'>

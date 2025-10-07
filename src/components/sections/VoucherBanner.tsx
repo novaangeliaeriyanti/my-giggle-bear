@@ -32,10 +32,10 @@ const VoucherBanner = () => {
         <div className="md:ml-16 lg:ml-32 flex-1">
           <div className="flex flex-col gap-1 p-4 md:py-2 lg:py-2 md:flex-row lg:flex-row md:justify-between lg:justify-between">
               <div className="flex flex-col gap-1">
-                  <h3 className="text-heading-1 text-stroke-3 font-bold mb-1 mt-1.5 text-secondary logo">
+                  <h2 className="text-heading-1 text-stroke-3 mb-1 mt-1.5 text-secondary">
                       {voucher.title}
-                  </h3>                
-                  <p className="text-description mb-1">
+                  </h2>                
+                  <p className="text-body mb-1">
                       {voucher.description}
                   </p>
               </div>

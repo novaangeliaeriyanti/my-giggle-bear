@@ -9,7 +9,6 @@
   --icon: #6B7280; /* gray-500 */
   --hover: #f472b6; /* pink-400 */
   --outlined: #D1D5DB; /* gray-200 */
-  --description: #666666;
   --blue-sky:#d0f1f1; /*#d0f1f1*/
   --yellow-light:#fee673;
   --pink-light: #fff6f9;
@@ -25,7 +24,6 @@
   --color-icon: var(--icon);
   --color-hover: var(--hover);
   --color-outlined: var(--outlined);
-  --color-text-description: var(--description);
   --color-blue-sky: var(--blue-sky);
   --color-pink-light: var(--pink-light);
   --color-yellow-light: var(--yellow-light);
@@ -45,29 +43,46 @@ body {
 }
 
 @layer components {
-  .logo {
-    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
-  }
-
-  .text-badge {
-    @apply text-sm;
-  }
-
-  .main-menu-link {
-    @apply text-base text-gray-700 cursor-pointer hover:text-hover;
-  }
-
-  .text-description {
-    @apply text-gray-500 text-sm sm:text-base md:text-[15px] lg:text-[16px] leading-relaxed;
-  }
-  
-  .text-button {
-    @apply text-xs sm:text-sm md:text-base font-medium;
-  }
 
   .card-rounded {
     @apply rounded-xl lg:rounded-3xl;
   }
+
+  h2, .heading-2 {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-700 leading-tight font-bold;
+  }
+
+  h3, .heading-3 {
+    @apply text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-snug font-bold;
+  }
+
+  h4, .heading-4 {
+    @apply text-sm md:text-base text-gray-700 tracking-wide;
+  }
+
+  .text-body {
+    @apply text-gray-500 text-sm sm:text-base md:text-[15px] lg:text-[16px] leading-relaxed;
+  }
+
+  .text-small {
+    @apply text-sm text-gray-500 leading-relaxed;
+  }
+
+  .text-tiny {
+    @apply text-xs sm:text-sm text-gray-400;
+  }
+
+  .text-button {
+    @apply text-xs sm:text-sm md:text-base font-medium leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .space-xs { margin: 0.5rem; }
+  .space-sm { margin: 1rem; }
+  .space-md { margin: 1.5rem; }
+  .space-lg { margin: 2rem; }
+  .space-xl { margin: 4rem; }
 }
 
 @keyframes fadeDown {

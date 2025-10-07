@@ -43,7 +43,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-[1]">
         { product.discount && (
-          <div className="absolute top-0 left-0 bg-pink-50 text-primary border-gray-200  rounded-br-xl font-bold p-1 lg:px-4 lg:py-2 z-10 text-xs sm:text-sm">
+          <div className="absolute top-0 left-0 text-tiny font-bold bg-pink-50 text-primary border-gray-200 rounded-br-xl p-1 lg:px-4 lg:py-2 z-10">
             {product.discount}%
           </div>
         )}
@@ -53,29 +53,29 @@ const ProductCard = ({ product }: { product: ProductType }) => {
             fill
             className="object-contain hover:scale-105 transition-all duration-300"
           />
-          { product?.isFlashsale && <div className="absolute bottom-0 left-0 bg-yellow-50 text-yellow-500 px-2 py-1 text-xs font-bold rounded-md  m-3 sm:m-4">flashsale</div> }
+          { product?.isFlashsale && <div className="absolute bottom-0 left-0 text-tiny font-bold bg-yellow-50 text-yellow-500 px-2 py-1 rounded-md m-3 sm:m-4">flashsale</div> }
           
         </div>
       </Link>
 
       <div className="flex flex-col gap-2 p-3 sm:p-4 lg:gap-3">
-        <h1 className="font-medium line-clamp-1 text-gray-500 text-sm sm:text-base">
+        <h4 className="line-clamp-1">
           {product.name}
-        </h1>
+        </h4>
         <div className="hidden md:block lg:block">
-          <p className="line-clamp-2 text-xs sm:text-sm text-gray-500 ">
+          <p className="line-clamp-2 text-tiny text-gray-500 ">
             {product.shortDescription}
           </p>
         </div>
 
-        <div className="hidden lg:flex items-start gap-3 text-xs sm:text-sm">
+        <div className="hidden lg:flex items-start gap-3 text-tiny">
           {/* Sizes */}
           <div className="flex flex-col gap-1">
             <span className="text-gray-500">Size</span>
             <select
               name="size"
               id="size"
-              className="ring ring-gray-300 rounded-lg px-2 py-1 text-gray-500 text-xs sm:text-sm"
+              className="ring ring-gray-300 rounded-lg px-2 py-1 text-tiny"
               onChange={(e) =>
                 handleProductType({ type: "size", value: e.target.value })
               }
@@ -120,22 +120,22 @@ const ProductCard = ({ product }: { product: ProductType }) => {
         >
           {product.discount ? (
             <div className="flex flex-col justify-start items-start">
-              <span className="font-bold text-gray-700 text-sm sm:text-base">
+              <span className="font-bold text-gray-700 text-small">
                 ${product?.priceDiscount?.toFixed(2)}
               </span>
-              <span className="line-through text-gray-400 text-xs">
+              <span className="line-through text-tiny">
                 ${product.price.toFixed(2)}
               </span>
             </div>
             ) : (
-              <span className="font-bold text-gray-700 text-sm sm:text-base">${product.price.toFixed(2)}</span>
+              <span className="font-bold text-gray-700 text-small">${product.price.toFixed(2)}</span>
           )}
           <button
             onClick={handleAddToCart}
-            className="hidden lg:flex ring-1 rounded-lg px-1 py-1 text-xs sm:text-base cursor-pointer text-white bg-pink-400 ring-pink-400 hover:text-pink-400 hover:bg-white hover:ring-pink-400 transition-all duration-300 items-center gap-1"
+            className="hidden lg:flex ring-1 rounded-lg px-1 py-1 cursor-pointer text-tiny text-white bg-pink-400 ring-pink-400 hover:text-pink-400 hover:bg-white hover:ring-pink-400 transition-all duration-300 items-center gap-1"
           >
             <ShoppingCart className="w-4 h-4" />
-            <span className="text-sm">Add to Cart</span>
+            Add to Cart
           </button>
         </div>
       </div>

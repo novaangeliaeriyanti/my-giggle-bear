@@ -15,14 +15,12 @@ const ProductDescription = ({ description }: ProductDescriptionProps) => {
   return (
     <>
       <div className="relative">
-        <p className="text-description line-clamp-10">{description}</p>
+        <p className="text-body line-clamp-10">{description}</p>
         <div className="flex justify-end">
-            <Button
-                onClick={() => setIsOpen(true)}
-                icon={<ChevronDown className="w-4 h-4" />}
-                desc="Read more"
-                className="bg-white !text-text-description hover:!text-primary"
-            /> 
+          <div className="flex items-center cursor-pointer text-body hover:text-primary">
+            <ChevronDown className="w-4 h-4 flex-shrink-0 space-xs" />
+            Read more
+          </div>
         </div>
    
       </div>

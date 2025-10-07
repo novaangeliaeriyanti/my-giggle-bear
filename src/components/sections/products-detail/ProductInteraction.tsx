@@ -52,8 +52,8 @@ const ProductInteraction = ({
   return (
     <div className="flex flex-col gap-4 mt-4">
       {/* SIZE */}
-      <div className="flex flex-col gap-2 text-description">
-        <span className="text-description font-bold text-secondary">Size</span>
+      <div className="flex flex-col gap-2 text-body">
+        <span className="text-body font-bold text-secondary">Size</span>
         <div className="flex items-center gap-2">
           {product.sizes.map((size) => (
             <div
@@ -64,10 +64,10 @@ const ProductInteraction = ({
               onClick={() => handleTypeChange("size", size)}
             >
               <div
-                className={`w-7 h-7 text-sm text-center flex items-center rounded-lg justify-center ${
+                className={`w-7 h-7 text-small text-center flex items-center rounded-lg justify-center ${
                   selectedSize === size
                     ? "bg-primary text-white"
-                    : "bg-white text-black"
+                    : "bg-white text-gray-700"
                 }`}
               >
                 {size.toUpperCase()}
@@ -78,7 +78,7 @@ const ProductInteraction = ({
       </div>
       {/* COLOR */}
       <div className="flex flex-col gap-2">
-        <span className="text-description  font-bold text-secondary">Color</span>
+        <span className="text-body font-bold text-secondary">Color</span>
         <div className="flex items-center gap-2">
           {product.colors.map((color) => (
             <div
@@ -94,8 +94,8 @@ const ProductInteraction = ({
         </div>
       </div>
       {/* QUANTITY */}
-      <div className="flex flex-col gap-2 text-sm">
-        <span className="text-description  font-bold text-secondary">Quantity</span>
+      <div className="flex flex-col gap-2 text-small">
+        <span className="text-body font-bold text-secondary">Quantity</span>
         <div className="flex items-center gap-2">
           <button
             className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"
@@ -103,7 +103,7 @@ const ProductInteraction = ({
           >
             <Minus className="w-4 h-4 " />
           </button>
-          <span className="text-description font-bold">{quantity}</span>
+          <span className="font-bold text-gray-700">{quantity}</span>
           <button
             className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"
             onClick={() => handleQuantityChange("increment")}

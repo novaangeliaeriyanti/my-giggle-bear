@@ -38,7 +38,7 @@ const ShareButton = () => {
                 >
                 <LinkIcon size={24} />
             </div>
-            <span className="text-description mt-1">
+            <span className="text-body mt-1">
                 {copied ? "Copied!" : "Copy Link"}
             </span>
          </div>

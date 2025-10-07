@@ -17,12 +17,12 @@ const VideoSection = () => {
             />
           </div>
           <div className="flex-1 flex flex-col gap-2">
-            <h3 className="text-heading-1 font-bold mb-1 mt-1.5 text-stroke-3 text-secondary logo">
+            <h2 className="text-heading-1 text-stroke-3 mb-1 mt-1.5 text-secondary">
               {videoSection.title}
-            </h3>
-            <p className="text-description mb-2">
+            </h2>
+            <span className="text-body mb-2">
               {videoSection.description}
-            </p>
+            </span>
           </div>
           <div className="flex-1 aspect-video">
             <div className="aspect-video w-full relative">

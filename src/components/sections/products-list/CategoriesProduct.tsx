@@ -74,9 +74,9 @@ const CategoriesProduct = () => {
                 </div>
               )}
             </div>
-            <span className="text-xs sm:text-sm md:text-base font-bold text-heading-1 text-stroke">
+            <h4 className="text-heading-1 text-stroke text-secondary">
               {category.name}
-            </span>
+            </h4>
           </div>
         </div>
       ))}

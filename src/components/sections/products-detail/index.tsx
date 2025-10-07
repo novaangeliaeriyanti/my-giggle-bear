@@ -36,7 +36,7 @@ const ProductDetail = () => {
 
   if (!product)
     return (
-      <div className="flex justify-center items-center h-64">
+      <div className="flex justify-center items-center h-64 text-body">
         <p className="text-gray-500">Loading product...</p>
       </div>
     );
@@ -48,9 +48,9 @@ const ProductDetail = () => {
     <div className="flex flex-col gap-4 lg:flex-row md:gap-12 container mx-auto p-4 lg:py-6">
       <div className="w-full lg:w-5/12 relative aspect-[2/3] overflow-hidden card-rounded">
         {product.discount && (
-          <div className="absolute top-0 left-0 z-10 bg-pink-50 text-primary border-gray-200 rounded-br-xl font-bold p-2 logo">
+          <h4 className="absolute top-0 left-0 z-10 font-bold bg-pink-50 text-primary border-gray-200 rounded-br-xl p-2">
             {product.discount}%
-          </div>
+          </h4>
         )}
         <Image
           src={product.images[color]}
@@ -61,21 +61,19 @@ const ProductDetail = () => {
       </div>
 
       <div className="w-full lg:w-7/12 flex flex-col gap-4">
-        <h1 className="text-2xl text-gray-700 font-bold">{product.name}</h1>
-        { product?.isFlashsale && <div className="bg-yellow-50 text-yellow-500 px-2 py-1 text-description w-fit font-bold card-rounded border">flashsale</div> }
+        <h3 className="text-gray-700 font-bold">{product.name}</h3>
+        { product?.isFlashsale && <div className="bg-yellow-50 text-yellow-500 px-2 py-1 text-body w-fit card-rounded border">flashsale</div> }
         <ShareButton />
         <ProductDescription description={product.description} />
         {product.discount ? (
           <div className="flex items-center">
-            <span className="text-xl text-gray-700 font-bold">
-              ${product?.priceDiscount?.toFixed(2)}
-            </span>
-            <span className="ml-2 line-through text-gray-400">
+            <h3>${product?.priceDiscount?.toFixed(2)}</h3>
+            <span className="ml-2 line-through text-small">
               ${product.price.toFixed(2)}
             </span>
           </div>
           ) : (
-            <span className="text-xl text-gray-700 font-bold">${product.price.toFixed(2)}</span>
+            <h3>${product.price.toFixed(2)}</h3>
         )}
         <ProductInteraction
           product={product}

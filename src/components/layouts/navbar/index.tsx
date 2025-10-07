@@ -17,20 +17,15 @@ export default function Navbar() {
       {/* Topbar */}
       <div className="border-b border-gray-200 flex items-center justify-center">
         <div className="container flex justify-between py-4 px-4 gap-3">
-          {/* Logo */}
-          <Link href="/" className="logo font-bold text-blue-600">
+          <Link href="/">
             <div className="flex items-center">
-              <p className="text-secondary">Giggle</p>
-              <p className="text-primary">Gear</p>
+              <h2 className="text-secondary">Giggle</h2>
+              <h2 className="text-primary">Gear</h2>
             </div>
           </Link>
-
-          {/* Search */}
           <div className="flex-1 max-w-2xl">
             <SearchBar />
           </div>
-
-          {/* Icons */}
           <div className="flex items-end gap-4">
             <Bell className="cursor-pointer border border-gray-300 rounded-lg text-icon hover:text-hover w-7 h-7 p-1 lg:w-10 lg:h-10 lg:p-2"/>
             <ShoppingCartIcon />
@@ -75,7 +70,7 @@ export default function Navbar() {
                             activeMenu === menu.title ? null : menu.title
                           )
                         }
-                        className="flex justify-between items-center px-4 py-3 text-gray-500 font-medium "
+                        className="flex justify-between items-center px-4 py-3 text-body "
                       >
                         {menu.title}
                         <ChevronDown
@@ -92,7 +87,7 @@ export default function Navbar() {
                             <Link
                               key={i}
                               href={item.href}
-                              className="flex items-center gap-2 text-gray-500 hover:text-hover transition-colors"
+                              className="flex items-center gap-2 text-body hover:text-hover transition-colors"
                             >
                               {item.icon && (
                                 <Image
@@ -129,7 +124,7 @@ export default function Navbar() {
             menu.items ? (
               <button
                 key={menu.title}
-                className={`flex items-center gap-1 font-medium main-menu-link group ${activeMenu === menu.title && '!text-hover'}`}
+                className={`flex items-center gap-1 font-medium text-body group ${activeMenu === menu.title && '!text-hover'}`}
                 onMouseEnter={() => setActiveMenu(menu.title)}
                 onClick={() =>
                   setActiveMenu(activeMenu === menu.title ? null : menu.title)
@@ -146,7 +141,7 @@ export default function Navbar() {
               <Link
                 key={menu.title}
                 href={menu.href || "/"}
-                className="font-medium main-menu-link"
+                className="font-medium main-body"
               >
                 {menu.title}
               </Link>
@@ -193,18 +188,6 @@ export default function Navbar() {
         </div>
       </div>
     </nav>
-
-    {/* Mobile Menu */}
-    {/* {isOpen && (
-      <div className="md:hidden bg-gray-50 border-t p-4 space-y-3">
-        <Link href="/">Home</Link>
-        <Link href="/">About</Link>
-        <Link href="/">Shop</Link>
-        <Link href="/">Pages</Link>
-        <Link href="/">Blog</Link>
-        <Link href="/">Contact</Link>
-      </div>
-    )} */}
   </header>
   )
 }

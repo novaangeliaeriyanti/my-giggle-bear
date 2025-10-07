@@ -7,20 +7,20 @@ export default function Footer() {
         
         {/* Column 1 */}
         <div>
-          <div className="flex items-center text-heading-1 text-stroke">
-            <p className="text-secondary">Giggle</p>
-            <p className="text-primary">Gear</p>
+          <div className="flex items-center">
+            <h2 className="text-secondary">Giggle</h2>
+            <h2 className="text-primary">Gear</h2>
           </div>
-          <p className="text-sm text-gray-500">
+          <span className="text-small">
             A minimal e-commerce template built with Next.js & Tailwind.  
             Perfect for modern online stores 🚀
-          </p>
+          </span>
         </div>
 
         {/* Column 2 */}
         <div>
-          <h4 className="font-semibold text-secondary text-stroke mb-4">Quick Links</h4>
-          <ul className="space-y-2 text-gray-500">
+          <h3 className="text-secondary text-stroke mb-4">Quick Links</h3>
+          <ul className="space-y-2 text-small">
             <li><Link href="/" className="hover:underline">Home</Link></li>
             <li><Link href="/products" className="hover:underline">Products</Link></li>
             <li><Link href="/about" className="hover:underline">About</Link></li>
@@ -29,12 +29,12 @@ export default function Footer() {
         </div>
 
         {/* Column 3 */}
-        <div>
-          <h4 className="font-semibold text-secondary text-stroke mb-4">Contact</h4>
-          <p className="text-sm">Email: support@minishop.com</p>
-          <p className="text-sm">Phone: +62 812 3456 7890</p>
-          <p className="text-sm mt-2">Follow us:</p>
-          <div className="flex gap-3 mt-2 text-gray-500">
+        <div className="flex flex-col space-y-2">
+          <h3 className="text-secondary text-stroke mb-4">Contact</h3>
+          <span className="text-small">Email: support@minishop.com</span>
+          <span className="text-small">Phone: +62 812 3456 7890</span>
+          <span className="text-small">Follow us:</span>
+          <div className="flex gap-3 text-small">
             <Link href="#" className="hover:text-white">Facebook</Link>
             <Link href="#" className="hover:text-white">Twitter</Link>
             <Link href="#" className="hover:text-white">Instagram</Link>

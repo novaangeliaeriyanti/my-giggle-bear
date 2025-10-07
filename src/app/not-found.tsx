@@ -26,8 +26,8 @@ export default function NotFound() {
                     priority
                 />
                 <div className="flex flex-col gap-2 justify-center items-center text-center">
-                    <span className="text-secondary font-bold text-xl md:text-2xl lg:text-3xl">404. Page not found</span>
-                    <span className="text-description">Sorry, we couldn‘t find the page you where looking for. We suggest that you return to homepage.</span>
+                    <h2 className="text-secondary">404. Page not found</h2>
+                    <span className="text-body">Sorry, we couldn‘t find the page you where looking for. We suggest that you return to homepage.</span>
                 </div>
                 <Button
                     onClick={handleBackHome}

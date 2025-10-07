@@ -23,14 +23,14 @@ const Testimonials = () => {
     <section className="flex flex-col gap-8 md:gap-12 container mx-auto px-4 py-8">
       {/* Header */}
       <div className="flex flex-col items-center text-center gap-2">
-        <h2 className="logo font-bold flex items-center gap-2 text-2xl md:text-3xl">
-          <span className="text-secondary">Customer</span>
-          <span className="text-primary">Reviews</span>
-        </h2>
-        <p className="text-description max-w-2xl text-gray-500">
+        <div className="flex items-center">
+          <h2 className="text-secondary">Customer</h2>
+          <h2 className="text-primary space-xs">Reviews</h2>
+        </div>
+        <span className="text-body max-w-2xl text-gray-500">
           Gain confidence in your purchase with real stories from our happy
           customers!
-        </p>
+        </span>
       </div>
 
       {/* Scrollable reviews */}
@@ -64,7 +64,7 @@ const Testimonials = () => {
               className="flex-shrink-0 overflow-hidden w-[260px] sm:w-[300px] md:w-[320px] bg-white card-rounded card-rounded border border-gray-200 flex flex-col gap-3"
             >
               <div className="relative">
-              <div className="absolute top-0 right-0 bg-yellow-50 border border-gray-200 text-white rounded-bl-xl rounded-tr-xl lg:rounded-tr-3xl font-bold p-1 lg:px-4 lg:py-2 z-10 text-xs sm:text-sm">
+              <div className="absolute top-0 right-0 text-tiny font-bold bg-yellow-50 border border-gray-200 text-white rounded-bl-xl rounded-tr-xl lg:rounded-tr-3xl p-1 lg:px-4 lg:py-2 z-10">
                 <div className="flex text-yellow-400">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star key={i} size={16} fill="currentColor" />
@@ -81,11 +81,11 @@ const Testimonials = () => {
                     height={50}
                     className="object-cover w-16 h-16"
                   />
-                  <p className="font-bold text-secondary line-clamp-2">{review.name}</p>
+                  <span className="text-body text-secondary line-clamp-2">{review.name}</span>
                 </div>
-                <p className="text-sm text-gray-500 leading-relaxed line-clamp-3">
-                “{review.comment}”
-              </p>
+                <span className="text-small line-clamp-3">
+                  “{review.comment}”
+                </span>
               </div>
             </div>
           ))}

@@ -77,7 +77,7 @@ const CartForm = () => {
               {items.map((item) => {
                 const key = `${item.id}-${item.selectedSize}-${item.selectedColor}`;
                 return (
-                  <div className="flex items-center justify-between rounded-lg" key={key}>
+                  <div className="flex flex-col md:flex-row lg:flex-row md:justify-between lg:justify-between rounded-lg" key={key}>
                     <div className="flex gap-4 items-center">
                       <Checkbox checked={!!checkedItems[key]} onChange={() => toggleCheck(item)} />
                       <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
@@ -112,7 +112,7 @@ const CartForm = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex justify-end items-center gap-2">
                       <div className="flex items-center">
                         <button
                           className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"

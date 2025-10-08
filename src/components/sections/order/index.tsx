@@ -4,7 +4,7 @@ import PaymentForm from "@/components/sections/order/PaymentForm";
 import ShippingForm from "@/components/sections/order/ShippingForm";
 import { orderSteps } from "@/data/cart";
 import { ShippingFormInputs } from "@/types/types";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
@@ -155,36 +155,53 @@ const Order = () => {
             if (activeStep === 3) return <PaymentForm onStatusChange={setPaymentStatus} />;
           })()}
         </div>
-        {/* Details */}
-        <div className="w-full lg:w-5/12 border-1 border-outlined p-8 card-rounded flex flex-col gap-8 h-max sticky top-36">
-          <h3>{orderSteps.find((step) => step.id === activeStep)?.summaryTitle}</h3>
-          <div className="flex flex-col gap-4">
-            <div className="flex justify-between">
-              <span className="text-small">Subtotal</span>
-              <span className="text-small">${subtotal?.toFixed(2)}</span>
+        {/* Voucher & Summary */}
+          <div className="w-full lg:w-5/12 flex flex-col h-max sticky top-36 gap-4">
+          <div className="border-1 border-outlined p-8 card-rounded flex flex-col gap-8">
+            <h3>Redeem Your Rewards</h3>
+            <div className="flex flex-col gap-2">
+            <span className="text-body">Choose vouchers, payment promotions</span>
+            <div className="border-1 border-primary border-dashed rounded-md bg-pink-50 px-3 flex items-center justify-between">
+              <div className="flex items-center gap-2 py-2">
+                <span className="text-body">Redeem now</span>
+                <span>:</span>
+              </div>
+              <div className="border-l-2 border-primary">
+                <ChevronRight />
+              </div>
             </div>
-            <div className="flex justify-between">
-              <span className="text-small">Discount(10%)</span>
-              <span className="text-small">${discount.toFixed(2)}</span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-small">Shipping Fee</span>
-              <span className="text-small">${shipping.toFixed(2)}</span>
-            </div>
-            <hr className="border-outlined border-dashed" />
-            <div className="flex justify-between">
-              <h4 className="font-bold">Total</h4>
-              <h4 className="font-bold">${total.toFixed(2)}</h4>
             </div>
           </div>
-          {activeStep === 1 && (
-            <Button
-              onClick={() => router.push("/order?step=2", { scroll: false })}
-              desc="Proceed to Shipping"
-              icon={<ArrowRight className="w-3 h-3" />}
-              className="flex justify-center items-center"
-            />
-          )}
+          <div className="border-1 border-outlined p-8 card-rounded flex flex-col gap-8">
+            <h3>{orderSteps.find((step) => step.id === activeStep)?.summaryTitle}</h3>
+            <div className="flex flex-col gap-4">
+              <div className="flex justify-between">
+                <span className="text-small">Subtotal</span>
+                <span className="text-small">${subtotal?.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-small">Discount(10%)</span>
+                <span className="text-small">${discount.toFixed(2)}</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-small">Shipping Fee</span>
+                <span className="text-small">${shipping.toFixed(2)}</span>
+              </div>
+              <hr className="border-outlined border-dashed" />
+              <div className="flex justify-between">
+                <h4 className="font-bold">Total</h4>
+                <h4 className="font-bold">${total.toFixed(2)}</h4>
+              </div>
+            </div>
+            {activeStep === 1 && (
+              <Button
+                onClick={() => router.push("/order?step=2", { scroll: false })}
+                desc="Proceed to Shipping"
+                icon={<ArrowRight className="w-3 h-3" />}
+                className="flex justify-center items-center"
+              />
+            )}
+          </div>
         </div>
       </div>
     </div>

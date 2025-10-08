@@ -8,9 +8,9 @@ const OrderPage = () => {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <div className="flex-1">
-         <Suspense fallback={<div></div>}>
-            <Order />
-         </Suspense>
+        <Suspense fallback={<div></div>}>
+          <Order />
+        </Suspense>
       </div>
       <Footer />
     </div>

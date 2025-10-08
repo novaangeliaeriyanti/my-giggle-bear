@@ -13,7 +13,11 @@ type PaymentFormProps = {
 };
 
 const PaymentForm = ({ onStatusChange }: PaymentFormProps) => {
-  const { register, handleSubmit, formState: { errors } } = useForm<PaymentFormInputs>({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<PaymentFormInputs>({
     resolver: zodResolver(paymentFormSchema),
   });
 

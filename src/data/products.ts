@@ -20,7 +20,7 @@ export const popularProducts: ProductType[] = [
     brandId: "adidas",
     category: ["kids"],
     subcategory: ["clothes"],
-    rating: "4"
+    rating: "4",
   },
   {
     id: 2,
@@ -57,7 +57,7 @@ export const popularProducts: ProductType[] = [
     brandId: "nike",
     category: ["preteen"],
     subcategory: ["clothes", "hoodies"],
-    rating: "4.6"
+    rating: "4.6",
   },
   {
     id: 4,
@@ -140,6 +140,6 @@ export const popularProducts: ProductType[] = [
     brandId: "levi's",
     category: ["kids", "preteen"],
     subcategory: ["clothes", "denim"],
-    rating: "5"
+    rating: "5",
   },
 ];

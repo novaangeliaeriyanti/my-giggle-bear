@@ -16,14 +16,16 @@ import useCartStore from "@/stores/cartStore";
 const Order = () => {
   const searchParams = useSearchParams();
   const router = useRouter();
-  
+
   const [shippingForm, setShippingForm] = useState<ShippingFormInputs>();
   const [isRedirecting, setIsRedirecting] = useState(false);
-  const [paymentStatus, setPaymentStatus] = useState<"idle" | "pending" | "success" | "error">("idle");
+  const [paymentStatus, setPaymentStatus] = useState<"idle" | "pending" | "success" | "error">(
+    "idle"
+  );
   const [countdown, setCountdown] = useState(6);
 
   const { calcSubtotal, calcTotal, calcDiscount, orders } = useOrderStore();
-  const { hasHydrated } = useCartStore()
+  const { hasHydrated } = useCartStore();
   const subtotal = calcSubtotal();
   const discountPercent = 10;
   const discount = calcDiscount(discountPercent);
@@ -60,7 +62,7 @@ const Order = () => {
         setIsRedirecting(false);
       }, 1200);
     }
-  
+
     if (activeStep >= 2 && orders.length === 0) {
       setIsRedirecting(true);
       setTimeout(() => {
@@ -69,16 +71,16 @@ const Order = () => {
       }, 1200);
     }
   }, [activeStep, shippingForm, orders, router]);
-  
+
   if (!hasHydrated) return null;
 
   if (isRedirecting) {
     return (
-        <StatusMessage
-          title="Please fill in your shipping information"
-          description="We need your shipping details before continuing to payment."
-          imageSrc="/images/icons/not-found.png"
-        />
+      <StatusMessage
+        title="Please fill in your shipping information"
+        description="We need your shipping details before continuing to payment."
+        imageSrc="/images/icons/not-found.png"
+      />
     );
   }
 
@@ -116,7 +118,9 @@ const Order = () => {
     <div className="flex flex-col gap-8 items-center justify-center container mx-auto p-4 lg:py-6">
       {/* Title */}
       <div className="relative w-full bg-blue-sky card-rounded bg-primary-50 bg-[url(/images/icons/grid-line.png)] bg-[length:720px] overflow-visible flex items-center justify-center p-4 lg:py-6">
-        <h3 className="text-heading-1 text-stroke-3 text-secondary">{orderSteps.find(step => step.id === activeStep)?.title}</h3>
+        <h3 className="text-heading-1 text-stroke-3 text-secondary">
+          {orderSteps.find((step) => step.id === activeStep)?.title}
+        </h3>
       </div>
       {/* Steps */}
       <div className="flex flex-row items-center gap-4 lg:gap-16">
@@ -153,13 +157,11 @@ const Order = () => {
         </div>
         {/* Details */}
         <div className="w-full lg:w-5/12 border-1 border-outlined p-8 card-rounded flex flex-col gap-8 h-max sticky top-36">
-          <h3>{orderSteps.find(step => step.id === activeStep)?.summaryTitle}</h3>
+          <h3>{orderSteps.find((step) => step.id === activeStep)?.summaryTitle}</h3>
           <div className="flex flex-col gap-4">
             <div className="flex justify-between">
               <span className="text-small">Subtotal</span>
-              <span className="text-small">
-                ${subtotal?.toFixed(2)}
-              </span>
+              <span className="text-small">${subtotal?.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
               <span className="text-small">Discount(10%)</span>
@@ -172,13 +174,11 @@ const Order = () => {
             <hr className="border-outlined border-dashed" />
             <div className="flex justify-between">
               <h4 className="font-bold">Total</h4>
-              <h4 className="font-bold">
-                ${total.toFixed(2)}
-              </h4>
+              <h4 className="font-bold">${total.toFixed(2)}</h4>
             </div>
           </div>
           {activeStep === 1 && (
-            <Button 
+            <Button
               onClick={() => router.push("/order?step=2", { scroll: false })}
               desc="Proceed to Shipping"
               icon={<ArrowRight className="w-3 h-3" />}

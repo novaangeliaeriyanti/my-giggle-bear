@@ -66,13 +66,13 @@ const useOrderStore = create<OrderStoreState & OrderStoreActions>()(
         get().orders.reduce((acc, item) => {
           const price = item.priceDiscount ?? item.price;
           return acc + price * item.quantity;
-        }, 0),        
+        }, 0),
 
       calcDiscount: (percentage) =>
         get().orders.reduce((acc, item) => {
           const price = item.priceDiscount ?? item.price;
           return acc + (price * item.quantity * percentage) / 100;
-      }, 0),
+        }, 0),
 
       calcTotal: (shipping, discountPercent) => {
         const subtotal = get().calcSubtotal();
@@ -80,8 +80,7 @@ const useOrderStore = create<OrderStoreState & OrderStoreActions>()(
         return subtotal - discount + shipping;
       },
 
-      totalItems: () =>
-        get().orders.reduce((acc, item) => acc + item.quantity, 0),
+      totalItems: () => get().orders.reduce((acc, item) => acc + item.quantity, 0),
     }),
     {
       name: "order-storage",

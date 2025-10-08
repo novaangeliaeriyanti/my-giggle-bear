@@ -23,11 +23,14 @@ const CartForm = () => {
     setCheckedItems(newChecked);
   }, [orders]);
 
-  const groupedCart = cart.reduce((acc, item) => {
-    if (!acc[item.brandId]) acc[item.brandId] = [];
-    acc[item.brandId].push(item);
-    return acc;
-  }, {} as Record<string, typeof cart>);
+  const groupedCart = cart.reduce(
+    (acc, item) => {
+      if (!acc[item.brandId]) acc[item.brandId] = [];
+      acc[item.brandId].push(item);
+      return acc;
+    },
+    {} as Record<string, typeof cart>
+  );
 
   const toggleCheck = (item: CartItemType) => {
     const key = `${item.id}-${item.selectedSize}-${item.selectedColor}`;
@@ -62,11 +65,11 @@ const CartForm = () => {
           <div key={brand} className="px-2 flex flex-col gap-4">
             {/* Brand Header */}
             <div className="flex items-center gap-2 bg-yellow-50 p-2 rounded-lg border border-yellow-400 border-dashed">
-                <Checkbox
-                  checked={allChecked}
-                  onChange={() => toggleCheckAllBrand(brand, !allChecked)}
-                />
-                <h4 className="font-bold">{brand}</h4>
+              <Checkbox
+                checked={allChecked}
+                onChange={() => toggleCheckAllBrand(brand, !allChecked)}
+              />
+              <h4 className="font-bold">{brand}</h4>
             </div>
 
             {/* Items */}
@@ -74,15 +77,9 @@ const CartForm = () => {
               {items.map((item) => {
                 const key = `${item.id}-${item.selectedSize}-${item.selectedColor}`;
                 return (
-                  <div
-                    className="flex items-center justify-between rounded-lg"
-                    key={key}
-                  >
+                  <div className="flex items-center justify-between rounded-lg" key={key}>
                     <div className="flex gap-4 items-center">
-                      <Checkbox
-                        checked={!!checkedItems[key]}
-                        onChange={() => toggleCheck(item)}
-                      />
+                      <Checkbox checked={!!checkedItems[key]} onChange={() => toggleCheck(item)} />
                       <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
                         {item.discount && (
                           <div className="absolute top-0 left-0 text-tiny font-bold bg-pink-50 text-primary rounded-br-xl p-1 z-10">

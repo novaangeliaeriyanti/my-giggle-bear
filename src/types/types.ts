@@ -23,7 +23,7 @@ export type ProductType = {
   brandId: string;
   category: string[];
   subcategory: string[];
-  rating?:string;
+  rating?: string;
 };
 
 export type ProductsType = ProductType[];
@@ -53,9 +53,9 @@ export type ShippingFormInputs = z.infer<typeof shippingFormSchema>;
 export const paymentFormSchema = z.object({
   cardHolder: z.string().min(1, "Card holder is required!"),
   cardNumber: z
-  .string()
-  .min(16, "Card number must be exactly 16 digits")
-  .max(16, "Card number must be exactly 16 digits"),
+    .string()
+    .min(16, "Card number must be exactly 16 digits")
+    .max(16, "Card number must be exactly 16 digits"),
   expirationDate: z
     .string()
     .regex(/^(0[1-9]|1[0-2])\/\d{2}$/, "Expiration date must be in MM/YY format!"),
@@ -72,7 +72,7 @@ export type CartStoreStateType = {
 export type CartStoreActionsType = {
   addToCart: (product: CartItemType) => void;
   removeFromCart: (product: CartItemType) => void;
-  updateQuantity: (product: CartItemType, qty:number) => void;
+  updateQuantity: (product: CartItemType, qty: number) => void;
   clearCart: () => void;
 };
 

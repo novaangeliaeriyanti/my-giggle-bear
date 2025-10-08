@@ -1,7 +1,7 @@
 export const orderSteps = [
   {
     id: 1,
-    title:"Review your items",
+    title: "Review your items",
     step: "Shopping Cart",
     summaryTitle: "Cart Details",
   },

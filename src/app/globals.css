@@ -11,7 +11,7 @@
   --blue-sky: #d0f1f1; /*#d0f1f1*/
   --yellow-light: #fee673;
   --pink-light: #fff6f9;
-  --gray-light: #F9F9F9;
+  --gray-light: #f9f9f9;
 }
 
 @theme inline {
@@ -78,7 +78,6 @@ body {
   .text-button {
     @apply text-xs sm:text-sm md:text-base font-medium leading-relaxed;
   }
-
 }
 
 @layer utilities {

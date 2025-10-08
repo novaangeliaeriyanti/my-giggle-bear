@@ -5,7 +5,7 @@ import { ShoppingCart, Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { toast } from "react-toastify"
+import { toast } from "react-toastify";
 
 const ProductCard = ({ product }: { product: ProductType }) => {
   const { addToCart } = useCartStore();
@@ -29,7 +29,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
       selectedSize: productTypes.size,
       selectedColor: productTypes.color,
     });
-    toast.success("Product added to cart")
+    toast.success("Product added to cart");
   };
 
   return (
@@ -55,12 +55,9 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               </div>
             )}
             {product?.isFlashsale && (
-              <div className="text-tiny font-bold bg-pink-50 text-primary px-2 py-1">
-                flashsale
-              </div>
+              <div className="text-tiny font-bold bg-pink-50 text-primary px-2 py-1">flashsale</div>
             )}
           </div>
-
         </div>
       </Link>
 

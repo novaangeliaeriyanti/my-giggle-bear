@@ -11,21 +11,11 @@ type FormInputProps = InputHTMLAttributes<HTMLInputElement> & {
   required?: boolean;
 };
 
-const FormInput = ({
-  label,
-  error,
-  register,
-  required,
-  className,
-  ...props
-}: FormInputProps) => {
+const FormInput = ({ label, error, register, required, className, ...props }: FormInputProps) => {
   return (
     <div className="flex flex-col gap-1">
       {label && (
-        <label
-          htmlFor={props.id}
-          className="text-small"
-        >
+        <label htmlFor={props.id} className="text-small">
           {label}
           {required && <span className="text-primary ml-1">*</span>}
         </label>

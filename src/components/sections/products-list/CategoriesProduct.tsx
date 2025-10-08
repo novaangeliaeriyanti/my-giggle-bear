@@ -69,7 +69,11 @@ const CategoriesProduct = () => {
                 </div>
               )}
             </div>
-            <h4 className={`text-heading-1 text-stroke ${category.slug === selectedCategory ? "text-primary" : "text-secondary"}`}>{category.name}</h4>
+            <h4
+              className={`text-heading-1 text-stroke ${category.slug === selectedCategory ? "text-primary" : "text-secondary"}`}
+            >
+              {category.name}
+            </h4>
           </div>
         </div>
       ))}

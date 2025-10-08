@@ -47,7 +47,7 @@ const ProductInteraction = ({
       selectedColor,
       selectedSize,
     });
-    toast.success("Product added to cart")
+    toast.success("Product added to cart");
   };
   return (
     <div className="flex flex-col gap-4 mt-4">

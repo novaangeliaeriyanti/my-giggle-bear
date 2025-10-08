@@ -17,7 +17,7 @@ const ShareButton = () => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch (err) {
-      toast.error(`Failed to copy link because ${err}`)
+      toast.error(`Failed to copy link because ${err}`);
     }
   };
 

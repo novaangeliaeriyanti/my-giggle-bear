@@ -48,7 +48,7 @@ const ProductDetail = () => {
     <div className="flex flex-col gap-4 lg:flex-row md:gap-12 container mx-auto p-4 lg:py-6">
       <div className="w-full lg:w-5/12 relative aspect-[2/3] overflow-hidden card-rounded bg-gray-light">
         {product.discount && (
-          <h4 className="absolute top-0 left-0 z-10 font-bold bg-pink-50 text-primary border-gray-200 rounded-br-xl p-2">
+          <h4 className="absolute top-0 left-0 z-10 font-bold bg-primary/5 text-primary border-gray-200 rounded-br-xl p-2">
             {product.discount}%
           </h4>
         )}

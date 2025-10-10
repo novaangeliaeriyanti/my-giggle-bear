@@ -11,7 +11,7 @@ export default function Button({ children, className, icon, desc, ...props }: Bu
     <button
       {...props}
       className={clsx(
-        "bg-primary text-white px-3 py-2 rounded-md flex items-center gap-2 cursor-pointer text-sm font-medium border border-dashed border-transparent hover:border-primary hover:bg-white hover:text-primary transition-colors",
+        "bg-primary text-white px-3 py-2 rounded-md flex items-center gap-2 cursor-pointer text-sm font-medium border border-dashed border-transparent hover:border-primary hover:bg-primary/5  duration-300 hover:text-primary transition-colors",
         className
       )}
     >

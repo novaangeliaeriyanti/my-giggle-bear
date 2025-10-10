@@ -1,15 +1,15 @@
 import Footer from "@/components/layouts/footer/Footer";
 import Navbar from "@/components/layouts/navbar";
-import Order from "@/components/sections/order";
+import OrderTracking from "@/components/sections/order-tracking/OrderTracking";
 import { Suspense } from "react";
 
-const OrderPage = () => {
+const OrderDetailPage = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <div className="flex-1">
         <Suspense fallback={<div></div>}>
-          <Order />
+          <OrderTracking />
         </Suspense>
       </div>
       <Footer />
@@ -17,4 +17,4 @@ const OrderPage = () => {
   );
 };
 
-export default OrderPage;
+export default OrderDetailPage;

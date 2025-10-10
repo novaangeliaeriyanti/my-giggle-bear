@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[url('/images/icons/pink-cloud.png')] bg-cover bg-top bg-no-repeat text-gray-700">
+    <footer className="bg-[url('/images/icons/pink-cloud.png')] bg-cover bg-top bg-no-repeat">
       <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Column 1 */}
         <div>
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-outlined border-dashed text-center py-4 text-sm text-gray-500 text-stroke">
+      <div className="border-t border-outlined border-dashed text-center py-4 text-small text-stroke bg-primary/5">
         © {new Date().getFullYear()} GiggleBear. All rights reserved.
       </div>
     </footer>

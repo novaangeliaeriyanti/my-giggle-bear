@@ -37,7 +37,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-[1] bg-gray-light">
           {product.discount && (
-            <div className="absolute top-0 left-0 text-tiny font-bold bg-pink-50 text-primary border-gray-200 rounded-br-xl p-1 lg:px-4 lg:py-2 z-10">
+            <div className="absolute top-0 left-0 text-tiny font-bold bg-primary/5 text-primary border-gray-200 rounded-br-xl p-1 lg:px-4 lg:py-2 z-10">
               {product.discount}%
             </div>
           )}
@@ -55,7 +55,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               </div>
             )}
             {product?.isFlashsale && (
-              <div className="text-tiny font-bold bg-pink-50 text-primary px-2 py-1">flashsale</div>
+              <div className="text-tiny font-bold bg-primary/5 text-primary px-2 py-1">flashsale</div>
             )}
           </div>
         </div>
@@ -126,7 +126,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               rounded-lg p-1 cursor-pointer 
               text-tiny text-white bg-primary 
               border-primary border-1 ring-0
-              hover:text-primary hover:bg-white 
+              hover:text-primary hover:bg-primary/5 
               hover:ring-0 hover:border-1 hover:border-dashed hover:border-primary 
               transition-all duration-300 
               items-center gap-1

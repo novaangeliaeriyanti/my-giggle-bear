@@ -82,7 +82,7 @@ const CartForm = () => {
                       <Checkbox checked={!!checkedItems[key]} onChange={() => toggleCheck(item)} />
                       <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
                         {item.discount && (
-                          <div className="absolute top-0 left-0 text-tiny font-bold bg-pink-50 text-primary rounded-br-xl p-1 z-10">
+                          <div className="absolute top-0 left-0 text-tiny font-bold bg-primary/5 text-primary rounded-br-xl p-1 z-1">
                             {item.discount}%
                           </div>
                         )}

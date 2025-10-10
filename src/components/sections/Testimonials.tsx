@@ -60,7 +60,7 @@ const Testimonials = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="flex-shrink-0 overflow-hidden w-[260px] sm:w-[300px] md:w-[320px] bg-white card-rounded card-rounded border border-gray-200 flex flex-col gap-3"
+              className="flex-shrink-0 overflow-hidden w-[260px] sm:w-[300px] md:w-[320px] bg-white card-rounded border border-gray-200 flex flex-col gap-3"
             >
               <div className="relative">
                 <div className="absolute top-0 right-0 text-tiny font-bold bg-yellow-50 border border-gray-200 text-white rounded-bl-xl rounded-tr-xl lg:rounded-tr-3xl p-1 lg:px-4 lg:py-2 z-10">

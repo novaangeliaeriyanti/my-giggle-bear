@@ -46,35 +46,11 @@ const CategoriesProduct = () => {
             transition-transform duration-300 hover:scale-105
           `}
         >
-          <div className="flex items-center gap-1">
-            <div className="text-secondary">
-              {category.icon && (
-                <div
-                  className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12
-                  flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
-                >
-                  <Image
-                    src={category.icon}
-                    alt={category.icon}
-                    width={50}
-                    height={50}
-                    className="
-                      object-contain
-                      transition-transform duration-500 group-hover:scale-110
-                      w-8 h-8 
-                      sm:w-10 sm:h-10
-                      md:w-12 md:h-12
-                    "
-                  />
-                </div>
-              )}
-            </div>
-            <h4
-              className={`text-heading-1 text-stroke ${category.slug === selectedCategory ? "text-primary" : "text-secondary"}`}
-            >
-              {category.name}
-            </h4>
-          </div>
+        <h4
+          className={`text-heading-1 text-stroke ${category.slug === selectedCategory ? "text-primary" : "text-secondary"}`}
+        >
+          {category.name}
+        </h4>
         </div>
       ))}
     </div>

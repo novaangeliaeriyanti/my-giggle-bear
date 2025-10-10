@@ -4,7 +4,7 @@ import PaymentForm from "@/components/sections/order/PaymentForm";
 import ShippingForm from "@/components/sections/order/ShippingForm";
 import { orderSteps } from "@/data/cart";
 import { ShippingFormInputs } from "@/types/types";
-import { ArrowRight, ChevronRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
@@ -12,6 +12,7 @@ import CartForm from "./CartForm";
 import useOrderStore from "@/stores/orderStore";
 import StatusMessage from "@/components/ui/StatusMessage";
 import useCartStore from "@/stores/cartStore";
+import VoucherSection from "./VoucherSection";
 
 const Order = () => {
   const searchParams = useSearchParams();
@@ -33,17 +34,13 @@ const Order = () => {
   const total = calcTotal(shipping, discountPercent);
   const activeStep = parseInt(searchParams.get("step") || "1");
 
-  const handlePaymentStatus = (newStatus: "pending" | "success" | "error") => {
-    setPaymentStatus(newStatus);
-  };
-
   useEffect(() => {
     if (paymentStatus === "success" || paymentStatus === "error") {
       const timer = setInterval(() => {
         setCountdown((prev) => {
           if (prev <= 1) {
             clearInterval(timer);
-            router.push("/order-history");
+            router.push("/order/detail");
             return 0;
           }
           return prev - 1;
@@ -127,7 +124,7 @@ const Order = () => {
         {orderSteps.map((step) => {
           const isActive = step.id <= activeStep;
           const borderColor = isActive ? "border-primary" : "border-outlined";
-          const bgColor = isActive ? "bg-pink-50" : "bg-white";
+          const bgColor = isActive ? "bg-primary/5" : "bg-white";
           const badgeColor = isActive ? "text-primary" : "text-gray-500";
           const textColor = isActive ? "text-primary" : "text-gray-500";
 
@@ -157,21 +154,7 @@ const Order = () => {
         </div>
         {/* Voucher & Summary */}
           <div className="w-full lg:w-5/12 flex flex-col h-max sticky top-36 gap-4">
-          <div className="border-1 border-outlined p-8 card-rounded flex flex-col gap-8">
-            <h3>Redeem Your Rewards</h3>
-            <div className="flex flex-col gap-2">
-            <span className="text-body">Choose vouchers, payment promotions</span>
-            <div className="border-1 border-primary border-dashed rounded-md bg-pink-50 px-3 flex items-center justify-between">
-              <div className="flex items-center gap-2 py-2">
-                <span className="text-body">Redeem now</span>
-                <span>:</span>
-              </div>
-              <div className="border-l-2 border-primary">
-                <ChevronRight />
-              </div>
-            </div>
-            </div>
-          </div>
+           <VoucherSection />
           <div className="border-1 border-outlined p-8 card-rounded flex flex-col gap-8">
             <h3>{orderSteps.find((step) => step.id === activeStep)?.summaryTitle}</h3>
             <div className="flex flex-col gap-4">

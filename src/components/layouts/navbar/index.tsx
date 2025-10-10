@@ -27,9 +27,9 @@ export default function Navbar() {
               <SearchBar />
             </div>
             <div className="flex items-end gap-4">
-              <Bell className="cursor-pointer border border-gray-300 rounded-lg text-icon hover:text-hover w-7 h-7 p-1 lg:w-10 lg:h-10 lg:p-2" />
+              <Bell className="cursor-pointer border border-primary border-dashed bg-primary/5 rounded-full text-icon hover:text-hover w-7 h-7 p-1 lg:w-10 lg:h-10 lg:p-2 transition-colors duration-300 hover:bg-primary/5" />
               <ShoppingCartIcon />
-              <User2 className="cursor-pointer border border-gray-300 rounded-lg text-icon hover:text-hover w-7 h-7 p-1 lg:w-10 lg:h-10 lg:p-2" />
+              <User2 className="cursor-pointer border border-primary border-dashed bg-primary/5 rounded-full text-icon hover:text-hover w-7 h-7 p-1 lg:w-10 lg:h-10 lg:p-2 transition-colors duration-300 hover:bg-primary/5" />
             </div>
           </div>
         </div>

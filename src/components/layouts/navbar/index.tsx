@@ -6,6 +6,7 @@ import ShoppingCartIcon from "./ShoppingCartIcon";
 import SearchBar from "./SearchBar";
 import { menus } from "@/data/navbar";
 import Image from "next/image";
+import UserMenu from "./UserMenu";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,8 +17,8 @@ export default function Navbar() {
       <nav className="w-full">
         {/* Topbar */}
         <div className="border-b border-gray-200 flex items-center justify-center">
-          <div className="container flex justify-between py-4 px-4 gap-3">
-            <Link href="/">
+          <div className="container flex justify-between py-4 px-4 gap-3 relative">
+            <Link href="/" className="hidden sm:flex">
               <div className="flex items-center">
                 <h2 className="text-secondary">Giggle</h2>
                 <h2 className="text-primary">Gear</h2>
@@ -26,10 +27,9 @@ export default function Navbar() {
             <div className="flex-1 max-w-2xl">
               <SearchBar />
             </div>
-            <div className="flex items-end gap-4">
-              <Bell className="cursor-pointer border border-primary border-dashed bg-primary/5 rounded-full text-icon hover:text-hover w-7 h-7 p-1 lg:w-10 lg:h-10 lg:p-2 transition-colors duration-300 hover:bg-primary/5" />
+            <div className="flex items-center gap-4">
               <ShoppingCartIcon />
-              <User2 className="cursor-pointer border border-primary border-dashed bg-primary/5 rounded-full text-icon hover:text-hover w-7 h-7 p-1 lg:w-10 lg:h-10 lg:p-2 transition-colors duration-300 hover:bg-primary/5" />
+              <UserMenu />
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default function Navbar() {
         {/* Navbar menu */}
         <div onMouseLeave={() => setActiveMenu(null)} className="relative py-3 flex items-center">
           <button
-            className="container px-4 md:hidden flex flex-col gap-[4px] z-50 relative"
+            className="container px-4 md:hidden flex flex-col gap-[4px] z-2 relative"
             onClick={() => {
               setIsOpen(!isOpen);
               setActiveMenu(null);
@@ -143,7 +143,7 @@ export default function Navbar() {
                   <div
                     className="
                       py-6
-                      grid gap-x-8 gap-y-3
+                      grid gap-x-8 gap-y-2
                       [grid-auto-flow:column]
                       [grid-template-rows:repeat(5,min-content)]
                       justify-start
@@ -155,7 +155,7 @@ export default function Navbar() {
                         <Link
                           key={i}
                           href={item.href}
-                          className="flex items-center gap-3 text-gray-700 hover:text-hover transition-colors"
+                          className="flex items-center gap-3 p-2 text-gray-700 rounded-lg hover:text-hover hover:bg-primary/5 transition-colors"
                         >
                           {item.icon && (
                             <Image

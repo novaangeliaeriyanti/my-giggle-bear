@@ -50,3 +50,10 @@ export const menus: {
     href: "/contact",
   },
 ];
+
+export const userMenuItems = [
+  { label: "Login", href: "/login", icon: "/images/icons/smile.png" },
+  { label: "Register", href: "/register", icon: "/images/icons/smile.png" },
+  { label: "My Orders", href: "/orders-list", icon: "/images/icons/smile.png" },
+  { label: "My Reviews", href: "/my-reviews", icon: "/images/icons/smile.png" },
+];

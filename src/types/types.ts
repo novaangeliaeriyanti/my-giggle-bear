@@ -92,3 +92,39 @@ export type OrderStoreActionsType = {
   calcTotal: (shipping: number, discountPercent: number) => number;
   totalItems: () => number;
 };
+
+export const registerFormSchema = z
+  .object({
+    name: z.string().min(2, "Name must be at least 2 characters"),
+    email: z.string().email("Invalid email address"),
+    phone: z
+      .string()
+      .min(8, "Phone number must be at least 8 digits")
+      .regex(/^[0-9+()\-\s]+$/, "Invalid phone number format"),
+    password: z.string().min(6, "Password must be at least 6 characters"),
+    dateOfBirth: z
+      .string()
+      .nonempty("Date of birth is required")
+      .refine((val) => new Date(val) <= new Date(), {
+        message: "Date of birth cannot be in the future",
+      }),
+    hasKid: z.enum(["Yes", "No"]),
+    kidAge: z
+      .string()
+      .optional()
+      .refine((val) => val === undefined || val === "" || Number(val) >= 1, {
+        message: "Please select a valid kid age",
+      }),
+  })
+  .refine(
+    (data) => {
+      if (data.hasKid === "Yes" && !data.kidAge) return false;
+      return true;
+    },
+    {
+      message: "Kid age is required if you have a kid",
+      path: ["kidAge"],
+    }
+  );
+
+export type RegisterFormInputs = z.infer<typeof registerFormSchema>;

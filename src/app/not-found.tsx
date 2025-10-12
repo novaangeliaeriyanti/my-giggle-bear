@@ -2,10 +2,8 @@
 
 import Footer from "@/components/layouts/footer/Footer";
 import Navbar from "@/components/layouts/navbar";
-import Button from "@/components/ui/Button";
 import StatusMessage from "@/components/ui/StatusMessage";
 import { Home } from "lucide-react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 export default function NotFound() {

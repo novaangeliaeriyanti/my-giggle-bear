@@ -62,8 +62,7 @@ const CartForm = () => {
           (item) => checkedItems[`${item.id}-${item.selectedSize}-${item.selectedColor}`]
         );
         return (
-          <div key={brand} className="px-2 flex flex-col gap-4">
-            {/* Brand Header */}
+          <div key={brand} className="flex flex-col gap-4">
             <div className="flex items-center gap-2 bg-yellow-50 p-2 rounded-lg border border-yellow-400 border-dashed">
               <Checkbox
                 checked={allChecked}
@@ -77,7 +76,10 @@ const CartForm = () => {
               {items.map((item) => {
                 const key = `${item.id}-${item.selectedSize}-${item.selectedColor}`;
                 return (
-                  <div className="flex flex-col md:flex-row lg:flex-row md:justify-between lg:justify-between rounded-lg" key={key}>
+                  <div
+                    className="flex flex-col md:flex-row lg:flex-row md:justify-between lg:justify-between rounded-lg"
+                    key={key}
+                  >
                     <div className="flex gap-4 items-center">
                       <Checkbox checked={!!checkedItems[key]} onChange={() => toggleCheck(item)} />
                       <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
@@ -103,7 +105,9 @@ const CartForm = () => {
                             <span className="line-through text-tiny">${item.price.toFixed(2)}</span>
                           </div>
                         ) : (
-                          <span className="font-bold">${item.price.toFixed(2)}</span>
+                          <span className="font-bold text-small text-gray-700">
+                            ${item.price.toFixed(2)}
+                          </span>
                         )}
                         <div className="flex gap-2 text-small flex-col">
                           <span>

@@ -1,0 +1,68 @@
+export const myReviews = [
+  {
+    orderId: "ORD-20251007-001",
+    date: "October 7, 2025",
+    items: [
+      {
+        id: 1,
+        name: "Cotton T-shirt",
+        brandId: "nike",
+        colors: "Gray",
+        sizes: "M",
+        images: "/images/products/7g.png",
+        rating: 0,
+        text: "Very comfortable and soft!",
+        isAnonymous: false,
+        isReview: false,
+      },
+      {
+        id: 2,
+        name: "Denim Jeans",
+        brandId: "levis",
+        colors: "Blue",
+        sizes: "XL",
+        images: "/images/products/8b.png",
+        rating: 4,
+        text: "Good quality but slightly tight.",
+        isAnonymous: true,
+        isReview: true,
+      },
+    ],
+  },
+  {
+    orderId: "ORD-20251001-014",
+    date: "October 1, 2025",
+    items: [
+      {
+        id: 3,
+        name: "Running Shoes",
+        brandId: "adidas",
+        colors: "Black",
+        sizes: "42",
+        images: "/images/products/9a.png",
+        rating: 5,
+        text: "Super comfortable for jogging!",
+        isAnonymous: false,
+        isReview: true,
+      },
+    ],
+  },
+  {
+    orderId: "ORD-20250922-032",
+    date: "September 22, 2025",
+    items: [
+      {
+        id: 4,
+        name: "Hoodie",
+        brandId: "puma",
+        colors: "Red",
+        sizes: "L",
+        images: "/images/products/10c.png",
+        rating: 3,
+        text: "Material is okay, color fades slightly.",
+        isAnonymous: false,
+        isReview: true,
+      },
+    ],
+  },
+];

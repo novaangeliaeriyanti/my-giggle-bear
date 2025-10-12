@@ -1,6 +1,15 @@
 "use client";
 
-import { BadgePercent, CheckCircle, ChevronRight, ArrowLeft, Info, TicketPercent, BadgeDollarSign, Clock } from "lucide-react";
+import {
+  BadgePercent,
+  CheckCircle,
+  ChevronRight,
+  ArrowLeft,
+  Info,
+  TicketPercent,
+  BadgeDollarSign,
+  Clock,
+} from "lucide-react";
 import { useState } from "react";
 import { Voucher, voucherList } from "@/data/order";
 import Modal from "@/components/ui/Modal";
@@ -18,18 +27,16 @@ const VoucherSection = () => {
     const codeToUse = manualCode.trim();
 
     if (codeToUse) {
-      const found = voucherList.find(
-        (v) => v.code.toLowerCase() === codeToUse.toLowerCase()
-      );
+      const found = voucherList.find((v) => v.code.toLowerCase() === codeToUse.toLowerCase());
       if (found) {
-        toast.success("Invalid voucher code.")
+        toast.success("Invalid voucher code.");
         setAppliedVoucher(found);
       } else {
-        toast.error("Invalid voucher code.")
+        toast.error("Invalid voucher code.");
         return;
       }
     } else if (selectedVoucher) {
-      toast.success("Invalid voucher code.")
+      toast.success("Invalid voucher code.");
       setAppliedVoucher(selectedVoucher);
     }
     setIsModalOpen(false);
@@ -125,25 +132,19 @@ const VoucherSection = () => {
                   >
                     <div className="flex justify-between items-center">
                       <div className="flex-1">
-                        <h3 className="line-clamp-1">
-                          {voucher.title}
-                        </h3>
-                        <span className="text-small">
-                          {voucher.description}
-                        </span>
+                        <h3 className="line-clamp-1">{voucher.title}</h3>
+                        <span className="text-small">{voucher.description}</span>
                         <div
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setViewDetail(voucher);
-                            }}
-                            className="flex items-center gap-1 text-primary text-tiny group hover:text-primary/50"
-                          >
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setViewDetail(voucher);
+                          }}
+                          className="flex items-center gap-1 text-primary text-tiny group hover:text-primary/50"
+                        >
                           <Info className="fill-current stroke-white w-3 h-3" />
                           More info
                         </div>
-                        <span className="text-tiny">
-                          Valid until {voucher.expiry}
-                        </span>
+                        <span className="text-tiny">Valid until {voucher.expiry}</span>
                       </div>
                       <span className="bg-primary/10 text-primary text-sm font-semibold px-2 py-1 rounded">
                         {voucher.code}
@@ -184,20 +185,20 @@ const VoucherSection = () => {
                       </div>
                     </div>
                     <div className="flex items-center text-primary gap-2 lg:gap-4">
-                      <Clock className=" w-6 h-6 flex-shrink-0" />   
+                      <Clock className=" w-6 h-6 flex-shrink-0" />
                       <div className="flex flex-col">
                         <span className="text-tiny">Valid until</span>
                         <span className="text-small">{viewDetail.expiry}</span>
                       </div>
                     </div>
- 
+
                     {viewDetail?.minSpend > 0 && (
                       <div className="flex items-center text-primary gap-2 lg:gap-4">
                         <BadgeDollarSign className="fill-current w-6 h-6 stroke-white flex-shrink-0" />
                         <div className="flex flex-col">
-                        <span className="text-tiny">Min spend</span>
-                        <span className="text-small">${viewDetail.minSpend}</span>
-                      </div>
+                          <span className="text-tiny">Min spend</span>
+                          <span className="text-small">${viewDetail.minSpend}</span>
+                        </div>
                       </div>
                     )}
                   </div>

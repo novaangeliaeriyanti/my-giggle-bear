@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const categories = [
@@ -46,11 +46,11 @@ const CategoriesProduct = () => {
             transition-transform duration-300 hover:scale-105
           `}
         >
-        <h4
-          className={`text-heading-1 text-stroke ${category.slug === selectedCategory ? "text-primary" : "text-secondary"}`}
-        >
-          {category.name}
-        </h4>
+          <h4
+            className={`text-heading-1 text-stroke ${category.slug === selectedCategory ? "text-primary" : "text-secondary"}`}
+          >
+            {category.name}
+          </h4>
         </div>
       ))}
     </div>

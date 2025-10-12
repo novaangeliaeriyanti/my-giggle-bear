@@ -55,7 +55,9 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               </div>
             )}
             {product?.isFlashsale && (
-              <div className="text-tiny font-bold bg-primary/5 text-primary px-2 py-1">flashsale</div>
+              <div className="text-tiny font-bold bg-primary/5 text-primary px-2 py-1">
+                flashsale
+              </div>
             )}
           </div>
         </div>

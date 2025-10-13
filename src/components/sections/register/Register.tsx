@@ -2,13 +2,12 @@ import React from "react";
 import RegisterForm from "./RegisterForm";
 import Image from "next/image";
 import { loyaltyData } from "@/data/auth";
+import PageTitle from "@/components/ui/PageTitle";
 
 const Register = () => {
   return (
     <div className="flex flex-col gap-8 items-center justify-center container mx-auto p-4 lg:py-6">
-      <div className="relative w-full bg-blue-sky card-rounded bg-primary-50 bg-[url(/images/icons/grid-line.png)] bg-[length:720px] overflow-visible flex items-center justify-center p-4 lg:py-6">
-        <h3 className="text-heading-1 text-stroke-3 text-secondary">Register</h3>
-      </div>
+      <PageTitle title="Register" />
       <div className="w-full flex flex-col gap-4 lg:flex-row">
         <div className="lg:w-7/12 space-y-3">
           <div className="flex items-center">
@@ -40,16 +39,17 @@ const Register = () => {
             <p className="text-body">{loyaltyData.description}</p>
             <div
               className="
-                    flex-1 min-w-[500px]
+                    flex-1 min-w-[150px] lg:min-w-[200px]
                     bg-[url('/images/icons/cloud.png')]
                     bg-no-repeat bg-center bg-contain
                     aspect-[1/1]
                     flex flex-col items-center justify-center
                     text-pink-400 font-bold
-                    -translate-y-20
+                    -translate-y-16
+                    gap-3
                   "
             >
-              <ul className="space-y-3 text-left text-small">
+              <ul className="space-y-2 text-left text-small flex justify-center flex-col px-10">
                 {loyaltyData.perks.map((perk) => (
                   <li key={perk.id} className="flex items-center gap-3">
                     <Image

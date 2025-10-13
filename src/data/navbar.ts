@@ -8,10 +8,6 @@ export const menus: {
     items: [
       { label: "Home Layout 1", href: "/", icon: "/images/icons/smile.png" },
       { label: "Home Layout 2", href: "/", icon: "/images/icons/smile.png" },
-      { label: "Home Layout 3", href: "/", icon: "/images/icons/smile.png" },
-      { label: "Home Layout 3", href: "/", icon: "/images/icons/smile.png" },
-      { label: "Home Layout 3", href: "/", icon: "/images/icons/smile.png" },
-      { label: "Home Layout 3", href: "/", icon: "/images/icons/smile.png" },
     ],
   },
   {
@@ -19,15 +15,28 @@ export const menus: {
     items: [
       { label: "Login", href: "/login", icon: "/images/icons/smile.png" },
       { label: "Register", href: "/register", icon: "/images/icons/smile.png" },
-      { label: "Blog", href: "/blog", icon: "/images/icons/smile.png" },
-      { label: "Blog Details", href: "/blog-details", icon: "/images/icons/smile.png" },
-      { label: "Empty Shop", href: "/empty-shop", icon: "/images/icons/smile.png" },
+      { label: "Cart", href: "/order", icon: "/images/icons/smile.png" },
+      { label: "My Orders", href: "/orders-list", icon: "/images/icons/smile.png" },
+      { label: "My Reviews", href: "/my-reviews", icon: "/images/icons/smile.png" },
+      { label: "Product Detail", href: "/products/2", icon: "/images/icons/smile.png" },
+      {
+        label: "Product Review",
+        href: "/products/prod-001/reviews",
+        icon: "/images/icons/smile.png",
+      },
+      { label: "Order Detail", href: "/order/ORD-20251007-001", icon: "/images/icons/smile.png" },
+      {
+        label: "Order Tracking",
+        href: "/order/tracking/ORD-20251007-001",
+        icon: "/images/icons/smile.png",
+      },
+      {
+        label: "Add Review",
+        href: "/order/ORD-20251007-001/add-review",
+        icon: "/images/icons/smile.png",
+      },
       { label: "404 Not Found", href: "/not-found", icon: "/images/icons/smile.png" },
     ],
-  },
-  {
-    title: "About",
-    href: "/about",
   },
   {
     title: "Categories",
@@ -36,18 +45,6 @@ export const menus: {
       { label: "Pants", href: "/pants", icon: "/images/icons/smile.png" },
       { label: "Shoes", href: "/shoes", icon: "/images/icons/smile.png" },
     ],
-  },
-  {
-    title: "Blog",
-    items: [
-      { label: "Latest Posts", href: "/blog/latest", icon: "/images/icons/smile.png" },
-      { label: "News", href: "/blog/news", icon: "/images/icons/smile.png" },
-      { label: "Tips", href: "/blog/tips", icon: "/images/icons/smile.png" },
-    ],
-  },
-  {
-    title: "Contact",
-    href: "/contact",
   },
 ];
 

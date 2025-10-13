@@ -5,15 +5,13 @@ import LoginForm from "./LoginForm";
 import Button from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
 import { UserRoundPlus } from "lucide-react";
+import PageTitle from "@/components/ui/PageTitle";
 
 const Login = () => {
   const router = useRouter();
   return (
     <div className="flex flex-col gap-8 items-center justify-center container mx-auto p-4 lg:py-6">
-      <div className="relative w-full bg-blue-sky card-rounded bg-primary-50 bg-[url(/images/icons/grid-line.png)] bg-[length:720px] overflow-visible flex items-center justify-center p-4 lg:py-6">
-        <h3 className="text-heading-1 text-stroke-3 text-secondary">Login</h3>
-      </div>
-
+      <PageTitle title="Login" />
       <div className="w-full flex flex-col gap-4 lg:flex-row">
         <div className="lg:w-7/12 space-y-3">
           <div className="flex items-center">

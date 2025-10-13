@@ -73,7 +73,7 @@ const OrderDetail = () => {
               </div>
               <div>
                 <span className="font-medium">Status:</span>{" "}
-                <span className="text-green-600 font-medium">{order.payment.status}</span>
+                <span className="text-secondary font-medium">{order.payment.status}</span>
               </div>
               <div>
                 <span className="font-medium">Date:</span> {order.payment.date}

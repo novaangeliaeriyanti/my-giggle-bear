@@ -4,7 +4,7 @@ import PaymentForm from "@/components/sections/order/PaymentForm";
 import ShippingForm from "@/components/sections/order/ShippingForm";
 import { orderSteps } from "@/data/cart";
 import { ShippingFormInputs } from "@/types/types";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Home } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import Button from "@/components/ui/Button";
@@ -13,6 +13,7 @@ import useOrderStore from "@/stores/orderStore";
 import StatusMessage from "@/components/ui/StatusMessage";
 import useCartStore from "@/stores/cartStore";
 import VoucherSection from "./VoucherSection";
+import PageTitle from "@/components/ui/PageTitle";
 
 const Order = () => {
   const searchParams = useSearchParams();
@@ -23,16 +24,17 @@ const Order = () => {
   const [paymentStatus, setPaymentStatus] = useState<"idle" | "pending" | "success" | "error">(
     "idle"
   );
-  const [countdown, setCountdown] = useState(6);
+  const [countdown, setCountdown] = useState(5);
 
   const { calcSubtotal, calcTotal, calcDiscount, orders } = useOrderStore();
-  const { hasHydrated } = useCartStore();
+  const { cart, hasHydrated } = useCartStore();
   const subtotal = calcSubtotal();
   const discountPercent = 10;
   const discount = calcDiscount(discountPercent);
   const shipping = 5;
   const total = calcTotal(shipping, discountPercent);
   const activeStep = parseInt(searchParams.get("step") || "1");
+  const isCartEmpty = cart.reduce((acc, item) => acc + item.quantity, 0) <= 0;
 
   useEffect(() => {
     if (paymentStatus === "success" || paymentStatus === "error") {
@@ -59,17 +61,22 @@ const Order = () => {
         setIsRedirecting(false);
       }, 1200);
     }
-
-    if (activeStep >= 2 && orders.length === 0) {
-      setIsRedirecting(true);
-      setTimeout(() => {
-        router.replace("/order?step=1");
-        setIsRedirecting(false);
-      }, 1200);
-    }
   }, [activeStep, shippingForm, orders, router]);
 
   if (!hasHydrated) return null;
+
+  if (isCartEmpty) {
+    return (
+      <StatusMessage
+        title="No Items in Your Cart"
+        description="Your cart feels a little lonely. Browse products and add them to your cart to continue shopping!"
+        imageSrc="/images/icons/empty-cart.png"
+        buttonText="Shop Now!"
+        buttonIcon={<Home className="w-4 h-4" />}
+        buttonAction={() => router.push("/home1")}
+      />
+    );
+  }
 
   if (isRedirecting) {
     return (
@@ -113,12 +120,7 @@ const Order = () => {
 
   return (
     <div className="flex flex-col gap-8 items-center justify-center container mx-auto p-4 lg:py-6">
-      {/* Title */}
-      <div className="relative w-full bg-blue-sky card-rounded bg-primary-50 bg-[url(/images/icons/grid-line.png)] bg-[length:720px] overflow-visible flex items-center justify-center p-4 lg:py-6">
-        <h3 className="text-heading-1 text-stroke-3 text-secondary">
-          {orderSteps.find((step) => step.id === activeStep)?.title}
-        </h3>
-      </div>
+      <PageTitle title={orderSteps.find((step) => step.id === activeStep)?.title as string} />
       {/* Steps */}
       <div className="flex flex-row items-center gap-4 lg:gap-16">
         {orderSteps.map((step) => {
@@ -145,7 +147,7 @@ const Order = () => {
 
       <div className="w-full flex flex-col lg:flex-row gap-16">
         {/* Steps */}
-        <div className="w-full lg:w-7/12 border-1 border-outlined p-4 md:p-8 card-rounded flex flex-col gap-8">
+        <div className="w-full lg:w-7/12 border-1 border-outlined p-4 md:p-8 card-rounded flex flex-col gap-8 h-fit">
           {(() => {
             if (activeStep === 1) return <CartForm />;
             if (activeStep === 2) return <ShippingForm setShippingForm={setShippingForm} />;

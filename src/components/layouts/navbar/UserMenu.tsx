@@ -10,7 +10,6 @@ const UserMenu = () => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Tutup kalau klik di luar
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
@@ -25,7 +24,7 @@ const UserMenu = () => {
     <div className="relative z-51" ref={menuRef}>
       <User2
         onClick={() => setOpen((prev) => !prev)}
-        className="cursor-pointer border border-primary border-dashed bg-primary/5 rounded-full text-icon hover:text-hover w-7 h-7 p-1 lg:w-10 lg:h-10 lg:p-2 transition-colors duration-300 hover:bg-primary/5"
+        className="cursor-pointer border border-outlined bg-primary/5 rounded-full text-icon hover:text-hover w-7 h-7 p-1 lg:w-10 lg:h-10 lg:p-2 transition-colors duration-300 hover:bg-primary/5"
       />
 
       {open && (

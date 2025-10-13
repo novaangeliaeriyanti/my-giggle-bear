@@ -7,6 +7,7 @@ import { Star } from "lucide-react";
 import { orders } from "@/data/order";
 import Button from "@/components/ui/Button";
 import ToggleSwitch from "@/components/ui/ToggleSwitch";
+import PageTitle from "@/components/ui/PageTitle";
 
 export default function AddReview() {
   const { id } = useParams();
@@ -47,11 +48,7 @@ export default function AddReview() {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10 space-y-6">
-      <div className="flex items-center gap-2">
-        <h3 className="text-secondary">Add</h3>
-        <h3 className="text-primary">Review</h3>
-      </div>
-
+      <PageTitle title="Add Review Product" />
       <div className="text-small">
         Order ID: <span className="font-bold">{order.id}</span>
       </div>

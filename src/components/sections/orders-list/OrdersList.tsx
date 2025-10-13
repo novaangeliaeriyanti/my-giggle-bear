@@ -10,6 +10,7 @@ import { DateRange as DateRangePicker, RangeKeyDict, Range } from "react-date-ra
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { toast } from "react-toastify";
+import PageTitle from "@/components/ui/PageTitle";
 
 const OrdersList = () => {
   const router = useRouter();
@@ -89,12 +90,8 @@ const OrdersList = () => {
     searchTerm || statusFilter || dateRange[0].startDate || dateRange[0].endDate;
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10 space-y-6 relative">
-      {/* Title */}
-      <div className="flex items-center gap-2">
-        <h2 className="text-secondary">My</h2>
-        <h2 className="text-primary">Orders</h2>
-      </div>
+    <div className="max-w-4xl mx-auto px-6 py-4 space-y-4 relative">
+      <PageTitle title="My Orders" />
 
       <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:flex-wrap">
         <input

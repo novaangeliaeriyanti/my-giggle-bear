@@ -128,3 +128,13 @@ export const registerFormSchema = z
   );
 
 export type RegisterFormInputs = z.infer<typeof registerFormSchema>;
+
+export interface Review {
+  id: number;
+  productId: string;
+  name: string;
+  avatar: string;
+  rating: number;
+  comment: string;
+  date: string;
+}

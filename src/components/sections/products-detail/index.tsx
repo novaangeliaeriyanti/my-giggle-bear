@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import { getProductById } from "@/lib/api";
 import ProductDescription from "./ProductDescription";
 import ShareButton from "./ShareButton";
+import ReviewSection from "./ReviewSection";
 
 const ProductDetail = () => {
   const params = useParams<{ id: string }>();
@@ -59,7 +60,6 @@ const ProductDetail = () => {
           className="object-contain card-rounded z-0"
         />
       </div>
-
       <div className="w-full lg:w-7/12 flex flex-col gap-4">
         <h3 className="text-gray-700 font-bold">{product.name}</h3>
         {product?.isFlashsale && (
@@ -78,6 +78,7 @@ const ProductDetail = () => {
           <h3>${product.price.toFixed(2)}</h3>
         )}
         <ProductInteraction product={product} selectedSize={size} selectedColor={color} />
+        <ReviewSection productId="prod-001" />
       </div>
     </div>
   );

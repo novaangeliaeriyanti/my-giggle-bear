@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Copy, Star, X } from "lucide-react";
 import { myReviews } from "@/data/reviews";
+import PageTitle from "@/components/ui/PageTitle";
 
 type TimeFilter = "all" | "7days" | "month" | "3months";
 
@@ -50,12 +51,7 @@ export default function MyReviews() {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-10 space-y-6">
-      <div className="flex items-center gap-2">
-        <h2 className="text-secondary">My</h2>
-        <h2 className="text-primary">Reviews</h2>
-      </div>
-
-      {/* Search & Filter */}
+      <PageTitle title="My Reviews" />
       <div className="flex flex-col md:flex-row md:items-center gap-3">
         <input
           type="text"
@@ -96,7 +92,7 @@ export default function MyReviews() {
                 key={order.orderId}
                 className="space-y-2 border border-outlined card-rounded overflow-hidden"
               >
-                <div className="flex justify-between items-center border-b border-outlined p-4 bg-primary/5">
+                <div className="flex flex-col justify-start md:flex-row md:justify-between gap-2 border-b border-outlined p-4 bg-primary/5">
                   <div className="flex items-center gap-2">
                     <span className="text-small border-r border-outlined pr-2">{order.date}</span>
                     <div className="flex items-center gap-2">
@@ -106,8 +102,8 @@ export default function MyReviews() {
                   </div>
                   {hasPendingReview && (
                     <Link
-                      href={`/order/${order.orderId}/review`}
-                      className="text-sm text-white bg-primary px-3 py-1 rounded-full hover:bg-primary/80 transition-colors"
+                      href={`/order/${order.orderId}/add-review`}
+                      className="text-sm text-white bg-primary px-3 py-1 rounded-full hover:bg-primary/80 transition-colors w-fit"
                     >
                       Add Review
                     </Link>
@@ -120,15 +116,22 @@ export default function MyReviews() {
                       key={item.id}
                       className="flex flex-col lg:flex-row gap-4 p-4 hover:border-dashed hover:border-primary transition-all duration-300"
                     >
-                      <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
-                        <Image src={item.images} alt={item.name} fill className="object-contain" />
-                      </div>
-                      <div className="flex-1 flex flex-col gap-2">
+                      <div className="flex items-start gap-2 flex-1 bg-gray-light py-2 rounded-lg">
+                        <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
+                          <Image
+                            src={item.images}
+                            alt={item.name}
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
                         <div className="flex flex-col gap-1 text-small">
                           <span className="font-semibold line-clamp-1">{item.name}</span>
                           <span>color: {item.colors}</span>
                           <span>size: {item.sizes}</span>
                         </div>
+                      </div>
+                      <div className="flex-1 flex flex-col gap-2">
                         {item.isReview ? (
                           <div className="flex flex-col gap-2">
                             <div className="flex items-center gap-1">

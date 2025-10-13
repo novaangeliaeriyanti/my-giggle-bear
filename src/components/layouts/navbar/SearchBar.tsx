@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { popularProducts } from "@/data/products"; // pastikan path sesuai
+import { popularProducts } from "@/data/products";
 
 const popularKeywords = ["Nike", "T-shirt", "Sneakers", "Jacket", "Kids Wear"];
 

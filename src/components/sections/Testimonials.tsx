@@ -64,9 +64,14 @@ const Testimonials = () => {
             >
               <div className="relative">
                 <div className="absolute top-0 right-0 text-tiny font-bold bg-yellow-50 border border-gray-200 text-white rounded-bl-xl rounded-tr-xl lg:rounded-tr-3xl p-1 lg:px-4 lg:py-2 z-10">
-                  <div className="flex text-yellow-400">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} size={16} fill="currentColor" />
+                  <div className="flex items-center">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 ${
+                          i < review.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"
+                        }`}
+                      />
                     ))}
                   </div>
                 </div>

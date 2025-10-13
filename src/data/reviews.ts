@@ -66,3 +66,76 @@ export const myReviews = [
     ],
   },
 ];
+
+// Dummy reviews untuk 1 produk saja
+export const reviews = [
+  {
+    id: 1,
+    productId: "prod-001",
+    name: "Sarah Johnson",
+    avatar: "/images/icons/review.png",
+    rating: 5,
+    comment:
+      "Absolutely love the quality! The fabric feels premium and super comfy to wear all day.",
+    date: "October 10, 2025",
+  },
+  {
+    id: 2,
+    productId: "prod-001",
+    name: "Michael Lee",
+    avatar: "/images/icons/review.png",
+    rating: 4,
+    comment: "Good overall! Fits perfectly but wish there were more color options.",
+    date: "October 8, 2025",
+  },
+  {
+    id: 3,
+    productId: "prod-001",
+    name: "Amanda Rivera",
+    avatar: "/images/icons/review.png",
+    rating: 5,
+    comment: "Highly recommend! It looks just like the picture and the quality is excellent.",
+    date: "October 6, 2025",
+  },
+  {
+    id: 4,
+    productId: "prod-001",
+    name: "Kevin Wong",
+    avatar: "/images/icons/review.png",
+    rating: 5,
+    comment: "Fast shipping and great packaging! Definitely will order again.",
+    date: "October 4, 2025",
+  },
+  {
+    id: 5,
+    productId: "prod-001",
+    name: "Emily Carter",
+    avatar: "/images/icons/review.png",
+    rating: 4,
+    comment: "Nice product and fits as expected. Could be softer, but still great value!",
+    date: "October 2, 2025",
+  },
+];
+
+export const productReview = {
+  id: 1,
+  productId: "prod-001",
+  name: "Adidas CoreFit T-Shirt",
+  shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+  description:
+    "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+  price: 39.9,
+  discount: 30,
+  priceDiscount: 27.93,
+  sizes: ["s", "m", "l", "xl", "xxl"],
+  colors: ["gray", "purple", "green"],
+  images: {
+    gray: "/images/products/1g.png",
+    purple: "/images/products/1p.png",
+    green: "/images/products/1gr.png",
+  },
+  brandId: "adidas",
+  category: ["kids"],
+  subcategory: ["clothes"],
+  rating: "4",
+};

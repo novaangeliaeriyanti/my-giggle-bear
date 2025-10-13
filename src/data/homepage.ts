@@ -28,9 +28,10 @@ export const homepageVariants: Record<string, HomepageConfig> = {
 };
 
 export const images: string[] = [
-  "/images/banners/banner.webp",
-  "/images/banners/banner1.webp",
-  "/images/banners/banner2.webp",
+  "/images/banners/1.png",
+  "/images/banners/2.png",
+  "/images/banners/3.png",
+
 ];
 
 export const ServiceHighlightsData: ServiceHighlightsType = [

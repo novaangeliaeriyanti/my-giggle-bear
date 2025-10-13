@@ -16,9 +16,10 @@ const ServiceHighlights = () => {
               aspect-[4/2]
               flex flex-col items-center justify-center
               text-pink-400 font-bold
+              text-center
             "
         >
-          <div className="flex items-center gap-2 px-8 lg:px-16">
+          <div className="flex items-center px-8 mt-2 lg:px-20">
             <Image
               src={item.icon}
               alt={item.title}

@@ -34,9 +34,9 @@ export default function EventProducts() {
         <div className="relative w-full flex flex-col">
           <div className="absolute rounded-3xl top-0 left-0 h-full w-full block z-0">
             <Image
-              src="/images/banners/event-banner.avif"
+              src="/images/banners/event-banner.png"
               alt="Background Visual"
-              className="h-full w-[240px] object-cover rounded-3xl"
+              className="h-full w-fit object-cover rounded-3xl"
               width={240}
               height={360}
             />

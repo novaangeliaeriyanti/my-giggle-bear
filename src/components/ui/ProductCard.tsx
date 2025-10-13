@@ -37,7 +37,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
       <Link href={`/products/${product.id}`}>
         <div className="relative aspect-[1] bg-gray-light">
           {product.discount && (
-            <div className="absolute top-0 left-0 text-tiny font-bold bg-primary/5 text-primary border-gray-200 rounded-br-xl p-1 lg:px-4 lg:py-2 z-10">
+            <div className="absolute top-0 left-0 text-tiny font-bold bg-pink-light text-primary border-gray-200 rounded-br-xl p-1 lg:px-4 lg:py-2 z-10">
               {product.discount}%
             </div>
           )}
@@ -55,7 +55,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
               </div>
             )}
             {product?.isFlashsale && (
-              <div className="text-tiny font-bold bg-primary/5 text-primary px-2 py-1">
+              <div className="text-tiny font-bold bg-pink-light text-primary px-2 py-1">
                 flashsale
               </div>
             )}

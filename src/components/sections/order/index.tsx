@@ -7,13 +7,13 @@ import { ShippingFormInputs } from "@/types/types";
 import { ArrowRight, Home } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import Button from "@/components/ui/Button";
 import CartForm from "./CartForm";
 import useOrderStore from "@/stores/orderStore";
 import StatusMessage from "@/components/ui/StatusMessage";
 import useCartStore from "@/stores/cartStore";
 import VoucherSection from "./VoucherSection";
 import PageTitle from "@/components/ui/PageTitle";
+import Button from "@/components/ui/Button";
 
 const Order = () => {
   const searchParams = useSearchParams();
@@ -180,11 +180,13 @@ const Order = () => {
             </div>
             {activeStep === 1 && (
               <Button
-                onClick={() => router.push("/order?step=2", { scroll: false })}
-                desc="Proceed to Shipping"
-                icon={<ArrowRight className="w-3 h-3" />}
-                className="flex justify-center items-center"
-              />
+                onClick={() => router.push("/order?step=2")}
+                variant="primary"
+                icon={<ArrowRight />}
+                className="flex justify-center"
+              >
+                Proceed to Shipping
+              </Button>
             )}
           </div>
         </div>

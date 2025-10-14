@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
-import Button from "../ui/Button";
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 import { voucher } from "@/data/homepage";
 import { toast } from "react-toastify";
+import Button from "../ui/Button";
 
 const VoucherBanner = () => {
   const [copied, setCopied] = useState(false);
@@ -44,18 +44,12 @@ const VoucherBanner = () => {
             </div>
             <div className="flex items-center flex-1 md:justify-end lg:justify-end">
               <Button
-                className="w-full flex justify-center items-center md:w-fit lg:justify-end lg:w-fit"
                 onClick={handleCopy}
+                variant="primary"
+                icon={copied ? <Check /> : <Copy />}
+                className="flex justify-center"
               >
-                {copied ? (
-                  <div className="flex items-center gap-1 font-bold">
-                    <Check className="w-4 h-4" /> {voucher.code}
-                  </div>
-                ) : (
-                  <div className="flex items-center gap-1 font-bold">
-                    <Copy className="w-4 h-4" /> {voucher.code}
-                  </div>
-                )}
+                {voucher.code}
               </Button>
             </div>
           </div>

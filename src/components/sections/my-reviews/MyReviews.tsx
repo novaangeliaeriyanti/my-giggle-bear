@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Copy, Star, X } from "lucide-react";
 import { myReviews } from "@/data/reviews";
 import PageTitle from "@/components/ui/PageTitle";
+import AccountSidebar from "../account-sidebar/AccountSidebar";
 
 type TimeFilter = "all" | "7days" | "month" | "3months";
 
@@ -50,7 +51,9 @@ export default function MyReviews() {
   }, [searchTerm, timeFilter]);
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-10 space-y-6">
+    <div className="container mx-auto max-w-5xl px-4 py-6 space-y-4 flex gap-4 lg:py-10 ">
+      <AccountSidebar />
+      <div className="container mx-auto flex flex-col gap-6">
       <PageTitle title="My Reviews" />
       <div className="flex flex-col md:flex-row md:items-center gap-3">
         <input
@@ -162,6 +165,7 @@ export default function MyReviews() {
             );
           })
         )}
+      </div>
       </div>
     </div>
   );

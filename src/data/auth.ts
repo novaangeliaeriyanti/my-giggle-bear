@@ -48,3 +48,8 @@ export const loyaltyLoginData = {
     },
   ],
 };
+
+export const menus = [
+  { name: "Orders List", path: "/orders-list" },
+  { name: "My Reviews", path: "/my-reviews" },
+];

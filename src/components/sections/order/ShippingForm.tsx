@@ -80,12 +80,9 @@ const ShippingForm = ({
           required
         />
       </div>
-      <Button
-        type="submit"
-        desc="Proceed to Payment"
-        icon={<ArrowRight className="w-3 h-3" />}
-        className="flex justify-center items-center"
-      />
+      <Button variant="primary" icon={<ArrowRight />} className="flex justify-center" type="submit">
+        Proceed to Payment
+      </Button>
     </form>
   );
 };

@@ -4,8 +4,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { PaymentFormInputs, paymentFormSchema } from "@/types/types";
 import FormInput from "@/components/ui/FormInput";
-import Button from "@/components/ui/Button";
 import { ShoppingCart } from "lucide-react";
+import Button from "@/components/ui/Button";
 
 type PaymentFormProps = {
   onStatusChange: (status: "pending" | "success" | "error") => void;
@@ -67,13 +67,14 @@ const PaymentForm = ({ onStatusChange }: PaymentFormProps) => {
         error={errors.cvv?.message}
         required
       />
-
       <Button
+        variant="primary"
+        icon={<ShoppingCart />}
+        className="flex justify-center"
         type="submit"
-        desc="Place Order"
-        icon={<ShoppingCart className="w-3 h-3" />}
-        className="flex justify-center items-center"
-      />
+      >
+        Proceed to Shipping
+      </Button>
     </form>
   );
 };

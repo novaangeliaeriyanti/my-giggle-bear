@@ -13,8 +13,8 @@ import {
 import { useState } from "react";
 import { Voucher, voucherList } from "@/data/order";
 import Modal from "@/components/ui/Modal";
-import Button from "@/components/ui/Button";
 import { toast } from "react-toastify";
+import Button from "@/components/ui/Button";
 
 const VoucherSection = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -154,26 +154,28 @@ const VoucherSection = () => {
                 ))}
               </div>
 
-              {/* Sticky bottom button */}
               <div className="sticky bottom-0 left-0 bg-white pt-4 pb-2">
                 <Button
                   onClick={handleApplyVoucher}
-                  desc="Apply Voucher"
+                  variant="primary"
+                  className="flex justify-center"
                   disabled={!selectedVoucher && !manualCode.trim()}
-                  className="w-full justify-center"
-                />
+                >
+                  Apply Voucher
+                </Button>
               </div>
             </>
           ) : (
             <>
               <div className="flex-1 overflow-y-auto flex flex-col gap-4 pb-24">
-                <button
+                <Button
                   onClick={() => setViewDetail(null)}
-                  className="flex items-center gap-1 text-small hover:text-primary transition"
+                  variant="outlined"
+                  className="flex justify-center"
+                  icon={<ArrowLeft />}
                 >
-                  <ArrowLeft size={16} /> Back to vouchers
-                </button>
-
+                  Back to vouchers
+                </Button>
                 <div className=" flex flex-col gap-2">
                   <h3>{viewDetail.title}</h3>
                   <div className="flex flex-col bg-primary/5 rounded-md p-4 gap-2">
@@ -213,9 +215,11 @@ const VoucherSection = () => {
                     setSelectedVoucher(viewDetail);
                     handleApplyVoucher();
                   }}
-                  desc="Apply This Voucher"
-                  className="w-full justify-center"
-                />
+                  variant="outlined"
+                  className="flex justify-center"
+                >
+                  Apply This Voucher
+                </Button>
               </div>
             </>
           )}

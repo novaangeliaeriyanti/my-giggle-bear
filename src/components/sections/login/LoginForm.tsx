@@ -50,7 +50,9 @@ const LoginForm = () => {
         required
       />
 
-      <Button type="submit" desc="Login" className="flex justify-center items-center" />
+      <Button onClick={() => ""} variant="primary" className="flex justify-center">
+        Login
+      </Button>
     </form>
   );
 };

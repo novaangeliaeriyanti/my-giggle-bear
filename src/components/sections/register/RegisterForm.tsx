@@ -18,7 +18,7 @@ const RegisterForm = () => {
 
   const hasKid = watch("hasKid", "No");
 
-  const handleRegister: SubmitHandler<RegisterFormInputs> = async (data) => {
+  const handleRegister: SubmitHandler<RegisterFormInputs> = async () => {
     alert("Registration successful! Check console for data");
   };
 
@@ -108,8 +108,9 @@ const RegisterForm = () => {
           {errors.kidAge && <p className="text-xs text-red-500 mt-1">{errors.kidAge.message}</p>}
         </div>
       )}
-
-      <Button type="submit" desc="Submit" className="flex justify-center items-center" />
+      <Button variant="primary" className="flex justify-center" type="submit">
+        Submit
+      </Button>
     </form>
   );
 };

@@ -7,8 +7,7 @@ export default function Breadcrumbs() {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter(Boolean);
 
-  const isId = (segment: string) =>
-    /^[0-9]+$/.test(segment) || /^[0-9a-fA-F]{24}$/.test(segment);
+  const isId = (segment: string) => /^[0-9]+$/.test(segment) || /^[0-9a-fA-F]{24}$/.test(segment);
 
   const breadcrumbs = pathSegments
     .map((segment, index, array) => {
@@ -20,7 +19,7 @@ export default function Breadcrumbs() {
     .map(({ segment, href }) => {
       const label = decodeURIComponent(segment)
         .split(/[-_]/)
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
         .join(" ");
 
       return { label, href };

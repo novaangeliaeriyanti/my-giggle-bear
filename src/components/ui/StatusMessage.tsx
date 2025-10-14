@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 import { ReactNode } from "react";
+import Button from "./Button";
 
 type StatusMessageProps = {
   title: string;

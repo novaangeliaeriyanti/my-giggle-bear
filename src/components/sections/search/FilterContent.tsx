@@ -107,10 +107,12 @@ export default function FilterContent({
         </div>
       </div>
       <Button
-        desc="Reset Filters"
-        className="flex justify-center items-center h-fit w-fit"
         onClick={resetFilters}
-      />
+        variant="primary"
+        className="flex justify-center items-center h-fit w-fit"
+      >
+        Reset Filters
+      </Button>
     </div>
   );
 }

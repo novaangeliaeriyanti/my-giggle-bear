@@ -33,7 +33,7 @@ const OrderDetail = () => {
               </div>
               <Button
                 onClick={() => router.push(`/order/tracking/${id}`)}
-                icon={<Truck className="w-4 h-4" />}
+                icon={<Truck />}
                 className="flex justify-center items-center h-fit !text-tiny"
               >
                 View Tracking
@@ -116,14 +116,14 @@ const OrderDetail = () => {
                     (item.isReview ? (
                       <Button
                         onClick={() => router.push(`/order/${id}/add-review`)}
-                        icon={<Star className="w-3 h-3" />}
+                        icon={<Star />}
                         className="flex justify-center items-center w-fit text-tiny"
                       >
                         review item
                       </Button>
                     ) : (
                       <Button
-                        icon={<Star className="w-3 h-3" />}
+                        icon={<Star />}
                         className="flex justify-center items-center w-fit text-tiny"
                         disabled={true}
                       >

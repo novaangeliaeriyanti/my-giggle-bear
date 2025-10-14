@@ -5,10 +5,10 @@ import Image from "next/image";
 import { useParams } from "next/navigation";
 import { Star } from "lucide-react";
 import { orders } from "@/data/order";
-import Button from "@/components/ui/Button";
 import ToggleSwitch from "@/components/ui/ToggleSwitch";
 import PageTitle from "@/components/ui/PageTitle";
 import { toast } from "react-toastify";
+import Button from "@/components/ui/Button";
 
 export default function AddReview() {
   const { id } = useParams();
@@ -117,7 +117,9 @@ export default function AddReview() {
 
       <div className="flex justify-between">
         <ToggleSwitch checked={isAnonymous} onChange={setIsAnonymous} label="Show as anonymous" />
-        <Button onClick={handleSubmit}>Submit Reviews</Button>
+        <Button onClick={handleSubmit} variant="primary" className="flex justify-center">
+          Submit Reviews
+        </Button>
       </div>
     </div>
   );

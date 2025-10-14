@@ -11,6 +11,7 @@ import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { toast } from "react-toastify";
 import PageTitle from "@/components/ui/PageTitle";
+import AccountSidebar from "../account-sidebar/AccountSidebar";
 
 const OrdersList = () => {
   const router = useRouter();
@@ -90,171 +91,171 @@ const OrdersList = () => {
     searchTerm || statusFilter || dateRange[0].startDate || dateRange[0].endDate;
 
   return (
-    <div className="max-w-4xl mx-auto px-6 py-4 space-y-4 relative">
-      <PageTitle title="My Orders" />
+    <div className="container mx-auto max-w-5xl px-4 py-6 space-y-4 flex gap-4 lg:py-10 ">
+      <AccountSidebar />
+      <div className="container mx-auto flex flex-col gap-6">
+        <PageTitle title="My Orders" />
+        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:flex-wrap">
+          <input
+            type="text"
+            placeholder="Search by ID or product name..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="flex-1 min-w-[200px] border border-outlined rounded-md px-3 py-2 text-small focus:outline-none focus:border-dashed hover:border-dashed focus:bg-primary/5 hover:bg-primary/5 transition-colors duration-300"
+          />
 
-      <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between md:flex-wrap">
-        <input
-          type="text"
-          placeholder="Search by ID or product name..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="flex-1 min-w-[200px] border border-outlined rounded-md px-3 py-2 text-small focus:outline-none focus:border-dashed hover:border-dashed focus:bg-primary/5 hover:bg-primary/5 transition-colors duration-300"
-        />
+          <select
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+            className="w-full md:w-auto min-w-[160px] text-small border border-outlined rounded-md px-3 py-2
+                    focus:outline-none focus:border-dashed hover:border-dashed
+                    focus:bg-primary/5 hover:bg-primary/5 transition-colors duration-300
+                    appearance-none bg-white"
+          >
+            <option value="">All Status</option>
+            <option value="Delivered">Delivered</option>
+            <option value="In Transit">In Transit</option>
+            <option value="Processing">Processing</option>
+            <option value="Cancelled">Cancelled</option>
+          </select>
 
-        <select
-          value={statusFilter}
-          onChange={(e) => setStatusFilter(e.target.value)}
-          className="w-full md:w-auto min-w-[160px] text-small border border-outlined rounded-md px-3 py-2
-                  focus:outline-none focus:border-dashed hover:border-dashed
-                  focus:bg-primary/5 hover:bg-primary/5 transition-colors duration-300
-                  appearance-none bg-white"
-        >
-          <option value="">All Status</option>
-          <option value="Delivered">Delivered</option>
-          <option value="In Transit">In Transit</option>
-          <option value="Processing">Processing</option>
-          <option value="Cancelled">Cancelled</option>
-        </select>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full md:w-auto">
+            <div className="relative flex-1 sm:flex-none">
+              <div
+                onClick={() => setIsCalendarOpen(!isCalendarOpen)}
+                className="w-full sm:w-auto text-small border border-outlined rounded-md px-3 py-2 text-sm 
+                      focus:outline-none focus:border-dashed hover:border-dashed
+                      focus:bg-primary/5 hover:bg-primary/5 transition-colors duration-300"
+              >
+                {dateRange[0].startDate && dateRange[0].endDate ? (
+                  <>
+                    {format(dateRange[0].startDate, "dd MMM yyyy")} -{" "}
+                    {format(dateRange[0].endDate, "dd MMM yyyy")}
+                  </>
+                ) : (
+                  "Select date range"
+                )}
+              </div>
 
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 w-full md:w-auto">
-          <div className="relative flex-1 sm:flex-none">
-            <button
-              onClick={() => setIsCalendarOpen(!isCalendarOpen)}
-              className="w-full sm:w-auto text-small border border-outlined rounded-md px-3 py-2 text-sm 
-                     focus:outline-none focus:border-dashed hover:border-dashed
-                     focus:bg-primary/5 hover:bg-primary/5 transition-colors duration-300"
-            >
-              {dateRange[0].startDate && dateRange[0].endDate ? (
-                <>
-                  {format(dateRange[0].startDate, "dd MMM yyyy")} -{" "}
-                  {format(dateRange[0].endDate, "dd MMM yyyy")}
-                </>
-              ) : (
-                "Select date range"
-              )}
-            </button>
+              {isCalendarOpen && (
+                <div className="fixed left-1/2 top-[50%] md:top-auto md:left-auto md:absolute md:mt-2 md:right-1/2 z-50 transform -translate-x-1/2 md:translate-x-0 card-rounded border border-outlined bg-white overflow-hidden w-[90vw] max-w-[670px]">
+                  <div className="overflow-x-auto">
+                    <DateRangePicker
+                      ranges={dateRange}
+                      onChange={handleDateChange}
+                      maxDate={new Date()}
+                      rangeColors={["#2563EB"]}
+                      moveRangeOnFirstSelection={false}
+                      months={typeof window !== "undefined" && window.innerWidth < 768 ? 1 : 2}
+                      direction={
+                        typeof window !== "undefined" && window.innerWidth < 768
+                          ? "vertical"
+                          : "horizontal"
+                      }
+                    />
+                  </div>
 
-            {isCalendarOpen && (
-              <div className="fixed left-1/2 top-[50%] md:top-auto md:left-auto md:absolute md:mt-2 md:right-1/2 z-50 transform -translate-x-1/2 md:translate-x-0 card-rounded border border-outlined bg-white overflow-hidden w-[90vw] max-w-[670px]">
-                <div className="overflow-x-auto">
-                  <DateRangePicker
-                    ranges={dateRange}
-                    onChange={handleDateChange}
-                    maxDate={new Date()}
-                    rangeColors={["#2563EB"]}
-                    moveRangeOnFirstSelection={false}
-                    months={typeof window !== "undefined" && window.innerWidth < 768 ? 1 : 2}
-                    direction={
-                      typeof window !== "undefined" && window.innerWidth < 768
-                        ? "vertical"
-                        : "horizontal"
-                    }
-                  />
-                </div>
-
-                <div className="flex justify-end p-2 border-t">
-                  <div
-                    className="text-small hover:text-outlined"
-                    onClick={() => setIsCalendarOpen(false)}
-                  >
-                    Close
+                  <div className="flex justify-end p-2 border-t">
+                    <div
+                      className="text-small hover:text-outlined"
+                      onClick={() => setIsCalendarOpen(false)}
+                    >
+                      Close
+                    </div>
                   </div>
                 </div>
+              )}
+            </div>
+
+            {hasActiveFilter && (
+              <div
+                onClick={handleResetFilters}
+                className="flex items-center justify-center gap-1 bg-primary text-white border border-outlined rounded-md px-3 py-2 text-small
+                      hover:text-icon focus:text-icon hover:border-primary focus:border-primary 
+                      focus:bg-primary/5 hover:bg-primary/5 hover:border-dashed focus:border-dashed 
+                      transition-colors duration-300"
+              >
+                <X className="w-4 h-4" />
+                Reset Filters
               </div>
             )}
           </div>
-
-          {hasActiveFilter && (
-            <div
-              onClick={handleResetFilters}
-              className="flex items-center justify-center gap-1 bg-primary text-white border border-outlined rounded-md px-3 py-2 text-small
-                     hover:text-icon focus:text-icon hover:border-primary focus:border-primary 
-                     focus:bg-primary/5 hover:bg-primary/5 hover:border-dashed focus:border-dashed 
-                     transition-colors duration-300"
-            >
-              <X className="w-4 h-4" />
-              Reset Filters
-            </div>
-          )}
         </div>
-      </div>
-
-      {/* ORDER LIST */}
-      <div className="flex flex-col gap-4">
-        {filteredOrders.length === 0 ? (
-          <p className="text-small">No orders found.</p>
-        ) : (
-          filteredOrders.map((order) => (
-            <div
-              key={order.id}
-              onClick={() => router.push(`/order/${order.id}`)}
-              className="p-5 flex justify-between items-center border border-outlined card-rounded transition hover:border-primary hover:border-dashed cursor-pointer"
-            >
-              <div className="flex flex-col w-full">
-                <div className="flex flex-col md:flex-row lg:flex-row md:justify-between lg:justify-between border-b border-outlined py-2 gap-2">
-                  <div className="flex items-center gap-2">
-                    <span className="text-small border-r border-outlined pr-2">{order.date}</span>
+        <div className="flex flex-col gap-4">
+          {filteredOrders.length === 0 ? (
+            <p className="text-small">No orders found.</p>
+          ) : (
+            filteredOrders.map((order) => (
+              <div
+                key={order.id}
+                onClick={() => router.push(`/order/${order.id}`)}
+                className="p-5 flex justify-between items-center border border-outlined card-rounded transition hover:border-primary hover:border-dashed cursor-pointer"
+              >
+                <div className="flex flex-col w-full">
+                  <div className="flex flex-col md:flex-row lg:flex-row md:justify-between lg:justify-between border-b border-outlined py-2 gap-2">
                     <div className="flex items-center gap-2">
-                      <span className="text-small">{order.id}</span>
-                      <Copy
-                        onClick={(e) => handleCopy(e, order.id)}
-                        className="w-4 h-4 text-icon"
-                      />
+                      <span className="text-small border-r border-outlined pr-2">{order.date}</span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-small">{order.id}</span>
+                        <Copy
+                          onClick={(e) => handleCopy(e, order.id)}
+                          className="w-4 h-4 text-icon"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className={`text-tiny text-white rounded-full px-2 py-1 w-fit ${
+                        order.status === "Delivered"
+                          ? "bg-secondary"
+                          : order.status === "In Transit"
+                            ? "bg-yellow-400"
+                            : order.status === "Processing"
+                              ? "bg-secondary/50"
+                              : "bg-primary"
+                      }`}
+                    >
+                      {order.status}
                     </div>
                   </div>
-                  <div
-                    className={`text-tiny text-white rounded-full px-2 py-1 w-fit ${
-                      order.status === "Delivered"
-                        ? "bg-secondary"
-                        : order.status === "In Transit"
-                          ? "bg-yellow-400"
-                          : order.status === "Processing"
-                            ? "bg-secondary/50"
-                            : "bg-primary"
-                    }`}
-                  >
-                    {order.status}
-                  </div>
-                </div>
 
-                <div className="flex justify-between py-4">
-                  <div className="flex flex-col gap-2">
-                    {order.items.slice(0, 1).map((item) => (
-                      <div key={item.id} className="flex items-start gap-2">
-                        <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
-                          <Image
-                            src={item.images}
-                            alt={item.name}
-                            fill
-                            className="object-contain"
-                          />
-                        </div>
-                        <div className="flex flex-col gap-1 text-small">
-                          <div className="flex items-center gap-1">
-                            <span>{item.qty}x </span>
-                            <span className="font-semibold line-clamp-1">{item.name}</span>
+                  <div className="flex justify-between py-4">
+                    <div className="flex flex-col gap-2">
+                      {order.items.slice(0, 1).map((item) => (
+                        <div key={item.id} className="flex items-start gap-2">
+                          <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
+                            <Image
+                              src={item.images}
+                              alt={item.name}
+                              fill
+                              className="object-contain"
+                            />
                           </div>
-                          <span>color: {item.colors}</span>
-                          <span>size: {item.sizes}</span>
+                          <div className="flex flex-col gap-1 text-small">
+                            <div className="flex items-center gap-1">
+                              <span>{item.qty}x </span>
+                              <span className="font-semibold line-clamp-1">{item.name}</span>
+                            </div>
+                            <span>color: {item.colors}</span>
+                            <span>size: {item.sizes}</span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
-                    {order.items.length > 1 && (
-                      <span className="text-small">
-                        +{order.items.length - 1} other{" "}
-                        {order.items.length - 1 > 1 ? "products" : "product"}
-                      </span>
-                    )}
-                  </div>
-                  <div className="text-small flex-shrink-9">
-                    Total: ${<span className="font-bold">{order.total}</span>}
+                      ))}
+                      {order.items.length > 1 && (
+                        <span className="text-small">
+                          +{order.items.length - 1} other{" "}
+                          {order.items.length - 1 > 1 ? "products" : "product"}
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-small flex-shrink-9">
+                      Total: ${<span className="font-bold">{order.total}</span>}
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))
-        )}
+            ))
+          )}
+        </div>
       </div>
     </div>
   );

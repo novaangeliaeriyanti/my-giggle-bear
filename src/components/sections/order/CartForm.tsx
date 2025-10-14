@@ -121,8 +121,8 @@ const CartForm = () => {
                         <div
                           className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"
                           onClick={() => {
-                            if(item.quantity <= 1) return
-                            updateQuantity(item, item.quantity - 1)
+                            if (item.quantity <= 1) return;
+                            updateQuantity(item, item.quantity - 1);
                           }}
                         >
                           <Minus className="w-4 h-4 " />

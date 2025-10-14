@@ -33,7 +33,9 @@ const ServiceHighlights = () => {
                   md:w-12 md:h-12
                 "
             />
-            <span className="text-small text-heading-1 text-stroke text-secondary">{item.title}</span>
+            <span className="text-small text-heading-1 text-stroke text-secondary">
+              {item.title}
+            </span>
           </div>
         </div>
       ))}

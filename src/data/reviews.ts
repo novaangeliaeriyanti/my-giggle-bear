@@ -116,7 +116,7 @@ export const reviews = [
   },
 ];
 
-export const productReview =   {
+export const productReview = {
   id: 1,
   name: "LunaKids Summer Sleeveless Dress",
   shortDescription: "Light, comfy, and adorable — perfect for sunny days and little adventures.",
@@ -132,4 +132,4 @@ export const productReview =   {
   category: ["kids", "girls"],
   subcategory: ["dress"],
   rating: "4.7",
-}
+};

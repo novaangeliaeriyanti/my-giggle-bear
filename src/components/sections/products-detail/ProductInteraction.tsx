@@ -1,12 +1,12 @@
 "use client";
 
-import Button from "@/components/ui/Button";
 import { ProductType } from "@/types/types";
 import useCartStore from "@/stores/cartStore";
 import { Minus, Plus, ShoppingCart } from "lucide-react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import Button from "@/components/ui/Button";
 
 const ProductInteraction = ({
   product,
@@ -110,17 +110,17 @@ const ProductInteraction = ({
           </div>
         </div>
       </div>
-      {/* BUTTONS */}
       <Button
         onClick={handleAddToCart}
-        desc="Add to Cart"
-        icon={<Plus className="w-4 h-4" />}
-        className="flex justify-center items-center"
-      />
-      <div className="text-primary text-button px-4 py-2 rounded-md flex items-center justify-center cursor-pointer gap-2 border border-primary ring-0 hover:border-dashed">
-        <ShoppingCart className="w-4 h-4" />
+        variant="primary"
+        icon={<Plus />}
+        className="flex justify-center"
+      >
+        Tambah
+      </Button>
+      <Button icon={<ShoppingCart />} variant="outlined" className="flex justify-center">
         Buy this Item
-      </div>
+      </Button>
     </div>
   );
 };

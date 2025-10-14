@@ -2,10 +2,10 @@ import React from "react";
 import Image from "next/image";
 import { loyaltyLoginData } from "@/data/auth";
 import LoginForm from "./LoginForm";
-import Button from "@/components/ui/Button";
 import { useRouter } from "next/navigation";
 import { UserRoundPlus } from "lucide-react";
 import PageTitle from "@/components/ui/PageTitle";
+import Button from "@/components/ui/Button";
 
 const Login = () => {
   const router = useRouter();
@@ -41,10 +41,12 @@ const Login = () => {
               <h2 className="text-primary space-xs">{loyaltyLoginData.title.highlight}</h2>
               <Button
                 onClick={() => router.push("/register")}
-                desc="Register"
-                icon={<UserRoundPlus className="w-4 h-4" />}
-                className="flex justify-center items-center w-fit"
-              />
+                variant="primary"
+                icon={<UserRoundPlus />}
+                className="flex justify-center"
+              >
+                Register
+              </Button>
             </div>
             <p className="text-body">{loyaltyLoginData.description}</p>
             <div

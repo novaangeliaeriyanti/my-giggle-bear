@@ -6,6 +6,7 @@ import Testimonials from "@/components/sections/Testimonials";
 import VideoSection from "@/components/sections/video/VideoSection";
 import VoucherBanner from "@/components/sections/VoucherBanner";
 import { eventProducts } from "@/data/homepage";
+import { Suspense } from "react";
 
 export default function Home1() {
   return (
@@ -14,7 +15,9 @@ export default function Home1() {
       <ServiceHighlights />
       <EventProducts title={eventProducts.title} description={eventProducts.description} />
       <VoucherBanner />
-      <ProductsListSection />
+      <Suspense fallback={<div></div>}>
+        <ProductsListSection />
+      </Suspense>
       <VideoSection />
       <Testimonials />
     </main>

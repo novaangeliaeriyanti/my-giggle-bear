@@ -4,8 +4,7 @@ import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { popularProducts } from "@/data/products";
-
-const popularKeywords = ["Nike", "T-shirt", "Sneakers", "Jacket", "Kids Wear"];
+import { popularKeywords } from "@/data/search";
 
 const SearchBar = () => {
   const [query, setQuery] = useState("");
@@ -57,7 +56,7 @@ const SearchBar = () => {
             <p className="text-tiny font-semibold mb-2 text-primary">Popular Keyword</p>
             <div className="flex flex-wrap gap-2">
               {popularKeywords.map((keyword) => (
-                <button
+                <div
                   key={keyword}
                   onClick={() => {
                     setQuery(keyword);
@@ -67,7 +66,7 @@ const SearchBar = () => {
                   className="px-3 py-1 rounded-full text-tiny text-gray-500 bg-primary/10 hover:text-primary transition"
                 >
                   {keyword}
-                </button>
+                </div>
               ))}
             </div>
           </div>

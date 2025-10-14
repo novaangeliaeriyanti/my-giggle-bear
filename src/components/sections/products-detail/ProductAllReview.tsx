@@ -40,12 +40,12 @@ export default function ProductAllReview() {
   return (
     <div className="flex flex-col gap-4 container mx-auto p-4 lg:py-6 max-w-5xl">
       <PageTitle title="Product Review" />
-      <div className="flex bg-primary/5 flex-col rounded-2xl overflow-hidden">
+      <div className="flex bg-gray-light flex-col rounded-2xl overflow-hidden">
         <div className="flex-1 px-6 py-2">
           <div className="flex items-start gap-2 flex-1">
             <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
               <Image
-                src={productReview.images.gray}
+                src={productReview.images}
                 alt={productReview.name}
                 fill
                 className="object-contain"
@@ -103,7 +103,7 @@ export default function ProductAllReview() {
                   { id: "month", label: "This Month" },
                   { id: "3months", label: "Last 3 Months" },
                 ].map((item) => (
-                  <button
+                  <div
                     key={item.id}
                     onClick={() => setTimeFilter(item.id)}
                     className={`px-3 py-2 text-small rounded-md border transition-colors ${
@@ -113,7 +113,7 @@ export default function ProductAllReview() {
                     }`}
                   >
                     {item.label}
-                  </button>
+                  </div>
                 ))}
               </div>
             </div>
@@ -122,7 +122,7 @@ export default function ProductAllReview() {
             <div>
               <h3 className="font-semibold text-base mb-3">Filter by Rating</h3>
               <div className="flex lg:flex-col flex-row gap-2 lg:gap-3 overflow-x-auto">
-                <button
+                <div
                   onClick={() => setRatingFilter(null)}
                   className={`px-3 py-2 text-small rounded-md border transition-colors ${
                     ratingFilter === null
@@ -131,10 +131,10 @@ export default function ProductAllReview() {
                   }`}
                 >
                   All Ratings
-                </button>
+                </div>
 
                 {[5, 4, 3, 2, 1].map((rating) => (
-                  <button
+                  <div
                     key={rating}
                     onClick={() => setRatingFilter(rating)}
                     className={`px-3 py-2 text-sm rounded-md border flex items-center gap-1 transition-colors ${
@@ -151,7 +151,7 @@ export default function ProductAllReview() {
                           : "fill-yellow-400 text-yellow-400"
                       }`}
                     />
-                  </button>
+                  </div>
                 ))}
               </div>
             </div>

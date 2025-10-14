@@ -118,20 +118,22 @@ const CartForm = () => {
                     </div>
                     <div className="flex justify-end items-center gap-2">
                       <div className="flex items-center">
-                        <button
+                        <div
                           className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"
-                          onClick={() => updateQuantity(item, item.quantity - 1)}
-                          disabled={item.quantity <= 1}
+                          onClick={() => {
+                            if(item.quantity <= 1) return
+                            updateQuantity(item, item.quantity - 1)
+                          }}
                         >
                           <Minus className="w-4 h-4 " />
-                        </button>
+                        </div>
                         <div className="text-small font-bold space-xs">{item.quantity}</div>
-                        <button
+                        <div
                           className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"
                           onClick={() => updateQuantity(item, item.quantity + 1)}
                         >
                           <Plus className="w-4 h-4 " />
-                        </button>
+                        </div>
                       </div>
                       <Trash2
                         onClick={() => removeFromCart(item)}

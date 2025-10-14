@@ -9,6 +9,7 @@ import { getProductById } from "@/lib/api";
 import ProductDescription from "./ProductDescription";
 import ShareButton from "./ShareButton";
 import ReviewSection from "./ReviewSection";
+import Breadcrumbs from "@/components/ui/Breadscrumbs";
 
 const ProductDetail = () => {
   const params = useParams<{ id: string }>();
@@ -46,8 +47,10 @@ const ProductDetail = () => {
   const color = searchParams.get("color") || product.colors[0];
 
   return (
-    <div className="flex flex-col gap-4 lg:flex-row md:gap-12 container mx-auto p-4 lg:py-6">
-      <div className="w-full h-fit lg:max-w-5/12 aspect-[1] overflow-hidden card-rounded bg-gray-light  sticky top-32">
+    <div className="flex flex-col gap-4 md:gap-12 container mx-auto p-4 lg:py-6">
+      <Breadcrumbs />
+      <div className="flex flex-col gap-4 lg:flex-row md:gap-12">
+      <div className="w-full h-fit lg:max-w-5/12 aspect-[1] overflow-hidden card-rounded bg-gray-light relative lg:sticky lg:top-36">
         {product.discount && (
           <h4 className="absolute top-0 left-0 z-10 font-bold bg-primary/5 text-primary border-gray-200 rounded-br-xl p-2">
             {product.discount}%
@@ -79,6 +82,7 @@ const ProductDetail = () => {
         )}
         <ProductInteraction product={product} selectedSize={size} selectedColor={color} />
         <ReviewSection productId="prod-001" />
+      </div>
       </div>
     </div>
   );

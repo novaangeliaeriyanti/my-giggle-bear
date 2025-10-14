@@ -42,9 +42,9 @@ export default function RatingSummary({ productReviews }: { productReviews: Revi
       </div>
 
       <div className="sm:hidden flex justify-center">
-        <button onClick={() => setIsModalOpen(true)} className="text-primary text-tiny font-medium">
+        <div onClick={() => setIsModalOpen(true)} className="text-primary text-tiny font-medium">
           View Rating Details →
-        </button>
+        </div>
       </div>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title="Rating Details">

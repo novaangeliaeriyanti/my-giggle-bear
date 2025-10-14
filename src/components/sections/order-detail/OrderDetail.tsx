@@ -79,8 +79,8 @@ const OrderDetail = () => {
                 <span className="font-medium">Date:</span> {order.payment.date}
               </div>
               <div>
-                <span className="font-medium">Total Paid:</span> Rp
-                {order.payment.total.toLocaleString()}
+                <span className="font-medium">Total Paid:</span>
+                {order.payment.total}
               </div>
             </div>
           </section>
@@ -139,19 +139,19 @@ const OrderDetail = () => {
           <div className="border-t border-outlined border-dashed mt-4 pt-3 text-small space-y-1 p-2">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span>Rp{subtotal.toLocaleString()}</span>
+              <span>${subtotal.toLocaleString()}</span>
             </div>
             <div className="flex justify-between">
               <span>Shipping Fee</span>
-              <span>Rp{shippingFee.toLocaleString()}</span>
+              <span>${shippingFee.toLocaleString()}</span>
             </div>
             <div className="flex justify-between text-primary text-small">
               <span>Voucher ({order.voucher.code})</span>
-              <span>-Rp{order.voucher.discount.toLocaleString()}</span>
+              <span>- ${order.voucher.discount.toLocaleString()}</span>
             </div>
             <div className="flex font-semibold justify-between border-t pt-3 mt-3 border-outlined">
               <h4>Total</h4>
-              <h4>Rp{total.toLocaleString()}</h4>
+              <h4>${total.toLocaleString()}</h4>
             </div>
           </div>
         </section>

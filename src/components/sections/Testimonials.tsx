@@ -30,7 +30,7 @@ const Testimonials = () => {
 
       {/* Scrollable reviews */}
       <div className="group relative">
-        <button
+        <div
           onClick={() => scroll("left")}
           aria-label="Scroll Left"
           className="absolute left-0 top-1/2 -translate-y-1/2 
@@ -43,7 +43,7 @@ const Testimonials = () => {
             "
         >
           <ChevronLeft className="w-6 h-6" />
-        </button>
+        </div>
 
         {/* Container scroll */}
         <div
@@ -90,7 +90,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <button
+        <div
           onClick={() => scroll("right")}
           aria-label="Scroll Right"
           className="absolute right-0 top-1/2 -translate-y-1/2 
@@ -102,7 +102,7 @@ const Testimonials = () => {
             hover:text-white hover:bg-primary hover:border-primary rounded-full"
         >
           <ChevronRight className="w-6 h-6" />
-        </button>
+        </div>
       </div>
     </section>
   );

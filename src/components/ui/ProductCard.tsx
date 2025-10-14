@@ -121,7 +121,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
           ) : (
             <span className="font-bold text-gray-700 text-small">${product.price.toFixed(2)}</span>
           )}
-          <button
+          <div
             onClick={handleAddToCart}
             className="
               hidden lg:flex 
@@ -136,7 +136,7 @@ const ProductCard = ({ product }: { product: ProductType }) => {
           >
             <ShoppingCart className="w-4 h-4" />
             Add to Cart
-          </button>
+          </div>
         </div>
       </div>
     </div>

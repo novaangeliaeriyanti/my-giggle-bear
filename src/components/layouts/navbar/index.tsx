@@ -36,7 +36,7 @@ export default function Navbar() {
 
         {/* Navbar menu */}
         <div onMouseLeave={() => setActiveMenu(null)} className="relative py-3 flex items-center">
-          <button
+          <div
             className="container px-4 md:hidden flex flex-col gap-[4px] z-2 relative"
             onClick={() => {
               setIsOpen(!isOpen);
@@ -55,7 +55,7 @@ export default function Navbar() {
                 <span className="w-6 h-[2px] bg-icon transition-all duration-300"></span>
               </>
             )}
-          </button>
+          </div>
 
           {/* Mobile Menu */}
           {isOpen && (
@@ -64,7 +64,7 @@ export default function Navbar() {
                 {menus.map((menu) =>
                   menu.items ? (
                     <div key={menu.title} className="flex flex-col">
-                      <button
+                      <div
                         onClick={() => setActiveMenu(activeMenu === menu.title ? null : menu.title)}
                         className="flex justify-between items-center px-4 py-3 text-body "
                       >
@@ -74,7 +74,7 @@ export default function Navbar() {
                             activeMenu === menu.title ? "rotate-180 text-hover" : ""
                           }`}
                         />
-                      </button>
+                      </div>
 
                       {/* Dropdown items */}
                       {activeMenu === menu.title && (
@@ -118,7 +118,7 @@ export default function Navbar() {
           <div className="hidden md:flex md:items-center gap-6 font-medium text-gray-500 mx-auto justify-center">
             {menus.map((menu) =>
               menu.items ? (
-                <button
+                <div
                   key={menu.title}
                   className={`flex items-center gap-1 font-medium text-body group ${activeMenu === menu.title && "!text-hover"}`}
                   onMouseEnter={() => setActiveMenu(menu.title)}
@@ -130,7 +130,7 @@ export default function Navbar() {
                       activeMenu === menu.title ? "rotate-180 !text-hover" : ""
                     }`}
                   />
-                </button>
+                </div>
               ) : (
                 <Link key={menu.title} href={menu.href || "/"} className="font-medium main-body">
                   {menu.title}

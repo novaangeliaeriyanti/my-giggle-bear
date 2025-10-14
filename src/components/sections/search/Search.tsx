@@ -106,7 +106,7 @@ export default function Search() {
       />
       <div
         className={clsx(
-          "fixed top-0 left-0 h-full w-3/4 max-w-sm bg-white z-50 p-6 overflow-y-auto transform transition-transform duration-300 rounded-r-xl shadow-2xl flex flex-col",
+          "fixed gap-4 top-0 left-0 h-full w-3/4 max-w-sm bg-white z-50 p-6 overflow-y-auto transform transition-transform duration-300 rounded-r-xl shadow-2xl flex flex-col",
           showFilterMobile ? "translate-x-0" : "-translate-x-full"
         )}
       >

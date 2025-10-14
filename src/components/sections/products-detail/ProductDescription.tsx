@@ -18,10 +18,9 @@ const ProductDescription = ({ description }: ProductDescriptionProps) => {
         <div className="flex justify-end">
           <div
             onClick={() => setIsOpen(true)}
-            className="flex items-center cursor-pointer text-body hover:text-primary"
+            className="cursor-pointer text-primary text-small font-medium hover:underline"
           >
-            <ChevronDown className="w-4 h-4 flex-shrink-0 space-xs" />
-            Read more
+            Read more →
           </div>
         </div>
       </div>

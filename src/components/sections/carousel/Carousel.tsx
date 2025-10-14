@@ -44,29 +44,27 @@ const Carousel = () => {
       </div>
 
       {/* Arrow Left */}
-      <button
+      <div
         onClick={prevSlide}
         className="hidden sm:flex absolute top-1/2 left-4 -translate-y-1/2 border-2 border-outlined text-icon bg-pink-light rounded-full p-2 hover:text-white hover:bg-primary hover:border-primary transition duration-300 cursor-pointer"
         aria-label="Previous slide"
-        type="button"
       >
         <ChevronLeft className="w-6 h-6" />
-      </button>
+      </div>
 
       {/* Arrow right */}
-      <button
+      <div
         onClick={nextSlide}
         className="hidden sm:flex absolute top-1/2 right-4 -translate-y-1/2 border-2 border-outlined text-icon bg-pink-light rounded-full p-2 hover:text-white hover:bg-primary hover:border-primary transition duration-300 cursor-pointer"
         aria-label="Next slide"
-        type="button"
       >
         <ChevronRight className="w-6 h-6" />
-      </button>
+      </div>
 
       {/* Dots navigation */}
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-2">
         {images.map((_, i) => (
-          <button
+          <div
             key={i}
             onClick={() => setCurrent(i)}
             className={`h-1 sm:h-1 md:h-2 lg:h-2 rounded-full ${
@@ -75,8 +73,7 @@ const Carousel = () => {
                 : "w-1 sm:w-1 md:w-3 lg:w-3 bg-white/50"
             }`}
             aria-label={`Go to slide ${i + 1}`}
-            type="button"
-          />
+          ></div>
         ))}
       </div>
     </div>

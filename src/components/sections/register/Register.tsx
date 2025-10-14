@@ -49,7 +49,7 @@ const Register = () => {
                     gap-3
                   "
             >
-              <ul className="space-y-2 text-left text-small flex justify-center flex-col px-10">
+               <ul className="text-left text-tiny flex justify-center flex-col px-24 lg:space-y-2">
                 {loyaltyData.perks.map((perk) => (
                   <li key={perk.id} className="flex items-center gap-3">
                     <Image

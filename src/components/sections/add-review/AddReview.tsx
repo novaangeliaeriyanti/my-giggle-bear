@@ -8,6 +8,7 @@ import { orders } from "@/data/order";
 import Button from "@/components/ui/Button";
 import ToggleSwitch from "@/components/ui/ToggleSwitch";
 import PageTitle from "@/components/ui/PageTitle";
+import { toast } from "react-toastify";
 
 export default function AddReview() {
   const { id } = useParams();
@@ -35,7 +36,7 @@ export default function AddReview() {
   };
 
   const handleSubmit = () => {
-    alert(`Thank you for your feedback! ${isAnonymous ? "(Submitted anonymously)" : ""}`);
+    toast.success(`Thank you for your feedback! ${isAnonymous ? "(Submitted anonymously)" : ""}`);
   };
 
   // Group items by brandId

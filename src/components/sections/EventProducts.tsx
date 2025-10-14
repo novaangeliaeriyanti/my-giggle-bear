@@ -45,7 +45,7 @@ export default function EventProducts({ title, description, splitIndexTitle }: E
               height={360}
             />
           </div>
-          <button
+          <div
             onClick={() => scroll("left")}
             aria-label="Scroll Left"
             className="
@@ -59,7 +59,7 @@ export default function EventProducts({ title, description, splitIndexTitle }: E
                 "
           >
             <ChevronLeft className="w-6 h-6" />
-          </button>
+          </div>
 
           <div
             ref={scrollRef}
@@ -74,7 +74,7 @@ export default function EventProducts({ title, description, splitIndexTitle }: E
               </div>
             ))}
           </div>
-          <button
+          <div
             onClick={() => scroll("right")}
             aria-label="Scroll Right"
             className="
@@ -88,7 +88,7 @@ export default function EventProducts({ title, description, splitIndexTitle }: E
             "
           >
             <ChevronRight className="w-6 h-6" />
-          </button>
+          </div>
         </div>
       </div>
     </div>

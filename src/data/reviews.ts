@@ -5,11 +5,11 @@ export const myReviews = [
     items: [
       {
         id: 1,
-        name: "Cotton T-shirt",
+        name: "LunaKids Summer Sleeveless Dress",
         brandId: "nike",
         colors: "Gray",
         sizes: "M",
-        images: "/images/products/7g.png",
+        images: "/images/products/1o.png",
         rating: 0,
         text: "Very comfortable and soft!",
         isAnonymous: false,
@@ -17,11 +17,11 @@ export const myReviews = [
       },
       {
         id: 2,
-        name: "Denim Jeans",
-        brandId: "levis",
-        colors: "Blue",
-        sizes: "XL",
-        images: "/images/products/8b.png",
+        name: "BlueRidge Kids Denim Jeans",
+        brandId: "lunakids",
+        colors: "orange",
+        sizes: "XS",
+        images: "/images/products/10b.png",
         rating: 4,
         text: "Good quality but slightly tight.",
         isAnonymous: true,
@@ -35,13 +35,13 @@ export const myReviews = [
     items: [
       {
         id: 3,
-        name: "Running Shoes",
-        brandId: "adidas",
-        colors: "Black",
+        name: "Playnest SoftWeave Knit Pullover",
+        brandId: "playnest",
+        colors: "pink",
         sizes: "42",
-        images: "/images/products/9a.png",
+        images: "/images/products/12p.png",
         rating: 5,
-        text: "Super comfortable for jogging!",
+        text: "Super comfortable for my child!",
         isAnonymous: false,
         isReview: true,
       },
@@ -53,11 +53,11 @@ export const myReviews = [
     items: [
       {
         id: 4,
-        name: "Hoodie",
+        name: "Playnest CozyKnit Sweater",
         brandId: "puma",
-        colors: "Red",
+        colors: "blue",
         sizes: "L",
-        images: "/images/products/10c.png",
+        images: "/images/products/11b.png",
         rating: 3,
         text: "Material is okay, color fades slightly.",
         isAnonymous: false,
@@ -67,7 +67,6 @@ export const myReviews = [
   },
 ];
 
-// Dummy reviews untuk 1 produk saja
 export const reviews = [
   {
     id: 1,
@@ -117,25 +116,20 @@ export const reviews = [
   },
 ];
 
-export const productReview = {
+export const productReview =   {
   id: 1,
-  productId: "prod-001",
-  name: "Adidas CoreFit T-Shirt",
-  shortDescription: "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
+  name: "LunaKids Summer Sleeveless Dress",
+  shortDescription: "Light, comfy, and adorable — perfect for sunny days and little adventures.",
   description:
-    "Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit. Lorem ipsum dolor sit amet consect adipisicing elit lorem ipsum dolor sit.",
-  price: 39.9,
-  discount: 30,
-  priceDiscount: 27.93,
-  sizes: ["s", "m", "l", "xl", "xxl"],
-  colors: ["gray", "purple", "green"],
-  images: {
-    gray: "/images/products/1g.png",
-    purple: "/images/products/1p.png",
-    green: "/images/products/1gr.png",
-  },
-  brandId: "adidas",
-  category: ["kids"],
-  subcategory: ["clothes"],
-  rating: "4",
-};
+    "The LunaKids Summer Sleeveless Dress is made from soft, breathable cotton that keeps your little one cool and comfortable all day long. Designed with playful pastel patterns and a flowy silhouette, this dress is ideal for both casual outings and family gatherings. Easy to wash and gentle on the skin, it’s a must-have for every little girl’s summer wardrobe.",
+  price: 32.5,
+  discount: 20,
+  priceDiscount: 26,
+  sizes: "XS",
+  colors: "pink",
+  images: "/images/products/1p.png",
+  brandId: "lunakids",
+  category: ["kids", "girls"],
+  subcategory: ["dress"],
+  rating: "4.7",
+}

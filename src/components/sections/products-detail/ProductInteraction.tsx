@@ -95,19 +95,19 @@ const ProductInteraction = ({
       <div className="flex flex-col gap-2 text-small">
         <span className="text-body font-bold text-secondary">Quantity</span>
         <div className="flex items-center">
-          <button
+          <div
             className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"
             onClick={() => handleQuantityChange("decrement")}
           >
             <Minus className="w-4 h-4 " />
-          </button>
+          </div>
           <span className="font-bold text-gray-700 text-small space-md">{quantity}</span>
-          <button
+          <div
             className="cursor-pointer border-1 border-gray-300 p-1 rounded-lg text-icon hover:text-hover"
             onClick={() => handleQuantityChange("increment")}
           >
             <Plus className="w-4 h-4" />
-          </button>
+          </div>
         </div>
       </div>
       {/* BUTTONS */}
@@ -117,10 +117,10 @@ const ProductInteraction = ({
         icon={<Plus className="w-4 h-4" />}
         className="flex justify-center items-center"
       />
-      <button className="text-primary text-button px-4 py-2 rounded-md flex items-center justify-center cursor-pointer gap-2 border border-primary ring-0 hover:border-dashed">
+      <div className="text-primary text-button px-4 py-2 rounded-md flex items-center justify-center cursor-pointer gap-2 border border-primary ring-0 hover:border-dashed">
         <ShoppingCart className="w-4 h-4" />
         Buy this Item
-      </button>
+      </div>
     </div>
   );
 };

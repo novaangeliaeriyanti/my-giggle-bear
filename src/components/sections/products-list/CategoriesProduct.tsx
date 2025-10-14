@@ -40,11 +40,11 @@ const CategoriesProduct = () => {
             transition-transform duration-300 hover:scale-105
           `}
         >
-          <h4
-            className={`text-heading-1 text-stroke ${category.slug === selectedCategory ? "text-primary" : "text-secondary"}`}
+          <span
+            className={`text-small text-heading-1 text-stroke ${category.slug === selectedCategory ? "text-primary" : "text-secondary"}`}
           >
             {category.name}
-          </h4>
+          </span>
         </div>
       ))}
     </div>

@@ -1,2 +1,3 @@
-export const brands = ["Nike", "Adidas", "Puma", "Levi's", "Under Armour"];
-export const categories = ["Clothes", "Shoes", "Outerwear", "T-Shirts", "Denim"];
+export const brands = ["lunakids", "tinygent", "cuddlecloud", "littlebear", "juniorlane"];
+export const categories = ["kids", "babies", "girls", "boys"];
+export const popularKeywords = ["Dress", "T-shirt", "Oneset", "Boys"];

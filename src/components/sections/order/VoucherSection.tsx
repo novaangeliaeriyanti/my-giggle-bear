@@ -65,12 +65,12 @@ const VoucherSection = () => {
                 </div>
               </div>
 
-              <button
+              <div
                 onClick={handleRemoveVoucher}
                 className="text-sm text-gray-500 hover:text-hover transition-colors"
               >
                 Remove
-              </button>
+              </div>
             </div>
           ) : (
             <div

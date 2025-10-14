@@ -71,12 +71,12 @@ export default function MyReviews() {
           <option value="3months">Last 3 Months</option>
         </select>
         {searchTerm && (
-          <button
+          <div
             onClick={() => setSearchTerm("")}
             className="flex items-center bg-primary gap-1 text-small text-white border border-outlined rounded-md px-3 py-2 hover:text-icon focus:text-icon hover:border-primary focus:border-primary focus:bg-primary/5 hover:bg-primary/5 transition-colors duration-300"
           >
             <X className="w-4 h-4" /> Clear
-          </button>
+          </div>
         )}
       </div>
 

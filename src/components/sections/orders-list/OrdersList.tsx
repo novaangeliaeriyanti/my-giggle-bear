@@ -154,19 +154,19 @@ const OrdersList = () => {
                 </div>
 
                 <div className="flex justify-end p-2 border-t">
-                  <button
+                  <div
                     className="text-small hover:text-outlined"
                     onClick={() => setIsCalendarOpen(false)}
                   >
                     Close
-                  </button>
+                  </div>
                 </div>
               </div>
             )}
           </div>
 
           {hasActiveFilter && (
-            <button
+            <div
               onClick={handleResetFilters}
               className="flex items-center justify-center gap-1 bg-primary text-white border border-outlined rounded-md px-3 py-2 text-small
                      hover:text-icon focus:text-icon hover:border-primary focus:border-primary 
@@ -175,7 +175,7 @@ const OrdersList = () => {
             >
               <X className="w-4 h-4" />
               Reset Filters
-            </button>
+            </div>
           )}
         </div>
       </div>
@@ -248,7 +248,7 @@ const OrdersList = () => {
                     )}
                   </div>
                   <div className="text-small flex-shrink-9">
-                    Total: Rp{<span className="font-bold">{order.total.toLocaleString()}</span>}
+                    Total: ${<span className="font-bold">{order.total}</span>}
                   </div>
                 </div>
               </div>

@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
 import { reviews } from "@/data/homepage";
+import Title from "../ui/Title";
 
 const Testimonials = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -23,13 +24,8 @@ const Testimonials = () => {
     <section className="flex flex-col gap-8 md:gap-12 container mx-auto px-4 py-8">
       {/* Header */}
       <div className="flex flex-col items-center text-center gap-2">
-        <div className="flex items-center">
-          <h2 className="text-secondary">Customer</h2>
-          <h2 className="text-primary space-xs">Reviews</h2>
-        </div>
-        <span className="text-body max-w-2xl text-gray-500">
-          Gain confidence in your purchase with real stories from our happy customers!
-        </span>
+        <Title text={reviews?.title} />
+        <span className="text-body max-w-2xl text-gray-500">{reviews?.description}</span>
       </div>
 
       {/* Scrollable reviews */}
@@ -40,10 +36,11 @@ const Testimonials = () => {
           className="absolute left-0 top-1/2 -translate-y-1/2 
             -translate-x-[40px] group-hover:translate-x-0
             opacity-0 group-hover:opacity-100
-            pointer-events-none group-hover:pointer-events-auto
-            transition-all duration-300 ease-in-out
-            flex z-10 text-pink-400 border-2 border-dashed border-pink-400 p-2
-            hover:text-white hover:bg-pink-400 rounded-full"
+              pointer-events-none group-hover:pointer-events-auto
+              transition-all duration-300 ease-in-out
+              flex z-10 text-icon bg-pink-light border-1 border-outlined p-2
+            hover:text-white hover:bg-primary hover:border-primary rounded-full
+            "
         >
           <ChevronLeft className="w-6 h-6" />
         </button>
@@ -54,10 +51,10 @@ const Testimonials = () => {
           className={`
             flex overflow-x-auto gap-5 scroll-smooth scrollbar-hidden
             px-4 md:px-8
-            ${reviews.length <= 2 ? "justify-center" : "justify-start"}
+            ${reviews?.items?.length <= 2 ? "justify-center" : "justify-start"}
           `}
         >
-          {reviews.map((review) => (
+          {reviews?.items?.map((review) => (
             <div
               key={review.id}
               className="flex-shrink-0 overflow-hidden w-[260px] sm:w-[300px] md:w-[320px] bg-white card-rounded border border-gray-200 flex flex-col gap-3"
@@ -99,10 +96,10 @@ const Testimonials = () => {
           className="absolute right-0 top-1/2 -translate-y-1/2 
             translate-x-[40px] group-hover:translate-x-0
             opacity-0 group-hover:opacity-100
-            pointer-events-none group-hover:pointer-events-auto
-            transition-all duration-300 ease-in-out
-            flex z-10 text-primary border-2 border-dashed border-primary p-2
-            hover:text-white hover:bg-primary rounded-full"
+              pointer-events-none group-hover:pointer-events-auto
+              transition-all duration-300 ease-in-out
+              flex z-10 text-icon bg-pink-light border-1 border-outlined p-2
+            hover:text-white hover:bg-primary hover:border-primary rounded-full"
         >
           <ChevronRight className="w-6 h-6" />
         </button>

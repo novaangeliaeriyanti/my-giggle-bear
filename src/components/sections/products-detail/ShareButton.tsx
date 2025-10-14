@@ -25,7 +25,7 @@ const ShareButton = () => {
     <>
       <div
         onClick={() => setIsOpen(true)}
-        className="flex items-center p-3 rounded-full border border-gray-200 text-icon w-fit hover:text-hover cursor-pointer"
+        className="flex items-center p-3 rounded-full bg-pink-light border border-outlined text-icon w-fit hover:text-hover cursor-pointer"
       >
         <Share2 size={18} />
       </div>

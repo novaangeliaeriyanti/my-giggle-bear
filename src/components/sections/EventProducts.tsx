@@ -6,8 +6,15 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import clsx from "clsx";
 import ProductCard from "../ui/ProductCard";
 import { popularProducts } from "@/data/products";
+import Title from "../ui/Title";
 
-export default function EventProducts() {
+interface Eventrops {
+  title: string;
+  description?: string;
+  splitIndexTitle?: number;
+}
+
+export default function EventProducts({ title, description, splitIndexTitle }: Eventrops) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -24,11 +31,8 @@ export default function EventProducts() {
     <div className="flex justify-center">
       <div className="group w-full flex flex-col gap-4 container mx-auto p-4 mt-4">
         <div className="flex flex-col gap-1">
-          <div className="flex items-center">
-            <h2 className="text-secondary">Popular</h2>
-            <h2 className="text-primary space-xs">Products</h2>
-          </div>
-          <span className="text-body">Choose your favorite products through our collection</span>
+          <Title text={title} splitIndex={splitIndexTitle} />
+          <span className="text-body">{description}</span>
         </div>
 
         <div className="relative w-full flex flex-col">
@@ -50,8 +54,8 @@ export default function EventProducts() {
                   opacity-0 group-hover:opacity-100
                   pointer-events-none group-hover:pointer-events-auto
                   transition-all duration-300 ease-in-out
-                  flex z-10 text-primary border-2 border-dashed border-primary p-2
-                  hover:text-white hover:bg-primary rounded-full
+                  flex z-10 text-icon bg-pink-light border-1 border-outlined p-2
+                  hover:text-white hover:bg-primary hover:border-primary rounded-full
                 "
           >
             <ChevronLeft className="w-6 h-6" />
@@ -79,8 +83,8 @@ export default function EventProducts() {
               opacity-0 group-hover:opacity-100
               pointer-events-none group-hover:pointer-events-auto
               transition-all duration-300 ease-in-out
-              flex z-10 text-primary border-2 border-dashed border-primary p-2
-              hover:text-white hover:bg-primary rounded-full
+              flex z-10 text-icon bg-pink-light border-1 border-outlined p-2
+            hover:text-white hover:bg-primary hover:border-primary rounded-full
             "
           >
             <ChevronRight className="w-6 h-6" />

@@ -47,7 +47,7 @@ const ProductDetail = () => {
 
   return (
     <div className="flex flex-col gap-4 lg:flex-row md:gap-12 container mx-auto p-4 lg:py-6">
-      <div className="w-full h-fit lg:w-5/12 relative aspect-[2/3] overflow-hidden card-rounded bg-gray-light">
+      <div className="w-full h-fit lg:max-w-5/12 aspect-[1] overflow-hidden card-rounded bg-gray-light  sticky top-32">
         {product.discount && (
           <h4 className="absolute top-0 left-0 z-10 font-bold bg-primary/5 text-primary border-gray-200 rounded-br-xl p-2">
             {product.discount}%
@@ -63,7 +63,7 @@ const ProductDetail = () => {
       <div className="w-full lg:w-7/12 flex flex-col gap-4">
         <h3 className="text-gray-700 font-bold">{product.name}</h3>
         {product?.isFlashsale && (
-          <div className="bg-yellow-50 text-yellow-500 px-2 py-1 text-body w-fit card-rounded border border-dashed">
+          <div className="bg-primary text-white px-2 py-1 text-body w-fit card-rounded">
             flashsale
           </div>
         )}

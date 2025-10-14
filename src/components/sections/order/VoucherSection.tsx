@@ -49,7 +49,7 @@ const VoucherSection = () => {
 
   return (
     <>
-      <div className="border-1 border-outlined p-8 card-rounded flex flex-col gap-8 relative">
+      <div className="border-1 border-outlined p-4 md:p-8 card-rounded flex flex-col gap-8 relative">
         <h3>Redeem Your Rewards</h3>
 
         <div className="flex flex-col gap-2">

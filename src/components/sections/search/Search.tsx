@@ -65,7 +65,7 @@ export default function Search() {
       />
 
       {/* DESKTOP FILTER */}
-      <aside className="hidden lg:block lg:w-1/4 bg-white card-rounded border border-outlined p-4 flex-shrink-0">
+      <aside className="hidden lg:block lg:w-1/4 bg-white card-rounded border border-outlined p-4 md:p-8 flex-shrink-0 h-fit">
         <FilterContent
           brands={brands}
           categories={categories}

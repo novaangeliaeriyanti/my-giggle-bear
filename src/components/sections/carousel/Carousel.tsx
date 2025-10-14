@@ -46,7 +46,7 @@ const Carousel = () => {
       {/* Arrow Left */}
       <button
         onClick={prevSlide}
-        className="hidden sm:flex absolute top-1/2 left-4 -translate-y-1/2 border-2 border-dashed border-white text-white rounded-full p-2 hover:border-solid hover:border-pink-400 hover:bg-pink-400 transition"
+        className="hidden sm:flex absolute top-1/2 left-4 -translate-y-1/2 border-2 border-outlined text-icon bg-pink-light rounded-full p-2 hover:text-white hover:bg-primary hover:border-primary transition duration-300 cursor-pointer"
         aria-label="Previous slide"
         type="button"
       >
@@ -56,7 +56,7 @@ const Carousel = () => {
       {/* Arrow right */}
       <button
         onClick={nextSlide}
-        className="hidden sm:flex absolute top-1/2 right-4 -translate-y-1/2 border-2 border-dashed border-white text-white rounded-full p-2 hover:border-solid hover:border-pink-400 hover:bg-pink-400 transition"
+        className="hidden sm:flex absolute top-1/2 right-4 -translate-y-1/2 border-2 border-outlined text-icon bg-pink-light rounded-full p-2 hover:text-white hover:bg-primary hover:border-primary transition duration-300 cursor-pointer"
         aria-label="Next slide"
         type="button"
       >

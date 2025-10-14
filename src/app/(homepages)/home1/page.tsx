@@ -5,15 +5,16 @@ import ServiceHighlights from "@/components/sections/service-highlight/ServiceHi
 import Testimonials from "@/components/sections/Testimonials";
 import VideoSection from "@/components/sections/video/VideoSection";
 import VoucherBanner from "@/components/sections/VoucherBanner";
+import { eventProducts } from "@/data/homepage";
 
 export default function Home1() {
   return (
     <main className="max-w-screen overflow-hidden">
       <Carousel />
       <ServiceHighlights />
-      <EventProducts />
+      <EventProducts title={eventProducts.title} description={eventProducts.description} />
       <VoucherBanner />
-      <ProductsListSection category="" />
+      <ProductsListSection />
       <VideoSection />
       <Testimonials />
     </main>

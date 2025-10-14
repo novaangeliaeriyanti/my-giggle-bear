@@ -22,8 +22,7 @@ const LoginForm = () => {
     resolver: zodResolver(loginFormSchema),
   });
 
-  const handleLogin: SubmitHandler<LoginFormInputs> = async (data) => {
-    console.log("Login data:", data);
+  const handleLogin: SubmitHandler<LoginFormInputs> = async () => {
     alert("Login successful! Check console for data");
   };
 

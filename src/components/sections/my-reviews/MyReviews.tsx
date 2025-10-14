@@ -116,7 +116,7 @@ export default function MyReviews() {
                       key={item.id}
                       className="flex flex-col lg:flex-row gap-4 p-4 hover:border-dashed hover:border-primary transition-all duration-300"
                     >
-                      <div className="flex items-start gap-2 flex-1 bg-gray-light py-2 rounded-lg">
+                      <div className="flex items-start gap-2 flex-1 rounded-lg">
                         <div className="relative w-20 h-20 overflow-hidden rounded-lg flex-shrink-0 bg-gray-light">
                           <Image
                             src={item.images}

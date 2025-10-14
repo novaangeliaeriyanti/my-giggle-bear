@@ -1,13 +1,7 @@
 "use client";
 
+import { categoriesProductList } from "@/data/homepage";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-
-const categories = [
-  { name: "All", icon: "/images/icons/service-return.png", slug: "all" },
-  { name: "T-shirts", icon: "/images/icons/service-return.png", slug: "t-shirts" },
-  { name: "Shoes", icon: "/images/icons/service-return.png", slug: "shoes" },
-  { name: "Accessories", icon: "/images/icons/service-return.png", slug: "accessories" },
-];
 
 const CategoriesProduct = () => {
   const searchParams = useSearchParams();
@@ -31,7 +25,7 @@ const CategoriesProduct = () => {
         container mx-auto
       "
     >
-      {categories.map((category) => (
+      {categoriesProductList.map((category) => (
         <div
           key={category.slug}
           onClick={() => handleChange(category.slug)}

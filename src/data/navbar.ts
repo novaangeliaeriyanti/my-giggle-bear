@@ -15,6 +15,7 @@ export const menus: {
     items: [
       { label: "Login", href: "/login", icon: "/images/icons/smile.png" },
       { label: "Register", href: "/register", icon: "/images/icons/smile.png" },
+      { label: "Search Result", href: "/search", icon: "/images/icons/smile.png" },
       { label: "Cart", href: "/order", icon: "/images/icons/smile.png" },
       { label: "My Orders", href: "/orders-list", icon: "/images/icons/smile.png" },
       { label: "My Reviews", href: "/my-reviews", icon: "/images/icons/smile.png" },

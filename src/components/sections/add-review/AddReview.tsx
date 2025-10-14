@@ -35,7 +35,6 @@ export default function AddReview() {
   };
 
   const handleSubmit = () => {
-    console.log("Reviews submitted:", { reviews, isAnonymous });
     alert(`Thank you for your feedback! ${isAnonymous ? "(Submitted anonymously)" : ""}`);
   };
 

@@ -25,7 +25,8 @@ export const popularProducts: ProductType[] = [
   {
     id: 2,
     name: "TinyGent Classic Formal Oneset",
-    shortDescription: "Adorable 4-piece outfit for baby boys — perfect for weddings, parties, or family photos.",
+    shortDescription:
+      "Adorable 4-piece outfit for baby boys — perfect for weddings, parties, or family photos.",
     description:
       "Dress your little gentleman in style with the TinyGent Classic Formal Oneset. This 4-piece ensemble includes a soft cotton shirt, a lightweight vest, matching trousers, and a mini bow tie. Designed for comfort and easy movement, it combines classic charm with baby-friendly fabric that’s gentle on delicate skin. Ideal for birthdays, special occasions, or photo sessions.",
     price: 59.9,
@@ -36,7 +37,7 @@ export const popularProducts: ProductType[] = [
     colors: ["blue", "gray"],
     images: {
       blue: "/images/products/2b.png",
-      gray: "/images/products/2g.png"
+      gray: "/images/products/2g.png",
     },
     brandId: "tinygent",
     category: ["kids", "babies", "boys"],
@@ -71,10 +72,10 @@ export const popularProducts: ProductType[] = [
     priceDiscount: 28.41,
     sizes: ["XS", "S", "M", "L"],
     colors: ["black", "pink", "yellow"],
-    images: { 
-      black: "/images/products/4bl.png", 
+    images: {
+      black: "/images/products/4bl.png",
       pink: "/images/products/4p.png",
-      yellow: "/images/products/4y.png"  
+      yellow: "/images/products/4y.png",
     },
     brandId: "lunakids",
     category: ["kids", "girls"],
@@ -97,7 +98,7 @@ export const popularProducts: ProductType[] = [
     brandId: "littlebear",
     category: ["boys", "babies", "kids"],
     subcategory: ["oneset"],
-  },  
+  },
   {
     id: 6,
     name: "StripeEase Boys Shirt",
@@ -108,14 +109,14 @@ export const popularProducts: ProductType[] = [
     priceDiscount: 59.9,
     sizes: ["M", "L"],
     colors: ["blue", "red"],
-    images: { 
-      blue: "/images/products/6b.png", 
-      red: "/products/6r.png" 
+    images: {
+      blue: "/images/products/6b.png",
+      red: "/products/6r.png",
     },
     brandId: "juniorlane",
     category: ["kids", "boys"],
     subcategory: ["shirts", "tops"],
-  },  
+  },
   {
     id: 7,
     name: "Nike Ultraboost Pulse",
@@ -126,7 +127,7 @@ export const popularProducts: ProductType[] = [
     priceDiscount: 69.9,
     sizes: ["M", "L"],
     colors: ["black"],
-    images: { black: "/images/products/7bl.png"},
+    images: { black: "/images/products/7bl.png" },
     brandId: "nike",
     category: ["kids", "girls"],
     subcategory: ["tops"],
@@ -143,15 +144,15 @@ export const popularProducts: ProductType[] = [
     isFlashsale: true,
     sizes: ["S", "M", "L"],
     colors: ["blue", "red", "black"],
-    images: { 
-      blue: "/images/products/8b.png", 
-      red: "/images/products/8r.png", 
-      black: "/images/products/8bl.png", 
+    images: {
+      blue: "/images/products/8b.png",
+      red: "/images/products/8r.png",
+      black: "/images/products/8bl.png",
     },
     brandId: "lunakids",
     category: ["kids", "girls"],
     subcategory: ["clothes", "blouse"],
-  }, 
+  },
   {
     id: 9,
     name: "SunnyPlay Cotton Oneset",
@@ -164,9 +165,9 @@ export const popularProducts: ProductType[] = [
     isFlashsale: true,
     sizes: ["XS", "S"],
     colors: ["pink", "orange"],
-    images: { 
-      pink: "/images/products/9p.png", 
-      orange: "/images/products/9y.png", 
+    images: {
+      pink: "/images/products/9p.png",
+      orange: "/images/products/9y.png",
     },
     brandId: "playnest",
     category: ["kids", "babies", "girls", "boys"],
@@ -184,9 +185,9 @@ export const popularProducts: ProductType[] = [
     isFlashsale: true,
     sizes: ["XS", "S"],
     colors: ["blue", "black"],
-    images: { 
-      blue: "/images/products/10b.png", 
-      black: "/images/products/10bl.png", 
+    images: {
+      blue: "/images/products/10b.png",
+      black: "/images/products/10bl.png",
     },
     brandId: "playnest",
     category: ["kids", "boys"],
@@ -204,9 +205,9 @@ export const popularProducts: ProductType[] = [
     isFlashsale: true,
     sizes: ["XS", "S"],
     colors: ["blue", "brown"],
-    images: { 
-      blue: "/images/products/11b.png", 
-      brown: "/images/products/11w.png", 
+    images: {
+      blue: "/images/products/11b.png",
+      brown: "/images/products/11w.png",
     },
     brandId: "playnest",
     category: ["babies", "boys", "girls"],
@@ -224,12 +225,12 @@ export const popularProducts: ProductType[] = [
     isFlashsale: true,
     sizes: ["XS", "S"],
     colors: ["pink", "gray"],
-    images: { 
-      pink: "/images/products/12p.png", 
-      gray: "/images/products/12g.png", 
+    images: {
+      pink: "/images/products/12p.png",
+      gray: "/images/products/12g.png",
     },
     brandId: "playnest",
     category: ["babies", "boys", "girls"],
     subcategory: ["sweater", "knitwear"],
-  }
+  },
 ];

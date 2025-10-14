@@ -145,7 +145,7 @@ const Order = () => {
         })}
       </div>
 
-      <div className="w-full flex flex-col lg:flex-row gap-16">
+      <div className="w-full flex flex-col lg:flex-row gap-4">
         {/* Steps */}
         <div className="w-full lg:w-7/12 border-1 border-outlined p-4 md:p-8 card-rounded flex flex-col gap-8 h-fit">
           {(() => {
@@ -157,7 +157,7 @@ const Order = () => {
         {/* Voucher & Summary */}
         <div className="w-full lg:w-5/12 flex flex-col h-max sticky top-36 gap-4">
           <VoucherSection />
-          <div className="border-1 border-outlined p-8 card-rounded flex flex-col gap-8">
+          <div className="border-1 border-outlined p-4 md:p-8 card-rounded flex flex-col gap-8">
             <h3>{orderSteps.find((step) => step.id === activeStep)?.summaryTitle}</h3>
             <div className="flex flex-col gap-4">
               <div className="flex justify-between">

@@ -19,7 +19,6 @@ const RegisterForm = () => {
   const hasKid = watch("hasKid", "No");
 
   const handleRegister: SubmitHandler<RegisterFormInputs> = async (data) => {
-    console.log("Register data:", data);
     alert("Registration successful! Check console for data");
   };
 

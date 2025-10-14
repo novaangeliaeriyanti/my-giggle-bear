@@ -31,7 +31,6 @@ export const images: string[] = [
   "/images/banners/1.png",
   "/images/banners/2.png",
   "/images/banners/3.png",
-
 ];
 
 export const ServiceHighlightsData: ServiceHighlightsType = [
@@ -57,53 +56,79 @@ export const ServiceHighlightsData: ServiceHighlightsType = [
   },
 ];
 
-export const voucher = {
-  code: "GG50OFF",
-  title: "Voucher Diskon 50%",
-  description: "Voucher 199K min. purchase 549K (T&C applied)",
-  icon: "/images/icons/voucher.png",
-  minPurchase: 549000,
-  discount: 50,
+export const eventProducts = {
+  title: "Popular Products",
+  description:
+    "Explore our popular products — fresh styles made to inspire your kids everyday look.",
 };
+
+export const voucher = {
+  code: "KIDS20OFF",
+  title: "20% Off Kidswear",
+  description: "Enjoy 20% off kids’ clothing with a minimum purchase of $50 (T&C apply)",
+  icon: "/images/icons/voucher.png",
+  minPurchase: 50,
+  discount: 20,
+};
+
+export const productListSection = {
+  title: "New Arrival",
+  description:
+    "Discover the latest kidswear collection — playful, comfy, and stylish pieces made to brighten up your little one’s everyday look.",
+};
+
+export const categoriesProductList = [
+  { name: "All", slug: "all" },
+  { name: "Babies", slug: "babies" },
+  { name: "Girls", slug: "girls" },
+  { name: "Boys", slug: "boys" },
+];
 
 export const videoSection = {
   icon: "/images/icons/film.png",
-  title: "Welcome to Kidz Station!",
+  title: "Discover the World of Kidswear!",
   description:
-    "Kidz Station is the most explorative toy store that offers a unique experience for play where parents & kids can team up together. Let your imagination run as you embark on a new adventure filled with thrills and excitement. Welcome to Kidz Station Imagine Play",
-  videoSrc: "/videos/video.mp4",
-  poster: "/thumbnail.webp",
+    "Step into a colorful world of style and comfort with our latest kidswear collection. From playful everyday outfits to trendy looks for special occasions, every piece is made for fun, movement, and imagination. Let your little ones express themselves with fashion that’s as bright and joyful as they are!",
+  videoSrc: "/videos/view.mp4",
+  poster: "/images/thumbnail.webp",
 };
 
-export const reviews = [
-  {
-    id: 1,
-    name: "Sarah Johnson",
-    avatar: "/images/icons/review.png",
-    rating: 5,
-    comment:
-      "Absolutely love the quality! My kids can’t stop playing. The packaging and delivery were also excellent!",
-  },
-  {
-    id: 2,
-    name: "Michael Lee",
-    avatar: "/images/icons/review.png",
-    rating: 4,
-    comment: "Fun and safe products! Great value for money and very responsive customer service.",
-  },
-  {
-    id: 3,
-    name: "Amanda Rivera",
-    avatar: "/images/icons/review.png",
-    rating: 5,
-    comment: "Highly recommend! The toys are well-made and my daughter really loves them!",
-  },
-  {
-    id: 4,
-    name: "Kevin Wong",
-    avatar: "/images/icons/review.png",
-    rating: 5,
-    comment:
-      "Perfect for birthday gifts! Fast shipping and everything arrived in perfect condition.",
-  },
-];
+export const reviews = {
+  title: "Customer Reviews",
+  description:
+    "Read what other customers are saying about this product. Share your experience to help others make informed decisions.",
+  items: [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      avatar: "/images/icons/review.png",
+      rating: 5,
+      comment:
+        "The clothes are super comfy and adorable! My little one looks so cute in every outfit. Definitely buying more soon!",
+    },
+    {
+      id: 2,
+      name: "Michael Lee",
+      avatar: "/images/icons/review.png",
+      rating: 5,
+      comment:
+        "Great quality fabrics and stylish designs. My son loves his new jacket — it fits perfectly and feels soft!",
+    },
+    {
+      id: 3,
+      name: "Amanda Rivera",
+      avatar: "/images/icons/review.png",
+      rating: 5,
+      comment:
+        "Absolutely love this store! The kidswear is well-made, colorful, and perfect for everyday wear.",
+    },
+    {
+      id: 4,
+      name: "Kevin Wong",
+      avatar: "/images/icons/review.png",
+      rating: 5,
+      comment:
+        "Perfect outfits for gifts! Fast delivery and everything arrived beautifully packed. Highly recommended!",
+    },
+  ],
+};

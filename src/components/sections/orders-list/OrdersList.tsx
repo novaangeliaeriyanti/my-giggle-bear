@@ -26,14 +26,12 @@ const OrdersList = () => {
       key: "selection",
     },
   ]);
-  const [copiedId, setCopiedId] = useState<string | null>(null);
 
   const handleCopy = async (e: React.MouseEvent, id: string) => {
     e.stopPropagation();
     try {
       await navigator.clipboard.writeText(id);
-      setCopiedId(id);
-      setTimeout(() => setCopiedId(null), 1500);
+
     } catch {
       toast.error("Failed to copy order ID");
     }

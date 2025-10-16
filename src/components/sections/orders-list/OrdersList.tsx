@@ -31,7 +31,6 @@ const OrdersList = () => {
     e.stopPropagation();
     try {
       await navigator.clipboard.writeText(id);
-
     } catch {
       toast.error("Failed to copy order ID");
     }

@@ -44,8 +44,8 @@ export default function Footer() {
         {/* Column 3 */}
         <div className="flex flex-col space-y-2">
           <h3 className="text-secondary text-stroke mb-4">Contact</h3>
-          <span className="text-small">Email: support@minishop.com</span>
-          <span className="text-small">Phone: +62 812 3456 7890</span>
+          <span className="text-small">Email: xx@xxxx.com</span>
+          <span className="text-small">Phone: +xxxxxx</span>
           <span className="text-small">Follow us:</span>
           <div className="flex gap-3 text-small">
             <Link href="#" className="hover:text-white">

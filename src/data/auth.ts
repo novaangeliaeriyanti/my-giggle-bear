@@ -53,3 +53,8 @@ export const menus = [
   { name: "Orders List", path: "/orders-list" },
   { name: "My Reviews", path: "/my-reviews" },
 ];
+
+export const user = {
+  name: "George Smith",
+  email: "georgesmith@gmail.com"
+}

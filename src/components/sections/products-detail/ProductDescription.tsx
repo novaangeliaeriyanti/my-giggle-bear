@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Modal from "@/components/ui/Modal";
-import { ChevronDown } from "lucide-react";
 
 interface ProductDescriptionProps {
   description: string;

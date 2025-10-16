@@ -1,5 +1,5 @@
 "use client";
-import { Bell, ChevronDown, User2 } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import ShoppingCartIcon from "./ShoppingCartIcon";

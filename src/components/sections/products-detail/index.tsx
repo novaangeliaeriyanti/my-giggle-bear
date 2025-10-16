@@ -9,8 +9,6 @@ import { getProductById } from "@/lib/api";
 import ProductDescription from "./ProductDescription";
 import ShareButton from "./ShareButton";
 import ReviewSection from "./ReviewSection";
-import Breadcrumbs from "@/components/ui/Breadscrumbs";
-import { eventProducts } from "@/data/homepage";
 import RelatedProducts from "./RelatedProducts";
 import PageTitle from "@/components/ui/PageTitle";
 

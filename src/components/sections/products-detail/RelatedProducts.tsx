@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import clsx from "clsx";
@@ -10,11 +9,10 @@ import Title from "@/components/ui/Title";
 
 interface Eventrops {
   title: string;
-  description?: string;
   splitIndexTitle?: number;
 }
 
-export default function RelatedProducts({ title, description, splitIndexTitle }: Eventrops) {
+export default function RelatedProducts({ title, splitIndexTitle }: Eventrops) {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {

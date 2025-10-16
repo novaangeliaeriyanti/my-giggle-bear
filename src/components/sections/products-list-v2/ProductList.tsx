@@ -3,7 +3,6 @@ import ProductCard from "@/components/ui/ProductCard";
 import { popularProducts } from "@/data/products";
 import CategoriesProduct from "./CategoriesProduct";
 import { Suspense, useMemo } from "react";
-import Title from "@/components/ui/Title";
 import { productListSection } from "@/data/homepage";
 import { useSearchParams } from "next/navigation";
 

@@ -4,9 +4,9 @@ import Image from "next/image";
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import clsx from "clsx";
-import ProductCard from "../ui/ProductCard";
+import ProductCard from "../../ui/ProductCard";
 import { popularProducts } from "@/data/products";
-import Title from "../ui/Title";
+import Title from "../../ui/Title";
 
 interface Eventrops {
   title: string;

@@ -12,6 +12,7 @@
   --yellow-light: #fee673;
   --pink-light: #fff6f9;
   --gray-light: #f9f9f9;
+  --ivory-white:#fafbf4;
 }
 
 @theme inline {
@@ -28,6 +29,7 @@
   --color-pink-light: var(--pink-light);
   --color-yellow-light: var(--yellow-light);
   --color-gray-light: var(--gray-light);
+  --color-ivory-white: var(--ivory-white);
 }
 
 @media (prefers-color-scheme: dark) {

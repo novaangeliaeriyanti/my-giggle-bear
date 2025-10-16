@@ -43,7 +43,7 @@ const OrderDetail = () => {
 
           {/* Shipping Info */}
           <section className="bg-white border border-outlined card-rounded p-4 space-y-2 lg:py-6">
-            <h4 className="font-bold bg-yellow-50 p-2 rounded-lg border border-yellow-400 border-dashed">
+            <h4 className="font-bold bg-ivory-white p-2 rounded-lg border border-outlined border-dashed">
               Shipping Information
             </h4>
             <div className="space-y-2 text-small p-2">
@@ -64,7 +64,7 @@ const OrderDetail = () => {
 
           {/* Payment Info */}
           <section className="bg-white border border-outlined card-rounded p-4 space-y-2 lg:py-6">
-            <h4 className="font-bold bg-yellow-50 p-2 rounded-lg border border-yellow-400 border-dashed">
+            <h4 className="font-bold bg-ivory-whit p-2 rounded-lg border border-outlined order-dashed">
               Payment Information
             </h4>
             <div className="space-y-2 text-small p-2 flex flex-col">
@@ -87,7 +87,7 @@ const OrderDetail = () => {
         </div>
 
         <section className="bg-white border border-outlined card-rounded p-4 space-y-2 flex-1 h-fit md:mt-10 lg:mt-12 lg:py-6">
-          <h4 className="font-bold bg-yellow-50 p-2 rounded-lg border border-yellow-400 border-dashed">
+          <h4 className="font-bold bg-ivory-white p-2 rounded-lg border border-outlined border-dashed">
             Order Summary
           </h4>
           <div className="p-2">

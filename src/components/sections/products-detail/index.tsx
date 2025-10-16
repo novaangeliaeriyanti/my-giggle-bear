@@ -10,6 +10,9 @@ import ProductDescription from "./ProductDescription";
 import ShareButton from "./ShareButton";
 import ReviewSection from "./ReviewSection";
 import Breadcrumbs from "@/components/ui/Breadscrumbs";
+import { eventProducts } from "@/data/homepage";
+import RelatedProducts from "./RelatedProducts";
+import PageTitle from "@/components/ui/PageTitle";
 
 const ProductDetail = () => {
   const params = useParams<{ id: string }>();
@@ -48,7 +51,7 @@ const ProductDetail = () => {
 
   return (
     <div className="flex flex-col gap-4 md:gap-12 container mx-auto p-4 lg:py-6">
-      <Breadcrumbs />
+      <PageTitle title="Product Details" />
       <div className="flex flex-col gap-4 lg:flex-row md:gap-12">
         <div className="w-full h-fit lg:max-w-5/12 aspect-[1] overflow-hidden card-rounded bg-gray-light relative lg:sticky lg:top-36">
           {product.discount && (
@@ -84,6 +87,7 @@ const ProductDetail = () => {
           <ReviewSection productId="prod-001" />
         </div>
       </div>
+      <RelatedProducts title="Related Products" />
     </div>
   );
 };

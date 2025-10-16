@@ -1,10 +1,10 @@
 import Carousel from "@/components/sections/carousel/Carousel";
-import EventProducts from "@/components/sections/EventProducts";
+import EventProducts from "@/components/sections/event-products/EventProducts";
 import ProductsListSection from "@/components/sections/products-list/ProductList";
 import ServiceHighlights from "@/components/sections/service-highlight/ServiceHighlights";
-import Testimonials from "@/components/sections/Testimonials";
+import Testimonials from "@/components/sections/testimonials/Testimonials";
 import VideoSection from "@/components/sections/video/VideoSection";
-import VoucherBanner from "@/components/sections/VoucherBanner";
+import VoucherBanner from "@/components/sections/voucher-banner/VoucherBanner";
 import { eventProducts } from "@/data/homepage";
 import { Suspense } from "react";
 

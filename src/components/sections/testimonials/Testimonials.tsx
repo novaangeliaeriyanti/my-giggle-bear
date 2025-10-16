@@ -4,7 +4,7 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import Image from "next/image";
 import { reviews } from "@/data/homepage";
-import Title from "../ui/Title";
+import Title from "@/components/ui/Title";
 
 const Testimonials = () => {
   const scrollRef = useRef<HTMLDivElement>(null);

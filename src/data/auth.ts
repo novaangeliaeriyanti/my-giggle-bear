@@ -56,5 +56,5 @@ export const menus = [
 
 export const user = {
   name: "George Smith",
-  email: "georgesmith@gmail.com"
-}
+  email: "georgesmith@gmail.com",
+};

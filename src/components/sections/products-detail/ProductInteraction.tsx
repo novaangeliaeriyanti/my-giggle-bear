@@ -116,7 +116,7 @@ const ProductInteraction = ({
         icon={<Plus />}
         className="flex justify-center"
       >
-        Tambah
+        Add to cart
       </Button>
       <Button icon={<ShoppingCart />} variant="outlined" className="flex justify-center">
         Buy this Item

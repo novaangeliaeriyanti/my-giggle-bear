@@ -7,7 +7,7 @@ export const menus: {
     title: "Home",
     items: [
       { label: "Home Layout 1", href: "/", icon: "/images/icons/smile.png" },
-      { label: "Home Layout 2", href: "/", icon: "/images/icons/smile.png" },
+      { label: "Home Layout 2", href: "/home2", icon: "/images/icons/smile.png" },
     ],
   },
   {
@@ -42,9 +42,9 @@ export const menus: {
   {
     title: "Categories",
     items: [
-      { label: "T-Shirts", href: "/tshirts", icon: "/images/icons/smile.png" },
-      { label: "Pants", href: "/pants", icon: "/images/icons/smile.png" },
-      { label: "Shoes", href: "/shoes", icon: "/images/icons/smile.png" },
+      { label: "Babies", href: "/home1?category=babies", icon: "/images/icons/smile.png" },
+      { label: "Girls", href: "/home1?category=girls", icon: "/images/icons/smile.png" },
+      { label: "Boys", href: "/home1?category=boys", icon: "/images/icons/smile.png" },
     ],
   },
 ];

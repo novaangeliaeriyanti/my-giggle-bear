@@ -4,9 +4,9 @@ import { Check, Copy } from "lucide-react";
 import { useState } from "react";
 import { voucher } from "@/data/homepage";
 import { toast } from "react-toastify";
-import Button from "../ui/Button";
+import Button from "@/components/ui/Button";
 
-const VoucherBanner = () => {
+const VoucherBannerV2 = () => {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -23,7 +23,7 @@ const VoucherBanner = () => {
 
   return (
     <div className="flex justify-center container mx-auto p-4 mt-8">
-      <div className="relative w-full bg-blue-sky text-primary card-rounded bg-primary-50 bg-[url(/images/icons/grid-line.png)] bg-[length:720px] overflow-visible flex items-center">
+      <div className="relative w-full border border-icon bg-ivory-white text-primary card-rounded flex items-center border-dashed">
         <div className="absolute -top-8 w-12 h-12 md:w-20 md:h-20 lg:w-24 lg:h-24">
           <Image
             src={voucher.icon}
@@ -37,7 +37,7 @@ const VoucherBanner = () => {
         <div className="md:ml-16 lg:ml-32 flex-1">
           <div className="flex flex-col gap-1 p-4 md:py-2 lg:py-2 md:flex-row lg:flex-row md:justify-between lg:justify-between">
             <div className="flex flex-col gap-1">
-              <h2 className="text-heading-1 text-stroke-3 mb-1 mt-1.5 text-secondary">
+              <h2 className="text-heading-1 text-stroke-3 mb-1 mt-1.5 text-icon">
                 {voucher.title}
               </h2>
               <p className="text-body mb-1">{voucher.description}</p>
@@ -59,4 +59,4 @@ const VoucherBanner = () => {
   );
 };
 
-export default VoucherBanner;
+export default VoucherBannerV2;

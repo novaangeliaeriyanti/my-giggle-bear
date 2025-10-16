@@ -11,10 +11,10 @@ export default function AccountSidebar() {
   return (
     <aside className="hidden lg:block lg:w-1/4 flex-shrink-0 border border-outlined card-rounded p-4 h-fit">
       <div className="mb-4 flex items-start gap-2">
-        <CircleUserRound strokeWidth={1} className="w-10 h-10 text-icon"/>
+        <CircleUserRound strokeWidth={1} className="w-10 h-10 text-icon" />
         <div className="flex flex-col">
-            <span className="text-small font-bold line-clamp-1">{user.name}</span>
-            <span className="text-tiny line-clamp-1">{user.email}</span>
+          <span className="text-small font-bold line-clamp-1">{user.name}</span>
+          <span className="text-tiny line-clamp-1">{user.email}</span>
         </div>
       </div>
       <nav className="flex flex-col gap-1">

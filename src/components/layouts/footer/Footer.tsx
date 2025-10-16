@@ -2,9 +2,8 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-[url('/images/icons/pink-cloud.png')] bg-cover bg-top bg-no-repeat">
-      <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-        {/* Column 1 */}
+    <footer className="bg-[url('/images/icons/footer.png')] bg-cover bg-top bg-no-repeat pt-20">
+      <div className="container pt-20 mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           <div className="flex items-center">
             <h2 className="text-secondary">Giggle</h2>
@@ -16,7 +15,6 @@ export default function Footer() {
           </span>
         </div>
 
-        {/* Column 2 */}
         <div>
           <h3 className="text-secondary text-stroke mb-4">Quick Links</h3>
           <ul className="space-y-2 text-small">
@@ -62,8 +60,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-
-      <div className="border-t border-outlined border-dashed text-center py-4 text-small text-stroke bg-primary/5">
+      <div className="border-t border-outlined border-dashed text-center py-4 text-small text-stroke">
         © {new Date().getFullYear()} GiggleBear. All rights reserved.
       </div>
     </footer>

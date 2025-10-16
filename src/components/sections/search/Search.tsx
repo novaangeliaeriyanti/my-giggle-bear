@@ -10,6 +10,7 @@ import FilterContent from "./FilterContent";
 import { brands, categories } from "@/data/search";
 import Button from "@/components/ui/Button";
 import Breadcrumbs from "@/components/ui/Breadscrumbs";
+import StatusMessage from "@/components/ui/StatusMessage";
 
 export default function Search() {
   const searchParams = useSearchParams();
@@ -96,7 +97,11 @@ export default function Search() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-10 text-body">No products found.</div>
+            <StatusMessage
+              title="No products found."
+              description="It looks like there are no products available right now. Try exploring other categories to find something you like!"
+              imageSrc="/images/icons/empty-search.png"
+            />
           )}
         </div>
 

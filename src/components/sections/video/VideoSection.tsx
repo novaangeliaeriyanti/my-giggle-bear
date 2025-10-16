@@ -6,7 +6,7 @@ const VideoSection = () => {
   return (
     <div className="flex justify-center">
       <div className="w-full flex flex-col gap-3 container mx-auto p-2">
-        <div className="relative flex flex-col lg:flex-row items-center gap-2 bg-blue-sky card-rounded bg-primary-50 bg-[url(/images/icons/grid-line.png)] bg-[length:720px] bg-center overflow-visible px-8 py-10">
+        <div className="relative flex flex-col lg:flex-row items-center gap-2 bg-blue-sky card-rounded bg-[url(/images/icons/grid-line.png)] bg-[length:720px] bg-center overflow-visible px-8 py-10">
           <div className="absolute left-4 -top-1 w-12 h-12 md:w-24 md:h-24 lg:w-32 lg:h-32">
             <Image
               src={videoSection.icon}

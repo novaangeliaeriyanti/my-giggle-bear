@@ -63,7 +63,7 @@ const CartForm = () => {
         );
         return (
           <div key={brand} className="flex flex-col gap-4">
-            <div className="flex items-center gap-2 bg-yellow-50 p-2 rounded-lg border border-yellow-400 border-dashed">
+            <div className="flex items-center gap-2 bg-ivory-white p-2 rounded-lg border border-outlined border-dashed">
               <Checkbox
                 checked={allChecked}
                 onChange={() => toggleCheckAllBrand(brand, !allChecked)}

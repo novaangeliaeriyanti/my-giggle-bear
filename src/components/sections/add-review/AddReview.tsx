@@ -55,7 +55,7 @@ export default function AddReview() {
 
       {Object.entries(itemsByBrand).map(([brandId, items]) => (
         <div key={brandId} className="space-y-6 border border-outlined card-rounded p-4 lg:p-6">
-          <h4 className="font-bold capitalize bg-yellow-50 p-2 rounded-lg border border-yellow-400 border-dashed">
+          <h4 className="font-bold capitalize bg-ivory-white p-2 rounded-lg border border-outlined border-dashed">
             {brandId}
           </h4>
           {items.map((item) => {

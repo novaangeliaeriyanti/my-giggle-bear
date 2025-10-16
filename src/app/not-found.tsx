@@ -16,14 +16,14 @@ export default function NotFound() {
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
       <div className="flex-1">
-      <StatusMessage
-        title="404. Page not found"
-        description="Sorry, we couldn‘t find the page you where looking for. We suggest that you return to homepage."
-        imageSrc="/images/icons/not-found.png"
-        buttonText="Back to homepage"
-        buttonIcon={<Home className="w-4 h-4" />}
-        buttonAction={handleBackHome}
-      />
+        <StatusMessage
+          title="404. Page not found"
+          description="Sorry, we couldn‘t find the page you where looking for. We suggest that you return to homepage."
+          imageSrc="/images/icons/not-found.png"
+          buttonText="Back to homepage"
+          buttonIcon={<Home className="w-4 h-4" />}
+          buttonAction={handleBackHome}
+        />
       </div>
       <Footer />
     </div>
